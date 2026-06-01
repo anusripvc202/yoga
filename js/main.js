@@ -22,12 +22,24 @@ function initMobileMenu() {
       navLinks.classList.toggle('active');
     });
 
-    // Close menu when a link is clicked
+    // Close menu when a link is clicked, unless it is a dropdown toggle
     const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
+      link.addEventListener('click', (e) => {
+        if (link.classList.contains('dropdown-toggle') || link.getAttribute('href') === '#') {
+          e.preventDefault();
+          const parentItem = link.closest('.nav-item.dropdown');
+          if (parentItem) {
+            parentItem.classList.toggle('open');
+          }
+        } else {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          // Collapse all dropdowns when menu closes
+          navLinks.querySelectorAll('.nav-item.dropdown').forEach(item => {
+            item.classList.remove('open');
+          });
+        }
       });
     });
   }
@@ -98,11 +110,11 @@ function initHeaderScroll() {
     const handleScroll = () => {
       if (window.scrollY > 20) {
         header.style.boxShadow = 'var(--shadow-md)';
-        header.style.backgroundColor = 'rgba(250, 249, 246, 0.95)';
+        header.style.backgroundColor = 'rgba(240, 244, 239, 0.95)';
         header.style.height = '70px';
       } else {
         header.style.boxShadow = 'none';
-        header.style.backgroundColor = 'rgba(250, 249, 246, 0.85)';
+        header.style.backgroundColor = 'rgba(240, 244, 239, 0.85)';
         header.style.height = '80px';
       }
     };

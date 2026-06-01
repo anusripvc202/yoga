@@ -7,18 +7,18 @@
 
 /* --- DESIGN SYSTEM TOKENS --- */
 :root {
-  --color-bg: #FAF9F6;              /* Warm off-white / cream background */
-  --color-bg-secondary: #F4F2EB;    /* Warm sand secondary background */
-  --color-text: #1E251E;            /* Rich deep olive-black text */
-  --color-text-muted: #5C665C;      /* Soft grey-green muted text */
-  --color-primary: #4F6D52;         /* Earthy forest green */
-  --color-primary-hover: #3D553F;   /* Darker forest green */
-  --color-primary-light: #EBEFEA;   /* Light tinted green */
-  --color-secondary: #705E4C;       /* Soft tan / sand */
-  --color-secondary-light: #F0EDE9; /* Very light sand tint */
+  --color-bg: #F0F4EF;              /* Soft Sage background */
+  --color-bg-secondary: #E1E8E0;    /* Muted Sage secondary background */
+  --color-text: #2D3A2D;            /* Deep Forest text */
+  --color-text-muted: #6B7D6B;      /* Soft Sage-grey muted text */
+  --color-primary: #3E5A3E;         /* Deep Moss green */
+  --color-primary-hover: #2D422D;   /* Darker moss green */
+  --color-primary-light: #DCE5DC;   /* Pale sage tint */
+  --color-secondary: #8A9A8A;       /* Earthy sage */
+  --color-secondary-light: #E8EDE8; /* Very light sage tint */
   --color-white: #ffffff;
-  --color-border: rgba(79, 109, 82, 0.08); /* Minimal olive border */
-  --color-accent: #E29578;          /* Terracotta accent for indicators */
+  --color-border: rgba(62, 90, 62, 0.12); /* Minimal sage border */
+  --color-accent: #A8B8A8;          /* Muted sage accent */
 
   --font-serif: 'Lora', serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -174,6 +174,96 @@ button, input, textarea, select {
 
 .nav-links .active a::after {
   width: 100%;
+}
+
+/* --- DROPDOWN NAVIGATION MENU --- */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-top: 4px solid var(--color-text);
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transition: transform var(--transition-speed) var(--transition-ease);
+}
+
+.nav-item.dropdown:hover .dropdown-toggle::after,
+.nav-item.dropdown.open .dropdown-toggle::after {
+  transform: rotate(180deg);
+  border-top-color: var(--color-primary);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 0.75rem 0;
+  list-style: none;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed) var(--transition-ease),
+              transform var(--transition-speed) var(--transition-ease),
+              visibility var(--transition-speed);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown-menu li {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block !important;
+  padding: 0.6rem 1.5rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: var(--color-text) !important;
+  width: 100% !important;
+  text-align: left !important;
+  transition: all var(--transition-speed) var(--transition-ease) !important;
+}
+
+.dropdown-menu a::after {
+  display: none !important; /* remove hover line underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--color-primary-light) !important;
+  color: var(--color-primary) !important;
+  padding-left: 1.75rem !important;
+}
+
+/* Hover show on desktop */
+@media (min-width: 769px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .nav-btn-container {
@@ -453,40 +543,40 @@ button, input, textarea, select {
   border-color: #4F6D52;
 }
 
-/* Card 2 — Burn Fat: Soft Terracotta/Peach */
+/* Card 2 — Burn Fat: Mint/Lime Green */
 .benefit-card:nth-child(2) {
-  background: linear-gradient(135deg, #FDEEE8 0%, #F9D9CC 100%);
-  border-color: rgba(226, 149, 120, 0.2);
+  background: linear-gradient(135deg, #ECF5ED 0%, #D8ECD9 100%);
+  border-color: rgba(62, 90, 62, 0.15);
 }
 .benefit-card:nth-child(2):hover {
-  background: linear-gradient(135deg, #C9674B 0%, #A84F37 100%);
+  background: linear-gradient(135deg, #3E5A3E 0%, #2E422E 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(201, 103, 75, 0.3);
-  border-color: #C9674B;
+  box-shadow: 0 20px 40px rgba(62, 90, 62, 0.3);
+  border-color: #3E5A3E;
 }
 
-/* Card 3 — Get Stronger: Soft Blue-Purple */
+/* Card 3 — Get Stronger: Emerald Green */
 .benefit-card:nth-child(3) {
-  background: linear-gradient(135deg, #EAE8F4 0%, #D6D1EF 100%);
-  border-color: rgba(120, 110, 190, 0.2);
+  background: linear-gradient(135deg, #E6F3EF 0%, #CCEAE0 100%);
+  border-color: rgba(46, 117, 89, 0.15);
 }
 .benefit-card:nth-child(3):hover {
-  background: linear-gradient(135deg, #5D54A8 0%, #47408C 100%);
+  background: linear-gradient(135deg, #235D45 0%, #173F2E 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(93, 84, 168, 0.3);
-  border-color: #5D54A8;
+  box-shadow: 0 20px 40px rgba(35, 93, 69, 0.3);
+  border-color: #235D45;
 }
 
-/* Card 4 — Flexible: Soft Warm Gold */
+/* Card 4 — Flexible: Olive/Tea Green */
 .benefit-card:nth-child(4) {
-  background: linear-gradient(135deg, #FDF6E3 0%, #F5E9C0 100%);
-  border-color: rgba(197, 154, 50, 0.2);
+  background: linear-gradient(135deg, #F1F4EB 0%, #E3EAD3 100%);
+  border-color: rgba(125, 145, 95, 0.15);
 }
 .benefit-card:nth-child(4):hover {
-  background: linear-gradient(135deg, #B8882A 0%, #9A7020 100%);
+  background: linear-gradient(135deg, #5B6B46 0%, #445034 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(184, 136, 42, 0.3);
-  border-color: #B8882A;
+  box-shadow: 0 20px 40px rgba(91, 107, 70, 0.3);
+  border-color: #5B6B46;
 }
 
 /* On hover — flip text and list to white */
@@ -515,9 +605,9 @@ button, input, textarea, select {
 }
 
 .benefit-icon-wrapper.calm { background-color: rgba(79, 109, 82, 0.15); color: #4F6D52; }
-.benefit-icon-wrapper.fat  { background-color: rgba(201, 103, 75, 0.15); color: #C9674B; }
-.benefit-icon-wrapper.strong { background-color: rgba(93, 84, 168, 0.15); color: #5D54A8; }
-.benefit-icon-wrapper.flex { background-color: rgba(184, 136, 42, 0.15); color: #B8882A; }
+.benefit-icon-wrapper.fat  { background-color: rgba(62, 90, 62, 0.15); color: #3E5A3E; }
+.benefit-icon-wrapper.strong { background-color: rgba(46, 117, 89, 0.15); color: #2E7D5B; }
+.benefit-icon-wrapper.flex { background-color: rgba(125, 145, 95, 0.15); color: #6F8255; }
 
 .benefit-icon {
   width: 26px;
@@ -658,16 +748,16 @@ button, input, textarea, select {
   overflow: hidden;
 }
 
-/* Card 1 - Sakshi Maheshwari: Warm Rose/Terracotta tint */
+/* Card 1 - Sakshi Maheshwari: Green tint */
 .testimonial-card:nth-child(1) {
-  background: linear-gradient(135deg, #FAF0EC 0%, #F5DFD6 100%);
-  border-color: rgba(226, 149, 120, 0.15);
+  background: linear-gradient(135deg, #ECF5ED 0%, #D8ECD9 100%);
+  border-color: rgba(62, 90, 62, 0.15);
 }
 .testimonial-card:nth-child(1):hover {
-  background: linear-gradient(135deg, #E29578 0%, #C9674B 100%);
+  background: linear-gradient(135deg, #3E5A3E 0%, #2E422E 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(226, 149, 120, 0.3);
-  border-color: #E29578;
+  box-shadow: 0 20px 40px rgba(62, 90, 62, 0.3);
+  border-color: #3E5A3E;
 }
 
 /* Card 2 - Shikha Kumari: Soft Sage/Mint Green tint */
@@ -682,16 +772,16 @@ button, input, textarea, select {
   border-color: #4F6D52;
 }
 
-/* Card 3 - Melissa D'Souza: Soft Lavender/Blue-Grey tint */
+/* Card 3 - Melissa D'Souza: Soft Olive-Sage tint */
 .testimonial-card:nth-child(3) {
-  background: linear-gradient(135deg, #EEF1F6 0%, #DCE2EE 100%);
-  border-color: rgba(112, 94, 76, 0.15);
+  background: linear-gradient(135deg, #F1F4EB 0%, #E3EAD3 100%);
+  border-color: rgba(125, 145, 95, 0.15);
 }
 .testimonial-card:nth-child(3):hover {
-  background: linear-gradient(135deg, #705E4C 0%, #5A4B3C 100%);
+  background: linear-gradient(135deg, #5B6B46 0%, #445034 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(112, 94, 76, 0.3);
-  border-color: #705E4C;
+  box-shadow: 0 20px 40px rgba(91, 107, 70, 0.3);
+  border-color: #5B6B46;
 }
 
 /* On hover — flip text and icons to white/light */
@@ -1863,5 +1953,31 @@ footer {
 
   .section-padding {
     padding: 60px 0;
+  }
+}
+
+/* Mobile Dropdown responsive styles */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: none !important; /* Toggled via JavaScript */
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+    padding-left: 1.5rem !important;
+    min-width: auto !important;
+    width: 100% !important;
+    margin-top: 0.5rem;
+  }
+  
+  .nav-item.dropdown.open .dropdown-menu {
+    display: flex !important;
+  }
+
+  .dropdown-toggle::after {
+    border-top-color: var(--color-text);
   }
 }

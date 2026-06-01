@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About & Support - Aarogya</title>
-  <meta name="description" content="Find answers to your questions about Aarogya's yoga classes and memberships. Contact our support team for live-chat and email assistance.">
+  <title>Frequently Asked Questions - Aarogya Yoga</title>
+  <meta name="description" content="Find detailed answers to questions about our yoga sessions, online class timings, face yoga programs, and membership options.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,16 +25,16 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="classes.html">Classes</a></li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown active">
             <a href="#" class="dropdown-toggle">Pages</a>
             <ul class="dropdown-menu">
               <li><a href="pricing.html">Pricing</a></li>
               <li><a href="instructors.html">Instructors</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
+              <li class="active"><a href="faqs.html">FAQs</a></li>
               <li><a href="testimonials.html">Testimonials</a></li>
             </ul>
           </li>
-          <li class="active"><a href="about.html">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -53,12 +53,13 @@
   </header>
 
   <main>
-    <!-- ABOUT HERO SECTION -->
+    <!-- FAQ HERO SECTION -->
     <section class="bg-secondary-section section-padding">
       <div class="container" style="max-width: 800px; text-align: center; display: flex; flex-direction: column; gap: 1.5rem;">
-        <h1 class="section-title" style="font-size: 3.5rem;">Knowledge & Support</h1>
+        <span class="hero-subtitle">Help Center</span>
+        <h1 class="section-title" style="font-size: 3.5rem;">Frequently Asked Questions</h1>
         <p class="section-subtitle" style="font-size: 1.1rem; line-height: 1.6;">
-          Find answers to your questions about our wellness programs, or get in touch with our dedicated support team to help guide your journey.
+          Everything you need to know about our daily classes, face yoga programs, payment cards, and community portal. Can't find the answer you're looking for? Reach out to us.
         </p>
         
         <!-- Live FAQ Search Box -->
@@ -71,9 +72,9 @@
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ ACCORDION SECTION -->
     <section class="container section-padding">
-      <div class="faq-container">
+      <div class="faq-container" style="max-width: 900px; margin: 0 auto;">
         <!-- FAQ 1 -->
         <div class="faq-item">
           <button class="faq-question-btn">
@@ -88,6 +89,7 @@
             </div>
           </div>
         </div>
+        
         <!-- FAQ 2 -->
         <div class="faq-item">
           <button class="faq-question-btn">
@@ -102,6 +104,7 @@
             </div>
           </div>
         </div>
+
         <!-- FAQ 3 -->
         <div class="faq-item">
           <button class="faq-question-btn">
@@ -116,6 +119,7 @@
             </div>
           </div>
         </div>
+
         <!-- FAQ 4 -->
         <div class="faq-item">
           <button class="faq-question-btn">
@@ -130,6 +134,7 @@
             </div>
           </div>
         </div>
+
         <!-- FAQ 5 -->
         <div class="faq-item">
           <button class="faq-question-btn">
@@ -144,14 +149,30 @@
             </div>
           </div>
         </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            Can I change or cancel my plan?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes, you can change your membership tier or cancel your subscription at any time. Simply request a change through your account profile or contact support. Refunds are processed according to our 7-day refund guarantee policy.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- STILL HAVE QUESTIONS SECTION -->
+    <!-- CONTACT FORM & HELP SECTION -->
     <section class="bg-secondary-section section-padding">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Still have questions?</h2>
+          <p class="section-subtitle">Our supportive staff is here to help you get the answers you need.</p>
         </div>
 
         <div class="contact-container-grid">
@@ -159,16 +180,16 @@
           <div class="contact-form-card">
             <form class="contact-form" action="#" method="POST">
               <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Your name" required>
+                <label for="faq-name">Full Name</label>
+                <input type="text" id="faq-name" placeholder="Your name" required>
               </div>
               <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="hello@example.com" required>
+                <label for="faq-email">Email Address</label>
+                <input type="email" id="faq-email" placeholder="hello@example.com" required>
               </div>
               <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                <label for="faq-message">Message</label>
+                <textarea id="faq-message" rows="5" placeholder="How can we help you?" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
             </form>
@@ -203,27 +224,6 @@
         </div>
       </div>
     </section>
-
-    <!-- COMMUNITY BANNER -->
-    <section class="container section-padding">
-      <div class="community-stats-banner">
-        <div class="community-stats-left">
-          <div class="community-avatars-large">
-            <img src="images/instructor.png" alt="User 1">
-            <img src="images/yoga_hero.png" alt="User 2">
-            <img src="images/pricing_hero.png" alt="User 3">
-            <div class="avatar-count">+1k</div>
-          </div>
-          <div class="community-stats-label">
-            <h4>920k+</h4>
-            <span>Global Community Members</span>
-          </div>
-        </div>
-        <p class="community-stats-quote">
-          "Join a thriving movement of individuals dedicated to finding peace, strength, and balance through the ancient art of yoga."
-        </p>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -242,7 +242,7 @@
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 23,12M10,15V9L15,12L10,15Z"/></svg>
           </a>
           <a href="#" class="social-link" aria-label="Twitter">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92(11.73,8.29)C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.06C2.38,12.15 3.86,13.88 5.82,14.28C5.46,14.38 5.08,14.43 4.68,14.43C4.4,14.43 4.13,14.4 3.87,14.35C4.42,16.07 6,17.32 7.89,17.35C6.41,18.5 4.54,19.2 2.5,19.2C2.15,19.2 1.81,19.18 1.47,19.14C3.39,20.37 5.66,21 8.1,21C16,21 20.33,14.44 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/></svg>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92C11.73,8.29 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.06C2.38,12.15 3.86,13.88 5.82,14.28C5.46,14.38 5.08,14.43 4.68,14.43C4.4,14.43 4.13,14.4 3.87,14.35C4.42,16.07 6,17.32 7.89,17.35C6.41,18.5 4.54,19.2 2.5,19.2C2.15,19.2 1.81,19.18 1.47,19.14C3.39,20.37 5.66,21 8.1,21C16,21 20.33,14.44 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/></svg>
           </a>
         </div>
       </div>
