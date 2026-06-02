@@ -476,9 +476,9 @@ select {
   max-width: 480px;
   height: auto;
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
   object-fit: cover;
   animation: float 6s ease-in-out infinite;
+  mix-blend-mode: multiply;
 }
 
 @keyframes float {
@@ -1284,9 +1284,9 @@ footer {
 .pricing-banner {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
   height: auto;
   animation: float 6s ease-in-out infinite;
+  mix-blend-mode: multiply;
 }
 
 .paths-grid {
