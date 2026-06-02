@@ -1272,6 +1272,16 @@ footer {
   color: #BCC6BE;
 }
 
+.footer-bottom a {
+  color: inherit;
+  text-decoration: underline;
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+.footer-bottom a:hover {
+  color: var(--color-white);
+}
+
 /* --- SUBPAGE: CLASSES / PRICING --- */
 .classes-hero {
   display: grid;
