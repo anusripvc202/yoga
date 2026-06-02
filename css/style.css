@@ -118,6 +118,13 @@ select {
   background-color: var(--color-bg-secondary);
 }
 
+.classes-online-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
 /* --- HEADER / NAVBAR --- */
 .header-nav {
   position: sticky;
@@ -806,7 +813,7 @@ select {
 /* --- TESTIMONIALS SECTION --- */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -950,7 +957,7 @@ select {
 
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -1301,7 +1308,7 @@ footer {
 
 .paths-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
@@ -1461,7 +1468,7 @@ footer {
 /* --- DEDICATED PRICING CARDS PAGE --- */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
@@ -1712,7 +1719,7 @@ footer {
 /* --- BLOG GRID PAGE --- */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
@@ -1940,7 +1947,8 @@ footer {
   .hero,
   .classes-hero,
   .guide-section,
-  .contact-container-grid {
+  .contact-container-grid,
+  .classes-online-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
@@ -1971,6 +1979,32 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.25;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.88rem;
+  }
+
+  .faq-question-btn {
+    font-size: 1.05rem;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .faq-answer-inner {
+    padding: 0 1.25rem 1.1rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
   .header-nav {
     height: 70px;
   }
