@@ -110,11 +110,11 @@ function initHeaderScroll() {
     const handleScroll = () => {
       if (window.scrollY > 20) {
         header.style.boxShadow = 'var(--shadow-md)';
-        header.style.backgroundColor = 'rgba(240, 244, 239, 0.95)';
+        header.style.backgroundColor = 'rgba(250, 245, 240, 0.95)';
         header.style.height = '70px';
       } else {
         header.style.boxShadow = 'none';
-        header.style.backgroundColor = 'rgba(240, 244, 239, 0.85)';
+        header.style.backgroundColor = 'rgba(250, 245, 240, 0.85)';
         header.style.height = '80px';
       }
     };
