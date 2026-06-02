@@ -7,18 +7,29 @@
 
 /* --- DESIGN SYSTEM TOKENS --- */
 :root {
-  --color-bg: #F0F4EF;              /* Soft Sage background */
-  --color-bg-secondary: #E1E8E0;    /* Muted Sage secondary background */
-  --color-text: #2D3A2D;            /* Deep Forest text */
-  --color-text-muted: #6B7D6B;      /* Soft Sage-grey muted text */
-  --color-primary: #3E5A3E;         /* Deep Moss green */
-  --color-primary-hover: #2D422D;   /* Darker moss green */
-  --color-primary-light: #DCE5DC;   /* Pale sage tint */
-  --color-secondary: #8A9A8A;       /* Earthy sage */
-  --color-secondary-light: #E8EDE8; /* Very light sage tint */
+  --color-bg: #F0F4EF;
+  /* Soft Sage background */
+  --color-bg-secondary: #E1E8E0;
+  /* Muted Sage secondary background */
+  --color-text: #2D3A2D;
+  /* Deep Forest text */
+  --color-text-muted: #6B7D6B;
+  /* Soft Sage-grey muted text */
+  --color-primary: #3E5A3E;
+  /* Deep Moss green */
+  --color-primary-hover: #2D422D;
+  /* Darker moss green */
+  --color-primary-light: #DCE5DC;
+  /* Pale sage tint */
+  --color-secondary: #8A9A8A;
+  /* Earthy sage */
+  --color-secondary-light: #E8EDE8;
+  /* Very light sage tint */
   --color-white: #ffffff;
-  --color-border: rgba(62, 90, 62, 0.12); /* Minimal sage border */
-  --color-accent: #A8B8A8;          /* Muted sage accent */
+  --color-border: rgba(62, 90, 62, 0.12);
+  /* Minimal sage border */
+  --color-accent: #A8B8A8;
+  /* Muted sage accent */
 
   --font-serif: 'Lora', serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -58,7 +69,13 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .serif-font {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.serif-font {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.2;
@@ -76,7 +93,10 @@ img {
   display: block;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
   outline: none;
@@ -120,26 +140,32 @@ button, input, textarea, select {
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  text-decoration: none;
+  background-color: rgba(250, 249, 246, 0.85);
+  background: transparent;
+
+  /* same as navbar */
+  padding: 4px 8px;
+  border-radius: 10px;
 }
 
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  fill: none;
-  stroke: var(--color-primary);
-  stroke-width: 1.5;
-  transition: transform var(--transition-speed);
+.logo-image {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
-.logo:hover .logo-icon {
-  transform: scale(1.08) rotate(5deg);
+
+
+
+.logo:hover .logo-image {
+  transform: scale(1.05);
 }
+
+
 
 .nav-links {
   display: flex;
@@ -224,8 +250,8 @@ button, input, textarea, select {
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-speed) var(--transition-ease),
-              transform var(--transition-speed) var(--transition-ease),
-              visibility var(--transition-speed);
+    transform var(--transition-speed) var(--transition-ease),
+    visibility var(--transition-speed);
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -250,7 +276,8 @@ button, input, textarea, select {
 }
 
 .dropdown-menu a::after {
-  display: none !important; /* remove hover line underline */
+  display: none !important;
+  /* remove hover line underline */
 }
 
 .dropdown-menu a:hover {
@@ -340,17 +367,33 @@ button, input, textarea, select {
   height: 2px;
   background-color: var(--color-text);
   position: absolute;
-  transition: transform var(--transition-speed) var(--transition-ease), 
-              opacity var(--transition-speed) var(--transition-ease);
+  transition: transform var(--transition-speed) var(--transition-ease),
+    opacity var(--transition-speed) var(--transition-ease);
 }
 
-.menu-toggle span:nth-child(1) { top: 0; }
-.menu-toggle span:nth-child(2) { top: 11px; }
-.menu-toggle span:nth-child(3) { top: 22px; }
+.menu-toggle span:nth-child(1) {
+  top: 0;
+}
 
-.menu-toggle.active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-.menu-toggle.active span:nth-child(2) { opacity: 0; }
-.menu-toggle.active span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+.menu-toggle span:nth-child(2) {
+  top: 11px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 22px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
 
 /* --- HERO SECTION --- */
 .hero {
@@ -439,9 +482,17 @@ button, input, textarea, select {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* --- BANNER / TRUST BADGES --- */
@@ -538,6 +589,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #E8F0E9 0%, #D4E6D6 100%);
   border-color: rgba(79, 109, 82, 0.15);
 }
+
 .benefit-card:nth-child(1):hover {
   background: linear-gradient(135deg, #4F6D52 0%, #3D553F 100%);
   transform: translateY(-8px) scale(1.02);
@@ -550,6 +602,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #ECF5ED 0%, #D8ECD9 100%);
   border-color: rgba(62, 90, 62, 0.15);
 }
+
 .benefit-card:nth-child(2):hover {
   background: linear-gradient(135deg, #3E5A3E 0%, #2E422E 100%);
   transform: translateY(-8px) scale(1.02);
@@ -562,6 +615,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #E6F3EF 0%, #CCEAE0 100%);
   border-color: rgba(46, 117, 89, 0.15);
 }
+
 .benefit-card:nth-child(3):hover {
   background: linear-gradient(135deg, #235D45 0%, #173F2E 100%);
   transform: translateY(-8px) scale(1.02);
@@ -574,6 +628,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #F1F4EB 0%, #E3EAD3 100%);
   border-color: rgba(125, 145, 95, 0.15);
 }
+
 .benefit-card:nth-child(4):hover {
   background: linear-gradient(135deg, #5B6B46 0%, #445034 100%);
   transform: translateY(-8px) scale(1.02);
@@ -586,12 +641,15 @@ button, input, textarea, select {
 .benefit-card:hover .benefit-list li {
   color: rgba(255, 255, 255, 0.95);
 }
+
 .benefit-card:hover .benefit-list li::before {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .benefit-card:hover .benefit-icon-wrapper {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 .benefit-card:hover .benefit-icon {
   fill: #ffffff;
 }
@@ -606,10 +664,25 @@ button, input, textarea, select {
   transition: background-color 0.4s ease;
 }
 
-.benefit-icon-wrapper.calm { background-color: rgba(79, 109, 82, 0.15); color: #4F6D52; }
-.benefit-icon-wrapper.fat  { background-color: rgba(62, 90, 62, 0.15); color: #3E5A3E; }
-.benefit-icon-wrapper.strong { background-color: rgba(46, 117, 89, 0.15); color: #2E7D5B; }
-.benefit-icon-wrapper.flex { background-color: rgba(125, 145, 95, 0.15); color: #6F8255; }
+.benefit-icon-wrapper.calm {
+  background-color: rgba(79, 109, 82, 0.15);
+  color: #4F6D52;
+}
+
+.benefit-icon-wrapper.fat {
+  background-color: rgba(62, 90, 62, 0.15);
+  color: #3E5A3E;
+}
+
+.benefit-icon-wrapper.strong {
+  background-color: rgba(46, 117, 89, 0.15);
+  color: #2E7D5B;
+}
+
+.benefit-icon-wrapper.flex {
+  background-color: rgba(125, 145, 95, 0.15);
+  color: #6F8255;
+}
 
 .benefit-icon {
   width: 26px;
@@ -755,6 +828,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #ECF5ED 0%, #D8ECD9 100%);
   border-color: rgba(62, 90, 62, 0.15);
 }
+
 .testimonial-card:nth-child(1):hover {
   background: linear-gradient(135deg, #3E5A3E 0%, #2E422E 100%);
   transform: translateY(-8px) scale(1.02);
@@ -767,6 +841,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #EDF4EE 0%, #DBEADF 100%);
   border-color: rgba(79, 109, 82, 0.15);
 }
+
 .testimonial-card:nth-child(2):hover {
   background: linear-gradient(135deg, #4F6D52 0%, #3D553F 100%);
   transform: translateY(-8px) scale(1.02);
@@ -779,6 +854,7 @@ button, input, textarea, select {
   background: linear-gradient(135deg, #F1F4EB 0%, #E3EAD3 100%);
   border-color: rgba(125, 145, 95, 0.15);
 }
+
 .testimonial-card:nth-child(3):hover {
   background: linear-gradient(135deg, #5B6B46 0%, #445034 100%);
   transform: translateY(-8px) scale(1.02);
@@ -790,12 +866,15 @@ button, input, textarea, select {
 .testimonial-card:hover .testimonial-text {
   color: rgba(255, 255, 255, 0.95);
 }
+
 .testimonial-card:hover .testimonial-info h4 {
   color: #ffffff;
 }
+
 .testimonial-card:hover .testimonial-info span {
   color: rgba(255, 255, 255, 0.75);
 }
+
 .testimonial-card:hover .quote-icon {
   color: rgba(255, 255, 255, 0.15);
 }
@@ -1034,7 +1113,8 @@ button, input, textarea, select {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 200px; /* Adjusted by JS, but safe default */
+  max-height: 200px;
+  /* Adjusted by JS, but safe default */
 }
 
 .faq-more-link {
@@ -1051,8 +1131,10 @@ button, input, textarea, select {
 
 /* --- FOOTER --- */
 footer {
-  background-color: #1F2E22; /* Deep premium forest green background */
-  color: #D4DCD5; /* Warm light green-grey text */
+  background-color: #1F2E22;
+  /* Deep premium forest green background */
+  color: #D4DCD5;
+  /* Warm light green-grey text */
   border-top: 1px solid rgba(250, 249, 246, 0.1);
   padding: 80px 0 40px 0;
 }
@@ -1302,7 +1384,8 @@ footer {
   background-color: var(--color-white);
 }
 
-.comparison-table th, .comparison-table td {
+.comparison-table th,
+.comparison-table td {
   padding: 1.25rem 2rem;
   border-bottom: 1px solid var(--color-border);
 }
@@ -1317,7 +1400,8 @@ footer {
   color: var(--color-text);
 }
 
-.comparison-table td:first-child, .comparison-table th:first-child {
+.comparison-table td:first-child,
+.comparison-table th:first-child {
   font-weight: 500;
 }
 
@@ -1526,7 +1610,8 @@ footer {
   color: var(--color-text);
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 0.9rem 1.2rem;
   border: 1px solid var(--color-border);
@@ -1536,7 +1621,8 @@ footer {
   transition: all var(--transition-speed);
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   border-color: var(--color-primary);
   background-color: var(--color-white);
 }
@@ -1727,7 +1813,8 @@ footer {
   transition: all var(--transition-speed);
 }
 
-.page-link:hover, .page-link.active {
+.page-link:hover,
+.page-link.active {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
@@ -1776,7 +1863,8 @@ footer {
   color: #2b352b;
 }
 
-.blog-single-content h2, .blog-single-content h3 {
+.blog-single-content h2,
+.blog-single-content h3 {
   margin-top: 1.5rem;
   color: var(--color-text);
 }
@@ -1838,16 +1926,22 @@ footer {
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
-  .hero, .classes-hero, .guide-section, .contact-container-grid {
+
+  .hero,
+  .classes-hero,
+  .guide-section,
+  .contact-container-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .hero-image-container, .pricing-banner {
+  .hero-image-container,
+  .pricing-banner {
     order: -1;
   }
 
-  .hero-content, .guide-content {
+  .hero-content,
+  .guide-content {
     align-items: center;
     text-align: center;
   }
@@ -1890,7 +1984,8 @@ footer {
   }
 
   .nav-btn-container {
-    display: none; /* Hide top btn on mobile, can embed inside nav drawer if needed */
+    display: none;
+    /* Hide top btn on mobile, can embed inside nav drawer if needed */
   }
 
   .menu-toggle {
@@ -1965,7 +2060,8 @@ footer {
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
-    display: none !important; /* Toggled via JavaScript */
+    display: none !important;
+    /* Toggled via JavaScript */
     box-shadow: none !important;
     border: none !important;
     background-color: transparent !important;
@@ -1974,7 +2070,7 @@ footer {
     width: 100% !important;
     margin-top: 0.5rem;
   }
-  
+
   .nav-item.dropdown.open .dropdown-menu {
     display: flex !important;
   }
