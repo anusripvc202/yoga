@@ -4,10 +4,294 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About & Support - Aarogya</title>
+  <title>About Shravanthi Raghu | Yoga Therapist & Wellness Coach - Aarogya</title>
   <meta name="description"
-    content="Find answers to your questions about Aarogya's yoga classes and memberships. Contact our support team for live-chat and email assistance.">
+    content="Meet Shravanthi Raghu, an experienced Yoga Therapist and Wellness Coach with 8+ years of expertise. Learn about our holistic treatment for PCOS, Thyroid, Sciatica, and lifestyle disorders.">
   <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Custom Redesign Styles (v2) for Shravanthi Raghu & Therapeutic Solutions */
+    .about-hero {
+      background-color: var(--color-bg);
+      padding: 80px 0 60px 0;
+    }
+    
+    .hero-grid-custom {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 4rem;
+    }
+    
+    .hero-left-img {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .hero-right-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    
+    .about-title {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin: 0;
+    }
+    
+    .about-tagline {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+    
+    .about-tagline strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+    
+    .hero-badge-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+    
+    .hero-badge-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .badge-number {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    
+    .badge-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+    
+    .oval-image-frame {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1/1.2;
+      border-radius: var(--border-radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.4s ease;
+    }
+    
+    .oval-image-frame:hover {
+      transform: scale(1.02);
+    }
+    
+    .oval-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .bio-paragraph {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* Disorders & Root Cause Section */
+    .disorder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .disorder-card {
+      background: linear-gradient(135deg, var(--color-white) 0%, var(--color-secondary-light) 100%);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 2.5rem 2rem;
+      transition: all 0.4s var(--transition-ease);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .disorder-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: var(--color-primary);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom;
+    }
+    
+    .disorder-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+    
+    .disorder-card:hover::before {
+      transform: scaleY(1);
+    }
+    
+    .disorder-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .disorder-card:hover .disorder-icon-wrapper {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      transform: scale(1.1);
+    }
+    
+    .disorder-icon-wrapper svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    
+    .disorder-card h3 {
+      font-size: 1.3rem;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0;
+    }
+    
+    .disorder-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
+    }
+    
+    .disorder-list li {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .disorder-list li::before {
+      content: "✦";
+      color: var(--color-primary);
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    /* Pillars / System Section */
+    .pillars-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .pillar-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2.5rem;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      position: relative;
+    }
+    
+    .pillar-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(79, 109, 82, 0.15);
+      line-height: 1;
+      position: absolute;
+      top: 0.5rem;
+      right: 1.5rem;
+    }
+    
+    .pillar-box h3 {
+      font-size: 1.35rem;
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      margin: 0;
+      padding-top: 1rem;
+    }
+    
+    .pillar-box p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+    
+    /* Media Queries for Custom Styles */
+    @media (max-width: 1024px) {
+      .hero-grid-custom {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      
+      .hero-right-content {
+        align-items: center;
+      }
+      
+      .hero-badge-row {
+        justify-content: center;
+      }
+      
+      .hero-left-img {
+        order: -1;
+      }
+      
+      .pillars-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .disorder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -51,283 +335,293 @@
   </header>
 
   <main>
+    <!-- ========== HERO SECTION (Profile and Narrative Side-by-Side) ========== -->
+    <section class="about-hero">
+      <div class="container hero-grid-custom">
+        <div class="hero-left-img">
+          <div class="oval-image-frame">
+            <img src="images/yoga_therapist.png" alt="Shravanthi Raghu">
+          </div>
+        </div>
+        <div class="hero-right-content">
+          <span class="hero-subtitle">Meet Your Wellness Guide &amp; Therapist</span>
+          <h1 class="about-title">Shravanthi Raghu</h1>
+          <p class="about-tagline">
+            <strong>Shravanthi Raghu</strong> is an experienced Yoga Therapist and Wellness Coach with <strong>8+ years of expertise</strong> in therapeutic yoga, Ayurveda-based nutrition, prenatal wellness, and MAT Pilates. Renowned for her specialized approach to spine health, cervical issues, and sciatica management, she empowers individuals to restore balance, build strength, and enhance overall well-being through personalized, evidence-informed practices.
+          </p>
+          <p class="about-tagline">
+            Her holistic methodology integrates yoga therapy, mindful movement, and Ayurvedic principles to support lasting health and vitality. By focusing on root-cause alignment and lifestyle adaptation, Shravanthi bridges the gap between ancient therapeutic wisdom and the demands of modern lives.
+          </p>
+          <div class="hero-badge-row">
+            <div class="hero-badge-item">
+              <span class="badge-number">8+</span>
+              <span class="badge-label">Years of Expertise</span>
+            </div>
+            <div class="hero-badge-item">
+              <span class="badge-number">Therapy</span>
+              <span class="badge-label">Spine &amp; Pain Specialist</span>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book a Consultation &rarr;</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- ========== HERO SECTION ========== -->
-    <section class="bg-secondary-section section-padding">
-      <div class="container"
-        style="max-width:860px; text-align:center; display:flex; flex-direction:column; gap:1.2rem;">
-        <p
-          style="text-transform:uppercase; letter-spacing:3px; font-size:0.85rem; color:var(--color-primary); font-weight:600;">
-          Our Story</p>
-        <h1 class="section-title" style="font-size:3.2rem; margin:0;">About Aarogya Yoga</h1>
-        <p class="section-subtitle" style="font-size:1.1rem; line-height:1.8; max-width:680px; margin:0 auto;">
-          Founded with a deep passion for holistic wellness, Aarogya Yoga is more than a studio — it is a sanctuary
-          where ancient yoga wisdom meets modern living. We are committed to nurturing every student's mind, body, and
-          spirit.
+    <!-- ========== OUR VISION & MISSION SECTION ========== -->
+    <section class="section-padding" style="background-color: var(--color-white); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 860px; text-align: center;">
+        <span class="hero-subtitle">Our Vision</span>
+        <h2 class="section-title" style="font-size: 2.2rem; margin: 10px 0 20px 0;">Empowering Lifelong Healing</h2>
+        <p class="bio-paragraph" style="font-size: 1.15rem; line-height: 1.8; color: var(--color-text-muted);">
+          Our vision is to make personalized, root-cause therapeutic wellness accessible to everyone. We believe that true health is not merely the absence of disease, but a state of complete physical, mental, and digestive harmony. Through personalized yoga therapy and Ayurvedic principles, we guide individuals to take control of their well-being, reverse chronic conditions, and live a life of vibrant energy and balance.
         </p>
-        <a href="contact.html" class="btn btn-primary" style="align-self:center; margin-top:0.5rem;">Book a Free
-          Trial</a>
       </div>
     </section>
 
-    <!-- ========== ABOUT STORY + IMAGE ========== -->
-    <section class="section-padding">
-      <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
-        <div>
-          <img src="images/yoga_hero.png" alt="About Aarogya Yoga"
-            style="width:100%; border-radius:16px; object-fit:cover; max-height:420px; mix-blend-mode: multiply;">
-        </div>
-        <div style="display:flex; flex-direction:column; gap:1.2rem;">
-          <p
-            style="text-transform:uppercase; letter-spacing:3px; font-size:0.85rem; color:var(--color-primary); font-weight:600;">
-            Who We Are</p>
-          <h2 class="section-title" style="font-size:2.2rem; margin:0;">A Community Built on Wellness &amp; Balance</h2>
-          <p style="font-size:1rem; line-height:1.8; color:var(--color-text-muted);">
-            Aarogya Yoga was born from a simple belief: that everyone deserves access to transformative yoga practice.
-            Our certified instructors bring decades of experience across Hatha, Vinyasa, therapeutic yoga, and women's
-            wellness programs.
-          </p>
-          <p style="font-size:1rem; line-height:1.8; color:var(--color-text-muted);">
-            We offer live online classes, on-demand sessions, and a supportive community of practitioners
-            from across the globe — all from the comfort of your home.
-          </p>
-          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-            <li style="display:flex; align-items:center; gap:0.6rem; font-size:0.95rem;">
-              <span style="color:var(--color-primary); font-size:1.1rem;">✔</span> Founded in 2019, serving a global
-              members worldwide
-            </li>
-            <li style="display:flex; align-items:center; gap:0.6rem; font-size:0.95rem;">
-              <span style="color:var(--color-primary); font-size:1.1rem;">✔</span> 50+ certified yoga instructors
-            </li>
-            <li style="display:flex; align-items:center; gap:0.6rem; font-size:0.95rem;">
-              <span style="color:var(--color-primary); font-size:1.1rem;">✔</span> Classes for all levels — beginner to
-              advanced
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== BENEFITS / WHY CHOOSE US ========== -->
-    <section class="bg-secondary-section section-padding">
+    <!-- ========== THE SYSTEM SECTION (Methodology / Timeline) ========== -->
+    <section class="section-padding bg-light-section" style="background-color: var(--color-bg);">
       <div class="container">
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-          <p
-            style="text-transform:uppercase; letter-spacing:3px; font-size:0.85rem; color:var(--color-primary); font-weight:600;">
-            Our Advantages</p>
-          <h2 class="section-title" style="font-size:2.4rem;">Why Choose Aarogya Yoga?</h2>
-          <p class="section-subtitle" style="max-width:600px; margin:0 auto;">
-            We combine ancient wisdom with modern tools to deliver a yoga experience that's personal, flexible, and
-            truly transformative.
-          </p>
+        <div class="section-header">
+          <span class="hero-subtitle">The System</span>
+          <h2 class="section-title">The Aarogya Therapy System</h2>
+          <p class="section-subtitle">A structured, results-focused methodology combining mindful movement and tradition.</p>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem;">
-          <!-- Benefit 1 -->
-          <div
-            style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:1rem;">
-            <div
-              style="width:52px; height:52px; background:rgba(79,109,82,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center;">
-              <svg width="24" height="24" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
-              </svg>
-            </div>
-            <h3 style="font-size:1.1rem; margin:0;">Live HD Streaming</h3>
-            <p style="font-size:0.93rem; line-height:1.7; color:var(--color-text-muted); margin:0;">
-              All sessions are conducted live with high-definition video so you get real-time feedback and corrections
-              from certified instructors.
-            </p>
+        <div class="pillars-container">
+          <!-- Pillar 1 -->
+          <div class="pillar-box">
+            <div class="pillar-num">01</div>
+            <h3>Yoga Therapy &amp; Alignment</h3>
+            <p>Targeted physical postures, alignment modifications, and restorative sequences designed to relieve pain, build core stability, and correct joint strain safely.</p>
           </div>
-          <!-- Benefit 2 -->
-          <div
-            style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:1rem;">
-            <div
-              style="width:52px; height:52px; background:rgba(79,109,82,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center;">
-              <svg width="24" height="24" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path
-                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
-              </svg>
-            </div>
-            <h3 style="font-size:1.1rem; margin:0;">Flexible Scheduling</h3>
-            <p style="font-size:0.93rem; line-height:1.7; color:var(--color-text-muted); margin:0;">
-              Choose from morning, afternoon, or evening slots. Our schedule adapts to your lifestyle — not the other
-              way around.
-            </p>
+          <!-- Pillar 2 -->
+          <div class="pillar-box">
+            <div class="pillar-num">02</div>
+            <h3>Ayurveda &amp; Nutrition</h3>
+            <p>Personalized nutrition coaching grounded in Ayurvedic principles to improve digestion, boost metabolism, manage fat, and support hormonal balance.</p>
           </div>
-          <!-- Benefit 3 -->
-          <div
-            style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:1rem;">
-            <div
-              style="width:52px; height:52px; background:rgba(79,109,82,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center;">
-              <svg width="24" height="24" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path
-                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-              </svg>
-            </div>
-            <h3 style="font-size:1.1rem; margin:0;">Expert Instructor</h3>
-            <p style="font-size:0.93rem; line-height:1.7; color:var(--color-text-muted); margin:0;">
-              Our certified instructor specializes in Hatha, Vinyasa, Face Yoga, and women's wellness programs
-              tailored for you.
-            </p>
-          </div>
-          <!-- Benefit 4 -->
-          <div
-            style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:1rem;">
-            <div
-              style="width:52px; height:52px; background:rgba(79,109,82,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center;">
-              <svg width="24" height="24" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path
-                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-              </svg>
-            </div>
-            <h3 style="font-size:1.1rem; margin:0;">Safe &amp; Supportive</h3>
-            <p style="font-size:0.93rem; line-height:1.7; color:var(--color-text-muted); margin:0;">
-              We create a non-judgmental, welcoming environment — whether you're a complete beginner or a seasoned
-              practitioner.
-            </p>
-          </div>
-          <!-- Benefit 5 -->
-          <div
-            style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:1rem;">
-            <div
-              style="width:52px; height:52px; background:rgba(79,109,82,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center;">
-              <svg width="24" height="24" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path
-                  d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.57 15.43 0 12.3 0c-1.7 0-3.14.77-4.1 2.01L12 7 5.8 2.01C4.84.77 3.4 0 1.7 0-1.43 0-4 2.57-4 5.7c0 3.93 3.57 7 8.84 11.67L12 24l7.16-6.63C24.43 12.7 28 9.63 28 5.7 28 2.57 25.43 0 22.3 0z" />
-              </svg>
-            </div>
-            <h3 style="font-size:1.1rem; margin:0;">Holistic Wellness</h3>
-            <p style="font-size:0.93rem; line-height:1.7; color:var(--color-text-muted); margin:0;">
-              From physical postures to pranayama and meditation — we address all aspects of health and wellbeing
-              holistically.
-            </p>
-          </div>
-          <!-- Benefit 6 -->
-          <div
-            style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:1rem;">
-            <div
-              style="width:52px; height:52px; background:rgba(79,109,82,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center;">
-              <svg width="24" height="24" fill="var(--color-primary)" viewBox="0 0 24 24">
-                <path
-                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
-              </svg>
-            </div>
-            <h3 style="font-size:1.1rem; margin:0;">Personalized Progress</h3>
-            <p style="font-size:0.93rem; line-height:1.7; color:var(--color-text-muted); margin:0;">
-              Track your journey with a personal members portal, access class recordings, and get tailored
-              recommendations as you grow.
-            </p>
+          <!-- Pillar 3 -->
+          <div class="pillar-box">
+            <div class="pillar-num">03</div>
+            <h3>Pilates &amp; Core Control</h3>
+            <p>Incorporating MAT Pilates techniques to reinforce deep postural muscles, stabilize spinal structures, and build sustainable strength to protect joints.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== TEAM SECTION ========== -->
+    <!-- ========== HOLISTIC HEALTH (Addressing the Root Cause) ========== -->
+    <section class="section-padding" style="background-color: var(--color-white);" id="therapeutic-solutions">
+      <div class="container">
+        <div class="section-header">
+          <span class="hero-subtitle">Holistic Health</span>
+          <h2 class="section-title">Addressing the Root Cause</h2>
+          <p class="section-subtitle">
+            Rather than just managing symptoms, we identify and target the structural, vascular, and metabolic origins of chronic health conditions.
+          </p>
+        </div>
 
+        <div class="disorder-grid">
+          <!-- Card 1: Endocrine & Hormonal -->
+          <div class="disorder-card">
+            <div class="disorder-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+              </svg>
+            </div>
+            <h3>Hormonal &amp; Endocrine</h3>
+            <ul class="disorder-list">
+              <li>Thyroid Care</li>
+              <li>PCOD / PCOS Management</li>
+              <li>Hormonal Imbalance Support</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Spine & Pain Care -->
+          <div class="disorder-card">
+            <div class="disorder-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2c5.52 0 10 4.48 10 10v1c0 3.87-3.13 7-7 7H9c-3.87 0-7-3.13-7-7v-1c0-5.52 4.48-10 10-10zm0 2c-4.41 0-8 3.59-8 8v1c0 2.76 2.24 5 5 5h6c2.76 0 5-2.24 5-5v-1c0-4.41-3.59-8-8-8zM12 7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
+              </svg>
+            </div>
+            <h3>Pain &amp; Structural Health</h3>
+            <ul class="disorder-list">
+              <li>Back &amp; Neck Pain issues</li>
+              <li>Joints Pains &amp; Stiffness</li>
+              <li>Sciatica Management</li>
+              <li>Cervical issues Support</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Metabolic & Cardiovascular -->
+          <div class="disorder-card">
+            <div class="disorder-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 14H13v-3h3.5v3zm0-4.5H13V8h3.5v3.5z" />
+              </svg>
+            </div>
+            <h3>Metabolic &amp; Lifestyle</h3>
+            <ul class="disorder-list">
+              <li>Cholesterol Control</li>
+              <li>Fatty Liver Recovery</li>
+              <li>Improves Metabolism</li>
+              <li>Diabetes &amp; Hypertension Support</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Digestive & Gut Health -->
+          <div class="disorder-card">
+            <div class="disorder-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.17 19.57 10.53 20 12 20c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
+              </svg>
+            </div>
+            <h3>Digestive &amp; Gut Health</h3>
+            <ul class="disorder-list">
+              <li>Gut Health Optimization</li>
+              <li>IBS Support</li>
+              <li>Metabolism &amp; Digestion</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: Neurological & Mental -->
+          <div class="disorder-card">
+            <div class="disorder-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
+            </div>
+            <h3>Neurological &amp; Sleep</h3>
+            <ul class="disorder-list">
+              <li>Stress &amp; Anxiety Management</li>
+              <li>Insomnia &amp; Sleep Patterns</li>
+              <li>Migraine, Headaches &amp; Vertigo</li>
+            </ul>
+          </div>
+
+          <!-- Card 6: Respiratory & Vascular -->
+          <div class="disorder-card">
+            <div class="disorder-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
+              </svg>
+            </div>
+            <h3>Respiratory &amp; Vascular</h3>
+            <ul class="disorder-list">
+              <li>Breathing Issues</li>
+              <li>Sinusitis Support</li>
+              <li>Varicose Veins</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== THE DIFFERENCE SECTION ========== -->
+    <section class="section-padding" style="background-color: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="hero-subtitle">The Difference</span>
+          <h2 class="section-title">Why Our Approach Works</h2>
+          <p class="section-subtitle">Discover what sets our results-focused therapeutic platform apart.</p>
+        </div>
+
+        <div class="disorder-grid" style="margin-top: 2rem;">
+          <!-- Card 1 -->
+          <div class="disorder-card" style="background: var(--color-white);">
+            <div class="disorder-icon-wrapper" style="background-color: rgba(79, 109, 82, 0.15); color: var(--color-primary);">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+            </div>
+            <h3>Personalized Customization</h3>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Every session and health plan is uniquely customized to fit your specific anatomical profile, body composition, and goals.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div class="disorder-card" style="background: var(--color-white);">
+            <div class="disorder-icon-wrapper" style="background-color: rgba(79, 109, 82, 0.15); color: var(--color-primary);">
+              <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9v7a2 2 0 002 2h14a2 2 0 002-2v-7a9 9 0 00-9-9zm-1 15H9v-2h2v2zm0-4H9v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2z" fill="currentColor"/></svg>
+            </div>
+            <h3>Holistic Health Integration</h3>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              We integrate traditional yoga therapy with Ayurvedic principles and mindful movement to support lasting wellness and restore your body's natural balance.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div class="disorder-card" style="background: var(--color-white);">
+            <div class="disorder-icon-wrapper" style="background-color: rgba(79, 109, 82, 0.15); color: var(--color-primary);">
+              <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="currentColor"/></svg>
+            </div>
+            <h3>Live Direct HD Feedback</h3>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Enjoy live instruction through high-definition video calls so Shravanthi can closely check posture form and coordinate transitions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ========== FAQ SECTION ========== -->
     <section class="bg-secondary-section section-padding">
       <div class="container">
         <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-          <p
-            style="text-transform:uppercase; letter-spacing:3px; font-size:0.85rem; color:var(--color-primary); font-weight:600;">
-            Got Questions?</p>
+          <span class="hero-subtitle">Got Questions?</span>
           <h2 class="section-title" style="font-size:2.4rem;">Frequently Asked Questions</h2>
         </div>
         <div class="faq-container">
           <div class="faq-item">
             <button class="faq-question-btn">
-              How are the online Yoga sessions structured?
+              What is Yoga Therapy and how does it differ from regular yoga?
               <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Our sessions begin with pranayama (breathing exercises), followed by a guided yoga flow, and conclude
-                with savasana (guided relaxation). All classes are live with real-time instructor feedback.
+                Yoga Therapy focuses on treating specific physiological, metabolic, and musculoskeletal disorders by modifying traditional yoga postures, breathing exercises, and lifestyle habits. Regular yoga is a general practice for fitness, whereas therapy is customized, holistic, and targeted to heal chronic disorders (such as back pain, PCOS, thyroid, or hypertension).
               </div>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question-btn">
-              What are the class timings? Can I choose my time slot?
+              Can I do Yoga Therapy if I have severe back pain or sciatica?
               <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                We offer morning (6:30–8:00 AM), midday (12:00–1:00 PM), and evening (6:00–7:30 PM) slots. You can
-                choose any time that fits your schedule each day.
+                Yes, absolutely. Shravanthi specializes in spine health, cervical issues, and sciatica. Our postures are adapted and props are used to stabilize your joints and build deep muscular strength without straining your spine.
               </div>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question-btn">
-              What types of classes are offered?
+              Do you offer nutrition guidance along with the yoga therapy?
               <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                We offer Daily Yoga (Hatha &amp; Vinyasa), Face Yoga, and Women's Wellness programs (hormonal balance,
-                PCOD/PCOS, pre/post-natal care).
+                Yes. Shravanthi integrates Ayurveda-based nutrition and lifestyle planning into her coaching methodology to improve digestion, boost metabolism, and help address metabolic disorders at their root.
               </div>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question-btn">
-              I have no experience in Yoga. Can I attend your classes?
+              Are the sessions live and online?
               <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Absolutely! All foundational classes are designed for beginners. Our instructors offer modifications for
-                every pose so you can progress at your own pace.
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn">
-              What are the next steps after I make the payment?
-              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Once your payment is processed, you'll receive an email with access to our members portal where you can
-                view the live schedule, join classes, and access recorded sessions.
+                Yes, our sessions are conducted live via high-definition video calls. This ensures Shravanthi can monitor your form, provide real-time alignment adjustments, and give direct feedback during your practice.
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ========== COMMUNITY BANNER ========== -->
-    <section class="container section-padding">
-      <div class="community-stats-banner">
-        <div class="community-stats-left">
-          <div class="community-avatars-large">
-            <img src="images/instructor.png" alt="Community member 1">
-            <img src="images/yoga_hero.png" alt="Community member 2">
-            <img src="images/pricing_hero.png" alt="Community member 3">
-            <div class="avatar-count">+1k</div>
-          </div>
-          <div class="community-stats-label">
-            <h4>Thriving</h4>
-            <span>Global Community</span>
-          </div>
-        </div>
-        <p class="community-stats-quote">
-          "Join a thriving movement of individuals dedicated to finding peace, strength, and balance through the ancient
-          art of yoga."
-        </p>
       </div>
     </section>
   </main>
