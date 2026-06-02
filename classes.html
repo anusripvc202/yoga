@@ -312,6 +312,457 @@
     </section>
 
     <!-- BATCH CARDS -->
+    <section class="container section-padding" id="online-programs" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="batches-badge" style="margin: 0 auto 0.75rem; display: table;">Online Sessions</span>
+        <h3 class="section-title"
+          style="font-size: 2.5rem; margin: 0; font-family: var(--font-serif); font-weight: 700; color: var(--color-text);">
+          Specialized Online Programs</h3>
+        <p
+          style="color: var(--color-text-muted); max-width: 600px; margin: 0.75rem auto 0; font-size: 1.05rem; line-height: 1.6;">
+          Expertly guided sessions designed for different skill levels, offering personalized attention and real-time
+          guidance to elevate your wellness.
+        </p>
+      </div>
+
+      <style>
+        .online-program-panel {
+          background: var(--color-white);
+          border: 1px solid var(--color-border);
+          border-radius: var(--border-radius-lg);
+          padding: 3rem 3.5rem;
+          margin-bottom: 3rem;
+          box-shadow: var(--shadow-sm);
+          transition: all var(--transition-speed) var(--transition-ease);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .online-program-panel:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-md);
+          border-color: var(--color-primary);
+        }
+
+        .online-program-panel.featured {
+          border: 2px solid var(--color-primary);
+        }
+
+        .program-panel-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.8fr;
+          gap: 4rem;
+          align-items: stretch;
+        }
+
+        .program-panel-info-col {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-right: 1px solid var(--color-border);
+          padding-right: 4rem;
+        }
+
+        .program-panel-details-col {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+        }
+
+        .detail-sub-col h4 {
+          font-family: var(--font-sans);
+          font-size: 0.95rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: var(--color-primary);
+          margin-bottom: 1.25rem;
+          border-bottom: 2px solid var(--color-primary-light);
+          padding-bottom: 0.5rem;
+        }
+
+        .detail-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.85rem;
+        }
+
+        .detail-list li {
+          font-size: 0.95rem;
+          color: var(--color-text);
+          line-height: 1.5;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+
+        .detail-list.benefits li {
+          color: var(--color-text-muted);
+        }
+
+        .bullet-accent {
+          color: var(--color-primary);
+          font-weight: bold;
+          flex-shrink: 0;
+          margin-top: 1px;
+        }
+
+        @media (max-width: 991px) {
+          .program-panel-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+          }
+
+          .program-panel-info-col {
+            border-right: none;
+            padding-right: 0;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 2.5rem;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .online-program-panel {
+            padding: 2rem;
+          }
+
+          .program-panel-details-col {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+        }
+      </style>
+
+      <div style="max-width: 1100px; margin: 0 auto;">
+
+        <!-- Panel 1: Beginners Yoga -->
+        <div class="online-program-panel">
+          <div class="program-panel-grid">
+            <!-- Left Side: Program Overview & CTA -->
+            <div class="program-panel-info-col">
+              <div>
+                <span class="overlay-badge"
+                  style="background-color: var(--color-primary-light); color: var(--color-primary); margin-bottom: 0.5rem; position: static; display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: var(--border-radius-sm);">Foundational</span>
+                <h3
+                  style="font-family: var(--font-serif); font-size: 2.1rem; font-weight: 700; color: var(--color-text); margin: 0.5rem 0 0.25rem;">
+                  Beginners Yoga</h3>
+                <span
+                  style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 1.5rem;">Live
+                  Online Practice</span>
+
+                <div style="display: flex; align-items: baseline; margin-bottom: 1.5rem; gap: 0.25rem;">
+                  <span
+                    style="font-size: 2.6rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-serif);">₹1,599</span>
+                  <span style="font-size: 0.95rem; color: var(--color-text-muted);">/ month</span>
+                </div>
+
+                <!-- Schedule Details -->
+                <div
+                  style="background-color: var(--color-bg-secondary); border-radius: var(--border-radius-sm); padding: 0.85rem 1.15rem; margin-bottom: 2rem; border: 1px solid rgba(62, 90, 62, 0.08);">
+                  <div
+                    style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px; margin-bottom: 0.25rem;">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8a8 8 0 0 1-8 8zm1-13h-2v6l5.25 3.15l1-1.64l-4.25-2.51z" />
+                    </svg>
+                    Weekly Schedule
+                  </div>
+                  <div style="font-size: 1.05rem; font-weight: 700; color: var(--color-text);">Mon – Thu &nbsp;·&nbsp;
+                    6:00 PM – 7:00 PM</div>
+                  <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.1rem;">Indian Standard
+                    Time (IST)</div>
+                </div>
+              </div>
+
+              <a href="https://wa.me/919985928227?text=Hi%20Shravanthi%2C%20I%20want%20to%20enroll%20in%20the%20Beginners%20Yoga%20(Online)%20Batch%20(6%3A00%20PM%20%E2%80%93%207%3A00%20PM%20-%20%E2%82%B91599%2Fmonth)"
+                target="_blank" class="btn btn-primary"
+                style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); margin-top: auto;">
+                <span>Enroll on WhatsApp</span>
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.136 8.136 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24c-1.45 0-2.88-.38-4.12-1.11l-.3-.17l-3.07.8l.82-2.99l-.19-.3A8.178 8.178 0 0 1 3.73 11.9c0-4.53 3.7-8.23 8.24-8.23m-3.8 3.51c-.2-.04-.43-.04-.62.15c-.19.18-.74.73-.74 1.79c0 1.06.77 2.08.88 2.23c.1.15 1.5 2.29 3.64 3.22c.51.22.9.36 1.21.46c.51.16.98.14 1.35.08c.41-.06 1.27-.52 1.45-1.02c.18-.5.18-.93.13-1.02c-.05-.09-.18-.14-.38-.24c-.2-.1-1.18-.58-1.37-.65c-.18-.07-.32-.1-.46.1c-.14.2-.54.68-.66.82c-.12.14-.24.16-.44.06c-.2-.1-.84-.31-1.59-.98c-.59-.52-.98-1.17-1.1-1.37c-.12-.2-.01-.31.09-.41c.09-.09.2-.24.3-.36c.1-.12.13-.2.2-.33c.07-.14.03-.26-.02-.36c-.05-.1-.46-1.11-.63-1.52z" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Right Side: Inclusions & Benefits Prospectus -->
+            <div class="program-panel-details-col">
+              <!-- What you'll practice -->
+              <div class="detail-sub-col">
+                <h4>What you'll practice</h4>
+                <ul class="detail-list">
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Pranayama &amp; Breathing practice</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Hatha yoga (Beginner friendly)</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Yoga with properties (Blocks, Chair)</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Surya Namaskaras</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Devotional Chanting</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Relaxation Techniques</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Yoga Nidra practice</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Program Benefits -->
+              <div class="detail-sub-col">
+                <h4>Focus &amp; Benefits</h4>
+                <ul class="detail-list benefits">
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Builds discipline &amp; healthy daily habits</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Posture corrections &amp; safe modifications</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Body alignment &amp; proper breathing focus</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Improves flexibility, mobility, balance &amp; body awareness</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Suitable for all ages &amp; fitness levels (lower risk)</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Helps reduce muscle pains, stress &amp; improve sleep</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Advanced Yoga -->
+        <div class="online-program-panel featured">
+          <!-- Intense Practice Tag Ribbon -->
+          <span class="featured-tag"
+            style="position: absolute; top: 0; left: 3.5rem; background-color: var(--color-primary); color: var(--color-white); padding: 4px 16px; border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Intense
+            Practice</span>
+
+          <div class="program-panel-grid" style="margin-top: 1rem;">
+            <!-- Left Side: Program Overview & CTA -->
+            <div class="program-panel-info-col">
+              <div>
+                <span class="overlay-badge"
+                  style="background-color: var(--color-primary-light); color: var(--color-primary); margin-bottom: 0.5rem; position: static; display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: var(--border-radius-sm);">Advanced</span>
+                <h3
+                  style="font-family: var(--font-serif); font-size: 2.1rem; font-weight: 700; color: var(--color-text); margin: 0.5rem 0 0.25rem;">
+                  Advanced &amp; Intense Yoga</h3>
+                <span
+                  style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 1.5rem;">Live
+                  Online &amp; Offline Practice</span>
+ 
+                <div style="display: flex; align-items: baseline; margin-bottom: 1.5rem; gap: 0.25rem;">
+                  <span
+                    style="font-size: 2.6rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-serif);">₹2,999</span>
+                  <span style="font-size: 0.95rem; color: var(--color-text-muted);">/ month</span>
+                </div>
+ 
+                <!-- Schedule Details -->
+                <div
+                  style="background-color: var(--color-bg-secondary); border-radius: var(--border-radius-sm); padding: 0.85rem 1.15rem; margin-bottom: 2rem; border: 1px solid rgba(62, 90, 62, 0.08);">
+                  <div
+                    style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px; margin-bottom: 0.25rem;">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8a8 8 0 0 1-8 8zm1-13h-2v6l5.25 3.15l1-1.64l-4.25-2.51z" />
+                    </svg>
+                    Weekly Schedule
+                  </div>
+                  <div style="font-size: 1.05rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.1rem;">
+                    Mon – Fri</div>
+                  <div style="font-size: 0.9rem; font-weight: 600; color: var(--color-primary);">6:00 AM – 7:15 AM <span
+                      style="opacity: 0.7; font-weight: 400; font-size: 0.85rem; color: var(--color-text-muted);">or</span>
+                    10:00 AM – 11:15 AM</div>
+                  <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.15rem;">Indian Standard
+                    Time (IST)</div>
+                </div>
+              </div>
+ 
+              <a href="https://wa.me/919985928227?text=Hi%20Shravanthi%2C%20I%20want%20to%20enroll%20in%20the%20Advanced%20and%20Intense%20Yoga%20(Online%20%26%20Offline)%20Batch%20-%20%E2%82%B92999%2Fmonth"
+                target="_blank" class="btn btn-primary"
+                style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); margin-top: auto;">
+                <span>Enroll on WhatsApp</span>
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79(3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.136 8.136 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24c-1.45 0-2.88-.38-4.12-1.11l-.3-.17l-3.07.8l.82-2.99l-.19-.3A8.178 8.178 0 0 1 3.73 11.9c0-4.53 3.7-8.23 8.24-8.23m-3.8 3.51c-.2-.04-.43-.04-.62.15c-.19.18-.74.73-.74 1.79c0 1.06.77 2.08.88 2.23c.1.15 1.5 2.29 3.64 3.22c.51.22.9.36 1.21.46c.51.16.98.14 1.35.08c.41-.06 1.27-.52 1.45-1.02c.18-.5.18-.93.13-1.02c-.05-.09-.18-.14-.38-.24c-.2-.1-1.18-.58-1.37-.65c-.18-.07-.32-.1-.46.1c-.14.2-.54.68-.66.82c-.12.14-.24.16-.44.06c-.2-.1-.84-.31-1.59-.98c-.59-.52-.98-1.17-1.1-1.37c-.12-.2-.01-.31.09-.41c.09-.09.2-.24.3-.36c.1-.12.13-.2.2-.33c.07-.14.03-.26-.02-.36c-.05-.1-.46-1.11-.63-1.52z" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Right Side: Inclusions & Benefits Prospectus -->
+            <div class="program-panel-details-col">
+              <!-- What you'll practice -->
+              <div class="detail-sub-col">
+                <h4>What you'll practice</h4>
+                <ul class="detail-list">
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Pranayamas &amp; Breathing techniques</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Ashtanga &amp; Vinyasa Variations</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Core Yoga focus</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Mat Pilates Conditioning</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Yoga with dumbbells, blocks &amp; strap</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Guided Meditation &amp; Chanting</span>
+                  </li>
+                  <li>
+                    <span class="check-icon-wrapper"
+                      style="width: 18px; height: 18px; background-color: rgba(79, 109, 82, 0.12); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="width: 9px; height: 9px;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg></span>
+                    <span>Relaxation &amp; Yoga Nidra</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Program Benefits -->
+              <div class="detail-sub-col">
+                <h4>Focus &amp; Benefits</h4>
+                <ul class="detail-list benefits">
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Deepen practice &amp; challenging sequences</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Deeper stretches &amp; stronger balance work</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Builds strength, stamina &amp; endurance</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Higher physical intensity Practice with transitions</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Weight loss, tones body &amp; highly active</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent">✦</span>
+                    <span>Achieve a peaceful, stress-free mind</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </a>
+      </div>
+
+      </div>
+    </section>
 
 
     <!-- CHOOSE YOUR JOURNEY COMPARISON -->
