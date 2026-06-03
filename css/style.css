@@ -135,17 +135,16 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(255,240,242,0.96) 100%);
+  background: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(90deg, #F43F5E 0%, #FB923C 100%) 1;
+  border-bottom: none;
   height: 80px;
   display: flex;
   align-items: center;
   transition: background var(--transition-speed) var(--transition-ease),
               box-shadow var(--transition-speed) var(--transition-ease);
-  box-shadow: 0 2px 20px rgba(244, 63, 94, 0.08);
+  box-shadow: 0 4px 24px rgba(244, 63, 94, 0.35);
 }
 
 .nav-container {
@@ -164,11 +163,16 @@ select {
   border-radius: 10px;
 }
 
+.logo span {
+  color: #ffffff !important;
+}
+
 .logo-image {
   width: 70px;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
 }
 
 .logo:hover .logo-image {
@@ -185,7 +189,7 @@ select {
 .nav-links a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.92);
   position: relative;
   padding: 6px 0;
   transition: color var(--transition-speed) var(--transition-ease);
@@ -198,13 +202,13 @@ select {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-accent);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: var(--border-radius-full);
   transition: width var(--transition-speed) var(--transition-ease);
 }
 
 .nav-links a:hover {
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 .nav-links a:hover::after {
@@ -212,7 +216,7 @@ select {
 }
 
 .nav-links .active a {
-  color: var(--color-primary);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -240,7 +244,7 @@ select {
   height: 0 !important;
   margin-left: 6px !important;
   vertical-align: middle !important;
-  border-top: 4px solid var(--color-text) !important;
+  border-top: 4px solid var(--color-white) !important;
   border-right: 4px solid transparent !important;
   border-left: 4px solid transparent !important;
   background-color: transparent !important;
@@ -250,7 +254,7 @@ select {
 .nav-item.dropdown:hover .dropdown-toggle::after,
 .nav-item.dropdown.open .dropdown-toggle::after {
   transform: rotate(180deg) !important;
-  border-top-color: var(--color-primary) !important;
+  border-top-color: var(--color-white) !important;
 }
 
 .dropdown-menu {
@@ -319,6 +323,28 @@ select {
   gap: 1.5rem;
 }
 
+/* Navbar Book a Class button — white on colored background */
+.header-nav .nav-btn-container .btn-primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.header-nav .nav-btn-container .btn-primary:hover {
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Hamburger icon — white on colored navbar */
+.header-nav .menu-toggle span {
+  background-color: #ffffff;
+}
+
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -386,7 +412,7 @@ select {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-text);
+  background-color: var(--color-white);
   position: absolute;
   transition: transform var(--transition-speed) var(--transition-ease),
     opacity var(--transition-speed) var(--transition-ease);
@@ -2233,8 +2259,8 @@ footer {
   .header-nav {
     height: 70px;
     border-image: none;
-    border-bottom: 3px solid transparent;
-    border-image: linear-gradient(90deg, #F43F5E 0%, #FB923C 100%) 1;
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.3);
   }
 
   .nav-links {
@@ -2243,17 +2269,22 @@ footer {
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: linear-gradient(160deg, #fff8f8 0%, #fff3ee 100%);
+    background: linear-gradient(160deg, #F43F5E 0%, #FB923C 100%);
     flex-direction: column;
     padding: 2.5rem 2rem;
     gap: 1.5rem;
     transition: left var(--transition-speed) var(--transition-ease);
-    border-top: 2px solid var(--color-primary-light);
-    box-shadow: 4px 0 30px rgba(244, 63, 94, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 4px 0 30px rgba(244, 63, 94, 0.35);
   }
 
   .nav-links.active {
     left: 0;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.92);
+    font-size: 1.1rem;
   }
 
   /* Mobile testimonials horizontal scroll */
