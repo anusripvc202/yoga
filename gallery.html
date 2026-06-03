@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Gallery - Aarogya Yoga & Wellness</title>
+  <meta name="description"
+    content="Browse photos and watch practice videos from Aarogya's therapeutic yoga sessions. Explore live class moments, breathing exercises, and posture alignments.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="header-nav" id="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24">
+          <path d="M12 3c-1.2 2.5-3.6 4-6 4 0 3.5 1.8 7.5 6 12 4.2-4.5 6-8.5 6-12-2.4 0-4.8-1.5-6-4Z"
+            fill="var(--color-logo-bg)" />
+          <path d="M12 8.5c-.8 1-2 2-3.5 2.5.5 2 1.8 3.5 3.5 5 1.7-1.5 3-3 3.5-5-1.5-.5-2.7-1.5-3.5-2.5Z"
+            fill="var(--color-primary)" />
+          <path d="M12 18.5c0 0-4-1.5-5.5-3M12 18.5c0 0 4-1.5 5.5-3" />
+        </svg>
+        <span style="font-weight: 300; letter-spacing: 1px;">Aarogya</span><span
+          style="font-weight: 700; color: var(--color-primary); margin-left: 2px;">Yoga</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li class="active"><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-btn-container">
+        <a href="contact.html" class="btn btn-primary">Book a Class</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- GALLERY HERO -->
+    <section class="gallery-hero">
+      <div class="container" style="max-width: 800px;">
+        <span class="hero-subtitle">Visual Journey</span>
+        <h1 class="section-title" style="font-size: 3.5rem; margin-top: 10px; font-weight: 800;">Our Media Gallery</h1>
+        <p class="section-subtitle" style="margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+          Explore moments from our therapeutic yoga sessions, pranayama classes, and live alignment exercises. Watch
+          sample tutorial clips and glimpse our thriving wellness community.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY FILTER SECTION -->
+    <section class="container" style="padding-bottom: 80px;">
+      <div class="gallery-filter-container">
+        <div class="gallery-filter-tabs">
+          <button class="filter-btn active" data-filter="all">Show All</button>
+          <button class="filter-btn" data-filter="photos">Yoga Sessions (Photos)</button>
+          <button class="filter-btn" data-filter="videos">Practice Videos (Videos)</button>
+        </div>
+      </div>
+
+      <!-- GALLERY GRID -->
+      <div class="gallery-grid">
+
+        <!-- Item 0: REAL VIDEO - Local MP4 -->
+        <div class="gallery-card gallery-card-featured" data-category="videos" data-media-type="video"
+          data-video-url="videos/real_video.mp4" data-video-type="local">
+          <div class="gallery-media-wrapper">
+            <div class="gallery-card-badge gallery-card-badge--real">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
+              </svg>
+              Real Video
+            </div>
+            <div class="video-play-overlay">
+              <div class="play-button-circle">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8,5V19L19,12L8,5Z" />
+                </svg>
+              </div>
+            </div>
+            <video class="gallery-video-thumb" muted preload="metadata" src="videos/real_video.mp4#t=1"></video>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Live Yoga Session — Real Recording</h3>
+            <p>An authentic recording from one of our live therapeutic yoga sessions. Experience the atmosphere,
+              guidance, and energy of a real Aarogya class.</p>
+            <div class="gallery-card-meta">
+              <span class="gallery-card-tag"
+                style="background: linear-gradient(135deg, #F43F5E, #e11d48); color: #fff;">Live Session</span>
+              <span>▶ Play Video</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 0b: REAL VIDEO 2 - Local MP4 -->
+        <div class="gallery-card gallery-card-featured" data-category="videos" data-media-type="video"
+          data-video-url="videos/real_video2.mp4" data-video-type="local">
+          <div class="gallery-media-wrapper">
+            <div class="gallery-card-badge gallery-card-badge--real">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
+              </svg>
+              Real Video 2
+            </div>
+            <div class="video-play-overlay">
+              <div class="play-button-circle">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8,5V19L19,12L8,5Z" />
+                </svg>
+              </div>
+            </div>
+            <video class="gallery-video-thumb" muted preload="metadata" src="videos/real_video2.mp4#t=5"></video>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Live Yoga Session — Real Recording 2</h3>
+            <p>Another authentic recording highlighting posture adjustments and breath control exercises from our specialized classes.</p>
+            <div class="gallery-card-meta">
+              <span class="gallery-card-tag"
+                style="background: linear-gradient(135deg, #F43F5E, #e11d48); color: #fff;">Live Session 2</span>
+              <span>▶ Play Video</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Item 1: Pranayama 1 (Photo) -->
+        <div class="gallery-card" data-category="photos" data-media-type="photo">
+          <div class="gallery-media-wrapper">
+            <div class="gallery-card-badge">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              Photo
+            </div>
+            <img src="images/gallery/gallery_pranayama_1.jpg" alt="Pranayama Alignment Session">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Pranayama Breathing Alignment</h3>
+            <p>Our practitioners engaged in deep Nadi Shodhana (alternate nostril breathing) to soothe the nervous
+              system and relieve stress.</p>
+            <div class="gallery-card-meta">
+              <span class="gallery-card-tag">Breathing</span>
+              <span>Online Batch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Warrior Pose (Photo) -->
+        <div class="gallery-card" data-category="photos" data-media-type="photo">
+          <div class="gallery-media-wrapper">
+            <div class="gallery-card-badge">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              Photo
+            </div>
+            <img src="images/gallery/gallery_warrior.jpg" alt="Virabhadrasana Alignment">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Virabhadrasana (Warrior Pose)</h3>
+            <p>Active alignment corrections to extend range of motion, strengthen thighs, and stabilize core spinal
+              structure.</p>
+            <div class="gallery-card-meta">
+              <span class="gallery-card-tag">Spine Care</span>
+              <span>Live Batch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Tree Pose (Photo) -->
+        <div class="gallery-card" data-category="photos" data-media-type="photo">
+          <div class="gallery-media-wrapper">
+            <div class="gallery-card-badge">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              Photo
+            </div>
+            <img src="images/gallery/gallery_tree_pose.jpg" alt="Vrikshasana Balance Practice">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Vrikshasana (Tree Pose) Practice</h3>
+            <p>Balancing exercise under live feedback. Focusing on lower back support, hip opener alignment, and mental
+              stability.</p>
+            <div class="gallery-card-meta">
+              <span class="gallery-card-tag">Balance</span>
+              <span>Studio Session</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Savasana / Yoga Nidra (Photo) -->
+        <div class="gallery-card" data-category="photos" data-media-type="photo">
+          <div class="gallery-media-wrapper">
+            <div class="gallery-card-badge">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              Photo
+            </div>
+            <img src="images/gallery/gallery_savasana.jpg" alt="Savasana Deep Relaxation">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Savasana (Corpse Pose) Deep Relaxation</h3>
+            <p>Guided relaxation and Yoga Nidra at the close of every session — allowing the body to absorb the full
+              benefit of practice.</p>
+            <div class="gallery-card-meta">
+              <span class="gallery-card-tag">Relaxation</span>
+              <span>Live Session</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <div class="lightbox-wrapper" tabindex="0">
+      <button class="lightbox-btn lightbox-close" aria-label="Close lightbox">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        </svg>
+      </button>
+      <button class="lightbox-btn lightbox-prev" aria-label="Previous image">
+        <svg viewBox="0 0 24 24">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </button>
+      <button class="lightbox-btn lightbox-next" aria-label="Next image">
+        <svg viewBox="0 0 24 24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+      </button>
+      <div class="lightbox-content-box">
+        <img class="lightbox-img" src="" alt="Full size preview">
+        <div class="lightbox-video-container" style="display: none;"></div>
+      </div>
+      <div class="lightbox-caption-panel">
+        <h3 class="lightbox-title"></h3>
+        <p class="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-column">
+        <h1 class="footer-logo">Aarogya</h1>
+        <p class="footer-desc">
+          Breathing space into modern life. Live guided therapeutic yoga, Ayurveda nutrition, and mindful living.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 23,12M10,15V9L15,12L10,15Z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="X (formerly Twitter)">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="classes.html">Yoga Classes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <ul class="footer-links" style="pointer-events: none;">
+          <li><span style="color: #FAF9F6; font-weight: 500;">Email:</span> <a
+              href="mailto:aarogyayoga.official@gmail.com"
+              style="pointer-events: auto; color: inherit; text-decoration: underline;">aarogyayoga.official@gmail.com</a>
+          </li>
+          <li><span style="color: #FAF9F6; font-weight: 500;">Availability:</span> Live Online &amp; Offline Sessions
+          </li>
+          <li><span style="color: #FAF9F6; font-weight: 500;">Specialty:</span> Spine, Joints &amp; Prenatal Care</li>
+          <li><a href="contact.html" style="pointer-events: auto; color: var(--color-accent); font-weight: 600;">Get in
+              Touch &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Aarogya. All rights reserved.</p>
+      <p>Designed by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer"
+          class="designer-link">The Patterns Company</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
