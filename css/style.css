@@ -36,8 +36,8 @@
   --gradient-accent: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
   --gradient-accent-hover: linear-gradient(135deg, #E11D48 0%, #EA580C 100%);
 
-  --font-serif: 'Lora', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Vireo', 'Lora', serif;
+  --font-sans: 'Vireo', 'Inter', sans-serif;
   --font-indian-yatra: 'Yatra One', cursive;
   --font-indian-vesper: 'Vesper Libre', serif;
   --font-indian-vireo: 'Vireo', serif;
