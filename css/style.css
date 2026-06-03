@@ -29,7 +29,7 @@
   --color-border: #E2E8F0;
   /* Sleek light grey border */
   --color-accent: #F43F5E;
-  
+
   /* Additional styling variables */
   --color-logo-bg: rgba(244, 63, 94, 0.12);
   --color-icon-bg: rgba(244, 63, 94, 0.1);
@@ -437,6 +437,67 @@ select {
   border-radius: var(--border-radius-full);
   display: inline-block;
   align-self: flex-start;
+}
+
+/* --- YOGA SUTRA QUOTE --- */
+.yoga-sutra-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 3.2vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #F43F5E 0%, #D946EF 35%, #6366F1 70%, #FB923C 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  animation: gradient-shift 8s ease infinite alternate;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.yoga-sutra-quote::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #F43F5E, #D946EF, #6366F1, #FB923C, transparent);
+  border-radius: var(--border-radius-full);
+  opacity: 0.7;
+  animation: bar-glow 4s ease-in-out infinite alternate;
+}
+
+.yoga-sutra-quote.mobile-only {
+  display: none;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes bar-glow {
+  0% {
+    transform: scaleX(0.85);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scaleX(1.15);
+    opacity: 1;
+    filter: drop-shadow(0 0 3px #D946EF);
+  }
 }
 
 .hero-title {
@@ -2016,15 +2077,39 @@ footer {
     gap: 3rem;
   }
 
-  .hero-image-container,
   .pricing-banner {
     order: -1;
+  }
+
+  .hero-image-container {
+    order: 2;
+  }
+
+  .hero-content {
+    order: 3;
+  }
+
+  .yoga-sutra-quote.mobile-only {
+    display: inline-block;
+    order: 1;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-self: center;
+    text-align: center;
+  }
+
+  .yoga-sutra-quote.desktop-only {
+    display: none;
   }
 
   .hero-content,
   .guide-content {
     align-items: center;
     text-align: center;
+  }
+
+  .hero-subtitle {
+    align-self: center;
   }
 
   .hero-desc {
@@ -2042,6 +2127,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .yoga-sutra-quote {
+    font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
   .hero-title {
     font-size: 2.1rem;
     line-height: 1.25;
@@ -2156,7 +2247,7 @@ footer {
   }
 
   .section-padding {
-    padding: 60px 0;
+    padding: 30px 0;
   }
 }
 
@@ -2462,7 +2553,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .batches-image-col {
     position: static;
     max-width: 500px;
@@ -2477,7 +2568,7 @@ footer {
     gap: 1.25rem;
     padding: 1.5rem;
   }
-  
+
   .batch-pricing-cta {
     width: 100%;
     justify-content: space-between;
@@ -2485,8 +2576,8 @@ footer {
     padding-top: 1.25rem;
     gap: 1rem;
   }
-  
+
   .batch-price-tag {
     text-align: left;
   }
-}
+}
