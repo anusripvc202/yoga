@@ -40,6 +40,7 @@
   --font-sans: 'Inter', sans-serif;
   --font-indian-yatra: 'Yatra One', cursive;
   --font-indian-vesper: 'Vesper Libre', serif;
+  --font-indian-vireo: 'Vireo', serif;
 
   --transition-speed: 0.3s;
   --transition-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -63,6 +64,10 @@
 
 .font-indian-vesper {
   font-family: var(--font-indian-vesper) !important;
+}
+
+.font-indian-vireo {
+  font-family: var(--font-indian-vireo) !important;
 }
 
 /* --- GLOBAL RESET & BASE --- */
