@@ -8,34 +8,34 @@
   <meta name="description"
     content="Meet Shravanthi Raghu, an experienced Yoga Therapist and Wellness Coach with 8+ years of expertise. Learn about our holistic treatment for PCOS, Thyroid, Sciatica, and lifestyle disorders.">
   <link rel="stylesheet" href="css/style.css">
-  
+
   <style>
     /* Custom Redesign Styles (v2) for Shravanthi Raghu & Therapeutic Solutions */
     .about-hero {
       background-color: var(--color-bg);
       padding: 80px 0 60px 0;
     }
-    
+
     .hero-grid-custom {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       align-items: center;
       gap: 4rem;
     }
-    
+
     .hero-left-img {
       display: flex;
       justify-content: center;
       position: relative;
     }
-    
+
     .hero-right-content {
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
       align-items: flex-start;
     }
-    
+
     .about-title {
       font-size: clamp(2.5rem, 5vw, 3.8rem);
       font-weight: 700;
@@ -43,31 +43,31 @@
       line-height: 1.15;
       margin: 0;
     }
-    
+
     .about-tagline {
       font-size: 1.05rem;
       color: var(--color-text-muted);
       line-height: 1.7;
       margin: 0;
     }
-    
+
     .about-tagline strong {
       color: var(--color-text);
       font-weight: 600;
     }
-    
+
     .hero-badge-row {
       display: flex;
       gap: 2rem;
       margin-top: 0.5rem;
     }
-    
+
     .hero-badge-item {
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
-    
+
     .badge-number {
       font-family: var(--font-serif);
       font-size: 2.2rem;
@@ -75,7 +75,7 @@
       color: var(--color-primary);
       line-height: 1;
     }
-    
+
     .badge-label {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -83,7 +83,7 @@
       color: var(--color-text-muted);
       font-weight: 600;
     }
-    
+
     .oval-image-frame {
       width: 100%;
       max-width: 420px;
@@ -93,24 +93,24 @@
       box-shadow: var(--shadow-lg);
       transition: transform 0.4s ease;
     }
-    
+
     .oval-image-frame:hover {
       transform: scale(1.02);
     }
-    
+
     .oval-image-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     .bio-paragraph {
       font-size: 1.05rem;
       line-height: 1.8;
       color: var(--color-text-muted);
       margin: 0;
     }
-    
+
     /* Disorders & Root Cause Section */
     .disorder-grid {
       display: grid;
@@ -118,7 +118,7 @@
       gap: 2rem;
       margin-top: 3rem;
     }
-    
+
     .disorder-card {
       background: linear-gradient(135deg, var(--color-white) 0%, var(--color-secondary-light) 100%);
       border: 1px solid var(--color-border);
@@ -132,7 +132,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .disorder-card::before {
       content: '';
       position: absolute;
@@ -145,17 +145,17 @@
       transition: transform 0.3s ease;
       transform-origin: bottom;
     }
-    
+
     .disorder-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-md);
       border-color: var(--color-primary);
     }
-    
+
     .disorder-card:hover::before {
       transform: scaleY(1);
     }
-    
+
     .disorder-icon-wrapper {
       width: 48px;
       height: 48px;
@@ -167,19 +167,19 @@
       justify-content: center;
       transition: all 0.3s ease;
     }
-    
+
     .disorder-card:hover .disorder-icon-wrapper {
       background-color: var(--color-primary);
       color: var(--color-white);
       transform: scale(1.1);
     }
-    
+
     .disorder-icon-wrapper svg {
       width: 24px;
       height: 24px;
       fill: currentColor;
     }
-    
+
     .disorder-card h3 {
       font-size: 1.3rem;
       font-family: var(--font-sans);
@@ -187,7 +187,7 @@
       color: var(--color-text);
       margin: 0;
     }
-    
+
     .disorder-list {
       list-style: none;
       padding: 0;
@@ -197,7 +197,7 @@
       gap: 0.8rem;
       width: 100%;
     }
-    
+
     .disorder-list li {
       font-size: 0.95rem;
       color: var(--color-text-muted);
@@ -206,14 +206,14 @@
       align-items: center;
       gap: 10px;
     }
-    
+
     .disorder-list li::before {
       content: "✦";
       color: var(--color-primary);
       font-size: 0.8rem;
       font-weight: bold;
     }
-    
+
     /* Pillars / System Section */
     .pillars-container {
       display: grid;
@@ -221,7 +221,7 @@
       gap: 3rem;
       margin-top: 3rem;
     }
-    
+
     .pillar-box {
       display: flex;
       flex-direction: column;
@@ -232,7 +232,15 @@
       border-radius: var(--border-radius-md);
       position: relative;
     }
-    
+
+    .pillar-box:hover {
+      background-color: var(--color-primary-light);
+      border-color: var(--color-primary);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
+      transition: all var(--transition-speed) var(--transition-ease);
+    }
+
     .pillar-num {
       font-family: var(--font-serif);
       font-size: 3rem;
@@ -243,7 +251,7 @@
       top: 0.5rem;
       right: 1.5rem;
     }
-    
+
     .pillar-box h3 {
       font-size: 1.35rem;
       color: var(--color-text);
@@ -252,14 +260,14 @@
       margin: 0;
       padding-top: 1rem;
     }
-    
+
     .pillar-box p {
       font-size: 0.95rem;
       color: var(--color-text-muted);
       line-height: 1.7;
       margin: 0;
     }
-    
+
     /* Media Queries for Custom Styles */
     @media (max-width: 1024px) {
       .hero-grid-custom {
@@ -267,25 +275,25 @@
         gap: 3rem;
         text-align: center;
       }
-      
+
       .hero-right-content {
         align-items: center;
       }
-      
+
       .hero-badge-row {
         justify-content: center;
       }
-      
+
       .hero-left-img {
         order: -1;
       }
-      
+
       .pillars-container {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
     }
-    
+
     @media (max-width: 768px) {
       .disorder-grid {
         grid-template-columns: 1fr;
@@ -317,7 +325,6 @@
           <li><a href="classes.html">Classes</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li class="active"><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
@@ -347,10 +354,16 @@
           <span class="hero-subtitle">Meet Your Wellness Guide &amp; Therapist</span>
           <h1 class="about-title">Shravanthi Raghu</h1>
           <p class="about-tagline">
-            <strong>Shravanthi Raghu</strong> is an experienced Yoga Therapist and Wellness Coach with <strong>8+ years of expertise</strong> in therapeutic yoga, Ayurveda-based nutrition, prenatal wellness, and MAT Pilates. Renowned for her specialized approach to spine health, cervical issues, and sciatica management, she empowers individuals to restore balance, build strength, and enhance overall well-being through personalized, evidence-informed practices.
+            <strong>Shravanthi Raghu</strong> is an experienced Yoga Therapist and Wellness Coach with <strong>8+ years
+              of expertise</strong> in therapeutic yoga, Ayurveda-based nutrition, prenatal wellness, and MAT Pilates.
+            Renowned for her specialized approach to spine health, cervical issues, and sciatica management, she
+            empowers individuals to restore balance, build strength, and enhance overall well-being through
+            personalized, evidence-informed practices.
           </p>
           <p class="about-tagline">
-            Her holistic methodology integrates yoga therapy, mindful movement, and Ayurvedic principles to support lasting health and vitality. By focusing on root-cause alignment and lifestyle adaptation, Shravanthi bridges the gap between ancient therapeutic wisdom and the demands of modern lives.
+            Her holistic methodology integrates yoga therapy, mindful movement, and Ayurvedic principles to support
+            lasting health and vitality. By focusing on root-cause alignment and lifestyle adaptation, Shravanthi
+            bridges the gap between ancient therapeutic wisdom and the demands of modern lives.
           </p>
           <div class="hero-badge-row">
             <div class="hero-badge-item">
@@ -368,12 +381,16 @@
     </section>
 
     <!-- ========== OUR VISION & MISSION SECTION ========== -->
-    <section class="section-padding" style="background-color: var(--color-white); border-bottom: 1px solid var(--color-border);">
+    <section class="section-padding"
+      style="background-color: var(--color-white); border-bottom: 1px solid var(--color-border);">
       <div class="container" style="max-width: 860px; text-align: center;">
         <span class="hero-subtitle">Our Vision</span>
         <h2 class="section-title" style="font-size: 2.2rem; margin: 10px 0 20px 0;">Empowering Lifelong Healing</h2>
         <p class="bio-paragraph" style="font-size: 1.15rem; line-height: 1.8; color: var(--color-text-muted);">
-          Our vision is to make personalized, root-cause therapeutic wellness accessible to everyone. We believe that true health is not merely the absence of disease, but a state of complete physical, mental, and digestive harmony. Through personalized yoga therapy and Ayurvedic principles, we guide individuals to take control of their well-being, reverse chronic conditions, and live a life of vibrant energy and balance.
+          Our vision is to make personalized, root-cause therapeutic wellness accessible to everyone. We believe that
+          true health is not merely the absence of disease, but a state of complete physical, mental, and digestive
+          harmony. Through personalized yoga therapy and Ayurvedic principles, we guide individuals to take control of
+          their well-being, reverse chronic conditions, and live a life of vibrant energy and balance.
         </p>
       </div>
     </section>
@@ -384,7 +401,8 @@
         <div class="section-header">
           <span class="hero-subtitle">The System</span>
           <h2 class="section-title">The Aarogya Therapy System</h2>
-          <p class="section-subtitle">A structured, results-focused methodology combining mindful movement and tradition.</p>
+          <p class="section-subtitle">A structured, results-focused methodology combining mindful movement and
+            tradition.</p>
         </div>
 
         <div class="pillars-container">
@@ -392,19 +410,22 @@
           <div class="pillar-box">
             <div class="pillar-num">01</div>
             <h3>Yoga Therapy &amp; Alignment</h3>
-            <p>Targeted physical postures, alignment modifications, and restorative sequences designed to relieve pain, build core stability, and correct joint strain safely.</p>
+            <p>Targeted physical postures, alignment modifications, and restorative sequences designed to relieve pain,
+              build core stability, and correct joint strain safely.</p>
           </div>
           <!-- Pillar 2 -->
           <div class="pillar-box">
             <div class="pillar-num">02</div>
             <h3>Ayurveda &amp; Nutrition</h3>
-            <p>Personalized nutrition coaching grounded in Ayurvedic principles to improve digestion, boost metabolism, manage fat, and support hormonal balance.</p>
+            <p>Personalized nutrition coaching grounded in Ayurvedic principles to improve digestion, boost metabolism,
+              manage fat, and support hormonal balance.</p>
           </div>
           <!-- Pillar 3 -->
           <div class="pillar-box">
             <div class="pillar-num">03</div>
             <h3>Pilates &amp; Core Control</h3>
-            <p>Incorporating MAT Pilates techniques to reinforce deep postural muscles, stabilize spinal structures, and build sustainable strength to protect joints.</p>
+            <p>Incorporating MAT Pilates techniques to reinforce deep postural muscles, stabilize spinal structures, and
+              build sustainable strength to protect joints.</p>
           </div>
         </div>
       </div>
@@ -417,7 +438,8 @@
           <span class="hero-subtitle">Holistic Health</span>
           <h2 class="section-title">Addressing the Root Cause</h2>
           <p class="section-subtitle">
-            Rather than just managing symptoms, we identify and target the structural, vascular, and metabolic origins of chronic health conditions.
+            Rather than just managing symptoms, we identify and target the structural, vascular, and metabolic origins
+            of chronic health conditions.
           </p>
         </div>
 
@@ -426,7 +448,8 @@
           <div class="disorder-card">
             <div class="disorder-icon-wrapper">
               <svg viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
               </svg>
             </div>
             <h3>Hormonal &amp; Endocrine</h3>
@@ -441,7 +464,8 @@
           <div class="disorder-card">
             <div class="disorder-icon-wrapper">
               <svg viewBox="0 0 24 24">
-                <path d="M12 2c5.52 0 10 4.48 10 10v1c0 3.87-3.13 7-7 7H9c-3.87 0-7-3.13-7-7v-1c0-5.52 4.48-10 10-10zm0 2c-4.41 0-8 3.59-8 8v1c0 2.76 2.24 5 5 5h6c2.76 0 5-2.24 5-5v-1c0-4.41-3.59-8-8-8zM12 7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
+                <path
+                  d="M12 2c5.52 0 10 4.48 10 10v1c0 3.87-3.13 7-7 7H9c-3.87 0-7-3.13-7-7v-1c0-5.52 4.48-10 10-10zm0 2c-4.41 0-8 3.59-8 8v1c0 2.76 2.24 5 5 5h6c2.76 0 5-2.24 5-5v-1c0-4.41-3.59-8-8-8zM12 7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
               </svg>
             </div>
             <h3>Pain &amp; Structural Health</h3>
@@ -457,7 +481,8 @@
           <div class="disorder-card">
             <div class="disorder-icon-wrapper">
               <svg viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 14H13v-3h3.5v3zm0-4.5H13V8h3.5v3.5z" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 14H13v-3h3.5v3zm0-4.5H13V8h3.5v3.5z" />
               </svg>
             </div>
             <h3>Metabolic &amp; Lifestyle</h3>
@@ -473,7 +498,8 @@
           <div class="disorder-card">
             <div class="disorder-icon-wrapper">
               <svg viewBox="0 0 24 24">
-                <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.17 19.57 10.53 20 12 20c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
+                <path
+                  d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.17 19.57 10.53 20 12 20c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
               </svg>
             </div>
             <h3>Digestive &amp; Gut Health</h3>
@@ -488,7 +514,8 @@
           <div class="disorder-card">
             <div class="disorder-icon-wrapper">
               <svg viewBox="0 0 24 24">
-                <path d="M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                <path
+                  d="M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
               </svg>
             </div>
             <h3>Neurological &amp; Sleep</h3>
@@ -503,7 +530,8 @@
           <div class="disorder-card">
             <div class="disorder-icon-wrapper">
               <svg viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
               </svg>
             </div>
             <h3>Respiratory &amp; Vascular</h3>
@@ -529,32 +557,48 @@
         <div class="disorder-grid" style="margin-top: 2rem;">
           <!-- Card 1 -->
           <div class="disorder-card" style="background: var(--color-white);">
-            <div class="disorder-icon-wrapper" style="background-color: var(--color-logo-bg); color: var(--color-primary);">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+            <div class="disorder-icon-wrapper"
+              style="background-color: var(--color-logo-bg); color: var(--color-primary);">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor" />
+              </svg>
             </div>
             <h3>Personalized Customization</h3>
             <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-              Every session and health plan is uniquely customized to fit your specific anatomical profile, body composition, and goals.
+              Every session and health plan is uniquely customized to fit your specific anatomical profile, body
+              composition, and goals.
             </p>
           </div>
           <!-- Card 2 -->
           <div class="disorder-card" style="background: var(--color-white);">
-            <div class="disorder-icon-wrapper" style="background-color: var(--color-logo-bg); color: var(--color-primary);">
-              <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9v7a2 2 0 002 2h14a2 2 0 002-2v-7a9 9 0 00-9-9zm-1 15H9v-2h2v2zm0-4H9v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2z" fill="currentColor"/></svg>
+            <div class="disorder-icon-wrapper"
+              style="background-color: var(--color-logo-bg); color: var(--color-primary);">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3a9 9 0 00-9 9v7a2 2 0 002 2h14a2 2 0 002-2v-7a9 9 0 00-9-9zm-1 15H9v-2h2v2zm0-4H9v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2z"
+                  fill="currentColor" />
+              </svg>
             </div>
             <h3>Holistic Health Integration</h3>
             <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-              We integrate traditional yoga therapy with Ayurvedic principles and mindful movement to support lasting wellness and restore your body's natural balance.
+              We integrate traditional yoga therapy with Ayurvedic principles and mindful movement to support lasting
+              wellness and restore your body's natural balance.
             </p>
           </div>
           <!-- Card 3 -->
           <div class="disorder-card" style="background: var(--color-white);">
-            <div class="disorder-icon-wrapper" style="background-color: var(--color-logo-bg); color: var(--color-primary);">
-              <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="currentColor"/></svg>
+            <div class="disorder-icon-wrapper"
+              style="background-color: var(--color-logo-bg); color: var(--color-primary);">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"
+                  fill="currentColor" />
+              </svg>
             </div>
             <h3>Live Direct HD Feedback</h3>
             <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-              Enjoy live instruction through high-definition video calls so Shravanthi can closely check posture form and coordinate transitions.
+              Enjoy live instruction through high-definition video calls so Shravanthi can closely check posture form
+              and coordinate transitions.
             </p>
           </div>
         </div>
@@ -578,7 +622,10 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Yoga Therapy focuses on treating specific physiological, metabolic, and musculoskeletal disorders by modifying traditional yoga postures, breathing exercises, and lifestyle habits. Regular yoga is a general practice for fitness, whereas therapy is customized, holistic, and targeted to heal chronic disorders (such as back pain, PCOS, thyroid, or hypertension).
+                Yoga Therapy focuses on treating specific physiological, metabolic, and musculoskeletal disorders by
+                modifying traditional yoga postures, breathing exercises, and lifestyle habits. Regular yoga is a
+                general practice for fitness, whereas therapy is customized, holistic, and targeted to heal chronic
+                disorders (such as back pain, PCOS, thyroid, or hypertension).
               </div>
             </div>
           </div>
@@ -591,7 +638,9 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Yes, absolutely. Shravanthi specializes in spine health, cervical issues, and sciatica. Our postures are adapted and props are used to stabilize your joints and build deep muscular strength without straining your spine.
+                Yes, absolutely. Shravanthi specializes in spine health, cervical issues, and sciatica. Our postures are
+                adapted and props are used to stabilize your joints and build deep muscular strength without straining
+                your spine.
               </div>
             </div>
           </div>
@@ -604,7 +653,8 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Yes. Shravanthi integrates Ayurveda-based nutrition and lifestyle planning into her coaching methodology to improve digestion, boost metabolism, and help address metabolic disorders at their root.
+                Yes. Shravanthi integrates Ayurveda-based nutrition and lifestyle planning into her coaching methodology
+                to improve digestion, boost metabolism, and help address metabolic disorders at their root.
               </div>
             </div>
           </div>
@@ -617,7 +667,9 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                Yes, our sessions are conducted live via high-definition video calls. This ensures Shravanthi can monitor your form, provide real-time alignment adjustments, and give direct feedback during your practice.
+                Yes, our sessions are conducted live via high-definition video calls. This ensures Shravanthi can
+                monitor your form, provide real-time alignment adjustments, and give direct feedback during your
+                practice.
               </div>
             </div>
           </div>
@@ -666,22 +718,28 @@
         </ul>
       </div>
 
-      
+
 
       <div class="footer-column">
         <h3>Contact Info</h3>
         <ul class="footer-links" style="pointer-events: none;">
-          <li><span style="color: #FAF9F6; font-weight: 500;">Email:</span> <a href="mailto:aarogyayoga.official@gmail.com" style="pointer-events: auto; color: inherit; text-decoration: underline;">aarogyayoga.official@gmail.com</a></li>
-          <li><span style="color: #FAF9F6; font-weight: 500;">Availability:</span> Live Online &amp; Offline Sessions</li>
+          <li><span style="color: #FAF9F6; font-weight: 500;">Email:</span> <a
+              href="mailto:aarogyayoga.official@gmail.com"
+              style="pointer-events: auto; color: inherit; text-decoration: underline;">aarogyayoga.official@gmail.com</a>
+          </li>
+          <li><span style="color: #FAF9F6; font-weight: 500;">Availability:</span> Live Online &amp; Offline Sessions
+          </li>
           <li><span style="color: #FAF9F6; font-weight: 500;">Specialty:</span> Spine, Joints &amp; Prenatal Care</li>
-          <li><a href="contact.html" style="pointer-events: auto; color: var(--color-accent); font-weight: 600;">Get in Touch &rarr;</a></li>
+          <li><a href="contact.html" style="pointer-events: auto; color: var(--color-accent); font-weight: 600;">Get in
+              Touch &rarr;</a></li>
         </ul>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <p>&copy; 2026 Aarogya. All rights reserved.</p>
-      <p>Designed by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer" class="designer-link">The Patterns Company</a>.</p>
+      <p>Designed by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer"
+          class="designer-link">The Patterns Company</a>.</p>
     </div>
   </footer>
 
