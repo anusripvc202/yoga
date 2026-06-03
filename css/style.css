@@ -1332,6 +1332,17 @@ footer {
   color: var(--color-white);
 }
 
+.footer-bottom a.designer-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-bottom a.designer-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
 /* --- SUBPAGE: CLASSES / PRICING --- */
 .classes-hero {
   display: grid;
