@@ -152,16 +152,17 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(135deg, #0d3320 0%, #1a5c35 45%, #b8892a 100%);
+  background: rgba(250, 245, 240, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid rgba(184, 137, 42, 0.4);
-  height: 100px;
+  border-bottom: 1px solid var(--color-border);
+  height: 110px;
   display: flex;
   align-items: center;
   transition: background var(--transition-speed) var(--transition-ease),
-              box-shadow var(--transition-speed) var(--transition-ease);
-  box-shadow: 0 4px 28px rgba(13, 51, 32, 0.55);
+              box-shadow var(--transition-speed) var(--transition-ease),
+              height var(--transition-speed) var(--transition-ease);
+  box-shadow: none;
 }
 
 .nav-container {
@@ -180,25 +181,19 @@ select {
 }
 
 .logo span {
-  color: #ffffff !important;
+  color: var(--color-text) !important;
 }
 
 .logo-image {
-  width: 90px;
+  width: auto;
   height: 90px;
   object-fit: contain;
-  /* Rich gold filter:
-     brightness(0) = all black → invert(1) = all white →
-     sepia → saturate(15) pushes to deep amber/gold →
-     brightness(0.88) darkens to true gold tone */
-  filter: brightness(0) invert(1) sepia(1) saturate(15) hue-rotate(5deg) brightness(0.88);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease, height var(--transition-speed) var(--transition-ease);
 }
 
 .logo:hover .logo-image {
   transform: scale(1.07);
-  filter: brightness(0) invert(1) sepia(1) saturate(18) hue-rotate(3deg) brightness(1.05)
-          drop-shadow(0 0 10px rgba(240,192,64,0.8));
 }
 
 .nav-links {
@@ -211,7 +206,7 @@ select {
 .nav-links a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--color-text-muted);
   position: relative;
   padding: 6px 0;
   transition: color var(--transition-speed) var(--transition-ease);
@@ -224,13 +219,13 @@ select {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #f0c040, #b8892a);
+  background: var(--color-primary);
   border-radius: var(--border-radius-full);
   transition: width var(--transition-speed) var(--transition-ease);
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: var(--color-primary);
 }
 
 .nav-links a:hover::after {
@@ -238,7 +233,7 @@ select {
 }
 
 .nav-links .active a {
-  color: #ffffff;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -266,7 +261,7 @@ select {
   height: 0 !important;
   margin-left: 6px !important;
   vertical-align: middle !important;
-  border-top: 4px solid var(--color-white) !important;
+  border-top: 4px solid var(--color-text-muted) !important;
   border-right: 4px solid transparent !important;
   border-left: 4px solid transparent !important;
   background-color: transparent !important;
@@ -276,7 +271,7 @@ select {
 .nav-item.dropdown:hover .dropdown-toggle::after,
 .nav-item.dropdown.open .dropdown-toggle::after {
   transform: rotate(180deg) !important;
-  border-top-color: var(--color-white) !important;
+  border-top-color: var(--color-primary) !important;
 }
 
 .dropdown-menu {
@@ -345,54 +340,50 @@ select {
   gap: 1.5rem;
 }
 
-/* Navbar Book a Class button — white on colored background */
+/* Navbar Book a Class button — primary style */
 .header-nav .nav-btn-container .btn-primary {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(4px);
+  background: var(--gradient-accent);
+  color: var(--color-white);
+  border: 1px solid transparent;
 }
 
 .header-nav .nav-btn-container .btn-primary:hover {
-  background: #ffffff;
-  color: var(--color-primary);
-  border-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+  background: var(--gradient-accent-hover);
+  color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(244, 63, 94, 0.2);
   transform: translateY(-2px) scale(1.02);
 }
 
-/* Hamburger icon — white on colored navbar */
+/* Hamburger icon — dark on light navbar */
 .header-nav .menu-toggle span {
-  background-color: #ffffff;
+  background-color: var(--color-text);
 }
 
-/* Navbar scrolled — darker green */
+/* Navbar scrolled */
 .header-nav.scrolled {
-  background: linear-gradient(135deg, #071a0f 0%, #0d3320 60%, #8a6318 100%);
-  box-shadow: 0 6px 32px rgba(7, 26, 15, 0.7);
+  background: rgba(250, 245, 240, 0.98);
+  height: 90px;
+  box-shadow: var(--shadow-md);
 }
 
-/* Gold CTA button inside navbar */
+.header-nav.scrolled .logo-image {
+  height: 75px;
+}
+
+/* CTA button inside navbar */
 .btn-nav-gold {
-  background: linear-gradient(135deg, #b8892a 0%, #f0c040 50%, #b8892a 100%);
-  background-size: 200% auto;
-  color: #0d3320 !important;
+  background: var(--gradient-accent);
+  color: var(--color-white) !important;
   font-weight: 700;
   border: none;
-  box-shadow: 0 3px 14px rgba(184,137,42,0.45);
-  animation: goldShine 3s linear infinite;
+  box-shadow: 0 3px 14px rgba(244, 63, 94, 0.2);
 }
 
 .btn-nav-gold:hover {
-  background-position: right center;
+  background: var(--gradient-accent-hover);
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 6px 20px rgba(184,137,42,0.65);
-  color: #071a0f !important;
-}
-
-@keyframes goldShine {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.35);
+  color: var(--color-white) !important;
 }
 
 
@@ -2590,26 +2581,32 @@ footer {
     font-size: 0.88rem;
   }
 
-  .header-nav {
-    height: 70px;
+  .header-nav,
+  .header-nav.scrolled {
+    height: 85px;
     border-image: none;
-    border-bottom: none;
-    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.3);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .logo-image,
+  .header-nav.scrolled .logo-image {
+    height: 70px;
   }
 
   .nav-links {
     position: fixed;
-    top: 70px;
+    top: 85px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(160deg, #F43F5E 0%, #FB923C 100%);
+    height: calc(100vh - 85px);
+    background: linear-gradient(160deg, #FAF5F0 0%, #FFF0EC 100%);
     flex-direction: column;
     padding: 2.5rem 2rem;
     gap: 1.5rem;
     transition: left var(--transition-speed) var(--transition-ease);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 4px 0 30px rgba(244, 63, 94, 0.35);
+    border-top: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
   }
 
   .nav-links.active {
@@ -2617,8 +2614,12 @@ footer {
   }
 
   .nav-links a {
-    color: rgba(255,255,255,0.92);
+    color: var(--color-text-muted);
     font-size: 1.1rem;
+  }
+
+  .nav-links .active a {
+    color: var(--color-primary);
   }
 
   /* Mobile testimonials horizontal scroll */
