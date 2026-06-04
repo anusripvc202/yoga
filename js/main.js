@@ -361,12 +361,12 @@ function initGallery() {
 
 /**
  * Hero Video Sound Toggle
- * Uses YouTube IFrame API postMessage to mute/unmute the background video.
+ * Controls playback of local background video audio.
  */
 function initHeroVideoSound() {
   const btn = document.getElementById('hero-sound-btn');
-  const iframe = document.getElementById('hero-yt-iframe');
-  if (!btn || !iframe) return;
+  const video = document.getElementById('hero-bg-video');
+  if (!btn || !video) return;
 
   const iconMuted   = document.getElementById('icon-muted');
   const iconUnmuted = document.getElementById('icon-unmuted');
@@ -374,28 +374,16 @@ function initHeroVideoSound() {
 
   let isMuted = true;
 
-  // Send postMessage command to YouTube iframe
-  function sendYTCommand(func, args) {
-    try {
-      iframe.contentWindow.postMessage(
-        JSON.stringify({ event: 'command', func, args: args || [] }),
-        '*'
-      );
-    } catch (e) {
-      console.warn('YT postMessage failed:', e);
-    }
-  }
-
   btn.addEventListener('click', () => {
     if (isMuted) {
-      sendYTCommand('unMute');
-      sendYTCommand('setVolume', [80]);
+      video.muted = false;
+      video.volume = 0.8;
       isMuted = false;
       iconMuted.style.display   = 'none';
       iconUnmuted.style.display = 'inline';
       label.textContent = 'Sound On';
     } else {
-      sendYTCommand('mute');
+      video.muted = true;
       isMuted = true;
       iconMuted.style.display   = 'inline';
       iconUnmuted.style.display = 'none';

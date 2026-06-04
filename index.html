@@ -56,16 +56,11 @@
   <!-- HERO SECTION - Full Width YouTube Video Background -->
   <main>
     <section class="hero-video-section" id="hero-video-section">
-      <!-- YouTube iframe as background -->
+      <!-- HTML5 Video as background (with audio included) -->
       <div class="hero-video-wrapper">
-        <iframe
-          id="hero-yt-iframe"
-          src="https://www.youtube.com/embed/YRJ6xoiRcpQ?autoplay=1&mute=1&loop=1&playlist=YRJ6xoiRcpQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1"
-          title="30 Minute Deep Meditation Music for Positive Energy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <video id="hero-bg-video" autoplay loop muted playsinline poster="images/instructor.png">
+          <source src="videos/bg_video.mp4" type="video/mp4">
+        </video>
       </div>
 
       <!-- Gradient overlay for readability -->
