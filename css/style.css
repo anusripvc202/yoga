@@ -188,7 +188,6 @@ select {
   width: auto;
   height: 90px;
   object-fit: contain;
-  mix-blend-mode: multiply;
   transition: transform 0.3s ease, height var(--transition-speed) var(--transition-ease);
 }
 
