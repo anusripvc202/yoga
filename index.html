@@ -53,30 +53,55 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION - Full Width YouTube Video Background -->
   <main>
-    <section class="container hero section-padding">
-      <div class="yoga-sutra-quote mobile-only">Yoga Chitta Vritti Nirodhah</div>
-      <div class="hero-content">
-        <span class="hero-subtitle">Welcome to Aarogya Yoga</span>
-        <div class="yoga-sutra-quote desktop-only">Yoga Chitta Vritti Nirodhah</div>
-        <h1 class="hero-title">Your Path to <span class="gradient-text">Wellness &amp; Success</span> Starts Here</h1>
-        <p class="hero-desc">
-          Start Your Health & Wellness Journey with our expert-guided classes which include self-care, movement,
+    <section class="hero-video-section" id="hero-video-section">
+      <!-- YouTube iframe as background -->
+      <div class="hero-video-wrapper">
+        <iframe
+          id="hero-yt-iframe"
+          src="https://www.youtube.com/embed/YRJ6xoiRcpQ?autoplay=1&mute=1&loop=1&playlist=YRJ6xoiRcpQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1"
+          title="30 Minute Deep Meditation Music for Positive Energy"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- Gradient overlay for readability -->
+      <div class="hero-video-overlay"></div>
+
+      <!-- Hero content on top of video -->
+      <div class="hero-video-content">
+        <div class="yoga-sutra-quote video-hero-sutra">Yoga Chitta Vritti Nirodhah</div>
+        <span class="hero-subtitle hero-subtitle-video">Welcome to Aarogya Yoga</span>
+        <h1 class="hero-title hero-title-video">Your Path to <span class="gradient-text-white">Wellness &amp; Success</span> Starts Here</h1>
+        <p class="hero-desc hero-desc-video">
+          Start Your Health &amp; Wellness Journey with our expert-guided classes which include self-care, movement,
           and mindfulness... because your well-being matters!
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions hero-actions-video">
           <a href="classes.html" class="btn btn-primary">Join Classes &rarr;</a>
-          <div class="member-avatars">
-            <img src="images/instructor.png" alt="Member 1">
-            <img src="images/yoga_hero.png" alt="Member 2">
-            <img src="images/pricing_hero.png" alt="Member 3">
-            <span class="avatar-label">Thriving Community</span>
-          </div>
+          <a href="contact.html" class="btn btn-outline-white">Book a Class</a>
         </div>
       </div>
-      <div class="hero-image-container">
-        <img class="hero-image" src="images/Yoga.gif" alt="Aarogya Yoga Journey">
+
+      <!-- Sound toggle button -->
+      <button class="hero-sound-btn" id="hero-sound-btn" aria-label="Toggle sound">
+        <!-- Muted icon (default) -->
+        <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+        </svg>
+        <!-- Unmuted icon (hidden by default) -->
+        <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" style="display:none;">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+        <span id="sound-label">Sound Off</span>
+      </button>
+
+      <!-- Scroll indicator -->
+      <div class="hero-scroll-indicator">
+        <div class="scroll-dot"></div>
       </div>
     </section>
 
