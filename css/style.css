@@ -3,41 +3,42 @@
  * Custom, premium, and responsive design system.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* --- DESIGN SYSTEM TOKENS --- */
 :root {
-  --color-bg: #FAF5F0;
-  /* Premium Warm Linen background */
-  --color-bg-secondary: #FFF0EC;
-  /* Soft Peach-Rose secondary background */
-  --color-text: #0F172A;
-  /* Deep Slate primary text */
-  --color-text-muted: #475569;
-  /* Muted Slate text */
-  --color-primary: #F43F5E;
-  /* Warm Rose accent */
-  --color-primary-hover: #E11D48;
-  /* Dark Rose accent hover */
-  --color-primary-light: #FFE4E6;
-  /* Pale Rose tint */
-  --color-secondary: #FB923C;
-  /* Peach orange accent */
-  --color-secondary-light: #FFF7ED;
-  /* Pale Peach tint */
+  --color-bg: oklch(0.985 0.012 80);
+  /* Warm cream/sage/gold yoga background */
+  --color-bg-secondary: oklch(0.95 0.025 90);
+  /* Soft secondary background */
+  --color-text: oklch(0.24 0.03 60);
+  /* Deep slate/warm gray text */
+  --color-text-muted: oklch(0.5 0.025 70);
+  /* Muted slate text */
+  --color-primary: oklch(0.72 0.16 45);
+  /* Warm terracotta-gold accent */
+  --color-primary-hover: oklch(0.65 0.16 35);
+  /* Terracotta primary hover */
+  --color-primary-light: oklch(0.95 0.025 90);
+  /* Soft secondary/cream tint */
+  --color-secondary: oklch(0.82 0.13 75);
+  /* Soft Gold accent */
+  --color-secondary-light: oklch(0.97 0.02 85);
+  /* Cream light accent */
   --color-white: #ffffff;
-  --color-border: #E2E8F0;
+  --color-border: oklch(0.9 0.02 75);
   /* Sleek light grey border */
-  --color-accent: #F43F5E;
+  --color-accent: oklch(0.78 0.09 140);
+  /* Sage green accent */
 
   /* Additional styling variables */
-  --color-logo-bg: rgba(244, 63, 94, 0.12);
-  --color-icon-bg: rgba(244, 63, 94, 0.1);
-  --gradient-accent: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
-  --gradient-accent-hover: linear-gradient(135deg, #E11D48 0%, #EA580C 100%);
+  --color-logo-bg: oklch(0.82 0.13 75 / 0.12);
+  --color-icon-bg: oklch(0.72 0.16 45 / 0.1);
+  --gradient-accent: linear-gradient(135deg, oklch(0.85 0.12 70), oklch(0.78 0.16 40), oklch(0.7 0.18 25));
+  --gradient-accent-hover: linear-gradient(135deg, oklch(0.78 0.14 55), oklch(0.72 0.18 35));
 
-  --font-serif: 'Lora', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --font-indian-yatra: 'Yatra One', cursive;
   --font-indian-vesper: 'Vesper Libre', serif;
   --font-indian-vireo: 'Vireo', serif;
@@ -577,7 +578,7 @@ select {
 .video-hero-sutra {
   color: rgba(255,255,255,0.85) !important;
   -webkit-text-fill-color: transparent !important;
-  background: linear-gradient(135deg, #f9a8d4 0%, #fcd34d 50%, #fb923c 100%) !important;
+  background: var(--gradient-accent) !important;
   background-size: 200% auto !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -587,7 +588,7 @@ select {
 .video-hero-sutra::after {
   left: 0 !important;
   width: 60% !important;
-  background: linear-gradient(90deg, #F43F5E, #D946EF, #6366F1, #FB923C, transparent) !important;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent), transparent) !important;
 }
 
 /* White pill badge over video */
@@ -609,7 +610,7 @@ select {
 
 /* White gradient highlight */
 .gradient-text-white {
-  background: linear-gradient(135deg, #fda4af 0%, #fcd34d 55%, #fb923c 100%);
+  background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -823,7 +824,7 @@ select {
   line-height: 1.3;
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #F43F5E 0%, #D946EF 35%, #6366F1 70%, #FB923C 100%);
+  background: var(--gradient-accent);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -843,7 +844,7 @@ select {
   left: 15%;
   width: 70%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #F43F5E, #D946EF, #6366F1, #FB923C, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-secondary), var(--color-accent), transparent);
   border-radius: var(--border-radius-full);
   opacity: 0.7;
   animation: bar-glow 4s ease-in-out infinite alternate;
@@ -877,7 +878,7 @@ select {
 }
 
 .hero-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5.2vw, 4rem);
   font-weight: 800;
   color: var(--color-text);
@@ -1071,56 +1072,56 @@ select {
   overflow: hidden;
 }
 
-/* Card 1 — Calm: Soft Rose Pink */
+/* Card 1 — Calm: Soothing Sage Green */
 .benefit-card:nth-child(1) {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
-  border-color: rgba(244, 63, 94, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 145) 0%, oklch(0.95 0.04 145) 100%);
+  border-color: oklch(0.78 0.09 140 / 0.15);
 }
 
 .benefit-card:nth-child(1):hover {
-  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, oklch(0.65 0.08 140) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
-  border-color: #E11D48;
+  box-shadow: 0 20px 40px oklch(0.78 0.09 140 / 0.25);
+  border-color: oklch(0.65 0.08 140);
 }
 
-/* Card 2 — Burn Fat: Warm Peach */
+/* Card 2 — Burn Fat: Warm Terracotta */
 .benefit-card:nth-child(2) {
-  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
-  border-color: rgba(251, 146, 60, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 45) 0%, oklch(0.94 0.04 45) 100%);
+  border-color: oklch(0.72 0.16 45 / 0.15);
 }
 
 .benefit-card:nth-child(2):hover {
-  background: linear-gradient(135deg, #FB923C 0%, #F97316 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(251, 146, 60, 0.25);
-  border-color: #F97316;
+  box-shadow: 0 20px 40px oklch(0.72 0.16 45 / 0.25);
+  border-color: var(--color-primary-hover);
 }
 
-/* Card 3 — Get Stronger: Rose-Peach Blend */
+/* Card 3 — Get Stronger: Soft Gold */
 .benefit-card:nth-child(3) {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FFEDD5 100%);
-  border-color: rgba(244, 63, 94, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 75) 0%, oklch(0.94 0.04 75) 100%);
+  border-color: oklch(0.82 0.13 75 / 0.15);
 }
 
 .benefit-card:nth-child(3):hover {
-  background: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, oklch(0.75 0.13 75) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
-  border-color: #FB923C;
+  box-shadow: 0 20px 40px oklch(0.82 0.13 75 / 0.25);
+  border-color: oklch(0.75 0.13 75);
 }
 
-/* Card 4 — Flexible: Modern Slate */
+/* Card 4 — Flexible: Cream/Sunrise */
 .benefit-card:nth-child(4) {
-  background: linear-gradient(135deg, #F8F9FA 0%, #F1F5F9 100%);
-  border-color: rgba(71, 85, 105, 0.15);
+  background: linear-gradient(135deg, oklch(0.985 0.012 80) 0%, oklch(0.95 0.025 90) 100%);
+  border-color: var(--color-border);
 }
 
 .benefit-card:nth-child(4):hover {
-  background: linear-gradient(135deg, #475569 0%, #334155 100%);
+  background: linear-gradient(135deg, oklch(0.4 0.025 70) 0%, oklch(0.24 0.03 60) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(71, 85, 105, 0.25);
-  border-color: #334155;
+  box-shadow: 0 20px 40px oklch(0.24 0.03 60 / 0.25);
+  border-color: oklch(0.24 0.03 60);
 }
 
 /* On hover — flip text and list to white */
@@ -1152,23 +1153,23 @@ select {
 }
 
 .benefit-icon-wrapper.calm {
-  background-color: rgba(244, 63, 94, 0.12);
-  color: #F43F5E;
+  background-color: oklch(0.78 0.09 140 / 0.12);
+  color: var(--color-accent);
 }
 
 .benefit-icon-wrapper.fat {
-  background-color: rgba(251, 146, 60, 0.12);
-  color: #FB923C;
+  background-color: oklch(0.72 0.16 45 / 0.12);
+  color: var(--color-primary);
 }
 
 .benefit-icon-wrapper.strong {
-  background-color: rgba(244, 63, 94, 0.12);
-  color: #F43F5E;
+  background-color: oklch(0.82 0.13 75 / 0.12);
+  color: var(--color-secondary);
 }
 
 .benefit-icon-wrapper.flex {
-  background-color: rgba(71, 85, 105, 0.12);
-  color: #475569;
+  background-color: oklch(0.24 0.03 60 / 0.12);
+  color: var(--color-text);
 }
 
 .benefit-icon {
@@ -1316,82 +1317,82 @@ select {
   overflow: hidden;
 }
 
-/* Card 1 - Sakshi Maheshwari: Rose tint */
+/* Card 1 - Sakshi Maheshwari: Sage tint */
 .testimonial-card:nth-child(1) {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
-  border-color: rgba(244, 63, 94, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 145) 0%, oklch(0.95 0.04 145) 100%);
+  border-color: oklch(0.78 0.09 140 / 0.15);
 }
 
 .testimonial-card:nth-child(1):hover {
-  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, oklch(0.65 0.08 140) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
-  border-color: #E11D48;
+  box-shadow: 0 20px 40px oklch(0.78 0.09 140 / 0.25);
+  border-color: oklch(0.65 0.08 140);
 }
 
-/* Card 2 - Shikha Kumari: Warm Peach tint */
+/* Card 2 - Shikha Kumari: Terracotta tint */
 .testimonial-card:nth-child(2) {
-  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
-  border-color: rgba(251, 146, 60, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 45) 0%, oklch(0.94 0.04 45) 100%);
+  border-color: oklch(0.72 0.16 45 / 0.15);
 }
 
 .testimonial-card:nth-child(2):hover {
-  background: linear-gradient(135deg, #FB923C 0%, #F97316 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(251, 146, 60, 0.25);
-  border-color: #F97316;
+  box-shadow: 0 20px 40px oklch(0.72 0.16 45 / 0.25);
+  border-color: var(--color-primary-hover);
 }
 
-/* Card 3 - Melissa D'Souza: Rose-Peach tint */
+/* Card 3 - Melissa D'Souza: Gold tint */
 .testimonial-card:nth-child(3) {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FFEDD5 100%);
-  border-color: rgba(244, 63, 94, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 75) 0%, oklch(0.94 0.04 75) 100%);
+  border-color: oklch(0.82 0.13 75 / 0.15);
 }
 
 .testimonial-card:nth-child(3):hover {
-  background: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, oklch(0.75 0.13 75) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
-  border-color: #FB923C;
+  box-shadow: 0 20px 40px oklch(0.82 0.13 75 / 0.25);
+  border-color: oklch(0.75 0.13 75);
 }
 
-/* Card 4 - Soft Pink-Lavender tint */
+/* Card 4 - Gold tint */
 .testimonial-card:nth-child(4) {
-  background: linear-gradient(135deg, #FDF2F8 0%, #FCE7F3 100%);
-  border-color: rgba(236, 72, 153, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 75) 0%, oklch(0.94 0.04 75) 100%);
+  border-color: oklch(0.82 0.13 75 / 0.15);
 }
 
 .testimonial-card:nth-child(4):hover {
-  background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, oklch(0.75 0.13 75) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.25);
-  border-color: #DB2777;
+  box-shadow: 0 20px 40px oklch(0.82 0.13 75 / 0.25);
+  border-color: oklch(0.75 0.13 75);
 }
 
-/* Card 5 - Warm Amber tint */
+/* Card 5 - Terracotta tint */
 .testimonial-card:nth-child(5) {
-  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-  border-color: rgba(245, 158, 11, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 45) 0%, oklch(0.94 0.04 45) 100%);
+  border-color: oklch(0.72 0.16 45 / 0.15);
 }
 
 .testimonial-card:nth-child(5):hover {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(245, 158, 11, 0.25);
-  border-color: #D97706;
+  box-shadow: 0 20px 40px oklch(0.72 0.16 45 / 0.25);
+  border-color: var(--color-primary-hover);
 }
 
-/* Card 6 - Deep Rose tint */
+/* Card 6 - Sage tint */
 .testimonial-card:nth-child(6) {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
-  border-color: rgba(225, 29, 72, 0.15);
+  background: linear-gradient(135deg, oklch(0.97 0.02 145) 0%, oklch(0.95 0.04 145) 100%);
+  border-color: oklch(0.78 0.09 140 / 0.15);
 }
 
 .testimonial-card:nth-child(6):hover {
-  background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, oklch(0.65 0.08 140) 100%);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(225, 29, 72, 0.25);
-  border-color: #E11D48;
+  box-shadow: 0 20px 40px oklch(0.78 0.09 140 / 0.25);
+  border-color: oklch(0.65 0.08 140);
 }
 
 /* On hover — flip text and icons to white/light */
