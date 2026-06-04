@@ -152,16 +152,16 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(135deg, #0d3320 0%, #1a5c35 45%, #b8892a 100%);
+  background: #FAF8F5;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid rgba(184, 137, 42, 0.4);
+  border-bottom: 2px solid rgba(184, 137, 42, 0.25);
   height: 100px;
   display: flex;
   align-items: center;
   transition: background var(--transition-speed) var(--transition-ease),
               box-shadow var(--transition-speed) var(--transition-ease);
-  box-shadow: 0 4px 28px rgba(13, 51, 32, 0.55);
+  box-shadow: 0 2px 18px rgba(13, 51, 32, 0.08);
 }
 
 .nav-container {
@@ -180,25 +180,19 @@ select {
 }
 
 .logo span {
-  color: #ffffff !important;
+  color: #0d3320 !important;
 }
 
 .logo-image {
   width: 90px;
   height: 90px;
   object-fit: contain;
-  /* Rich gold filter:
-     brightness(0) = all black → invert(1) = all white →
-     sepia → saturate(15) pushes to deep amber/gold →
-     brightness(0.88) darkens to true gold tone */
-  filter: brightness(0) invert(1) sepia(1) saturate(15) hue-rotate(5deg) brightness(0.88);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  /* No filter to show original dark green & gold colors */
+  transition: transform 0.3s ease;
 }
 
 .logo:hover .logo-image {
   transform: scale(1.07);
-  filter: brightness(0) invert(1) sepia(1) saturate(18) hue-rotate(3deg) brightness(1.05)
-          drop-shadow(0 0 10px rgba(240,192,64,0.8));
 }
 
 .nav-links {
@@ -211,7 +205,7 @@ select {
 .nav-links a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #0d3320;
   position: relative;
   padding: 6px 0;
   transition: color var(--transition-speed) var(--transition-ease);
@@ -230,7 +224,7 @@ select {
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: #b8892a;
 }
 
 .nav-links a:hover::after {
@@ -238,7 +232,7 @@ select {
 }
 
 .nav-links .active a {
-  color: #ffffff;
+  color: #b8892a;
   font-weight: 700;
 }
 
@@ -363,13 +357,13 @@ select {
 
 /* Hamburger icon — white on colored navbar */
 .header-nav .menu-toggle span {
-  background-color: #ffffff;
+  background-color: #0d3320;
 }
 
 /* Navbar scrolled — darker green */
 .header-nav.scrolled {
-  background: linear-gradient(135deg, #071a0f 0%, #0d3320 60%, #8a6318 100%);
-  box-shadow: 0 6px 32px rgba(7, 26, 15, 0.7);
+  background: rgba(250, 248, 245, 0.95);
+  box-shadow: 0 4px 24px rgba(13, 51, 32, 0.12);
 }
 
 /* Gold CTA button inside navbar */
@@ -491,6 +485,25 @@ select {
 
 .menu-toggle.active span:nth-child(3) {
   transform: translateY(-11px) rotate(-45deg);
+}
+
+/* --- YOGA BACKGROUND WATERMARK PATTERN --- */
+.yoga-bg-pattern {
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(250, 248, 245, 0.972), rgba(250, 248, 245, 0.972)), 
+    url('../images/logo_transparent.png');
+  background-repeat: repeat;
+  background-size: 380px;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Ensure background pattern shows through all home page sections */
+.yoga-bg-pattern section:not(.hero-video-section),
+.yoga-bg-pattern .trust-banner,
+.yoga-bg-pattern .bg-secondary-section {
+  background-color: transparent !important;
 }
 
 /* --- VIDEO / BUDDHA HERO SECTION --- */
