@@ -516,90 +516,54 @@ select {
 }
 
 .hero-video-wrapper video,
-.hero-buddha-img {
+.hero-room-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
   /* Subtle breathing zoom animation */
-  animation: buddhaBreath 14s ease-in-out infinite alternate;
+  animation: roomBreath 20s ease-in-out infinite alternate;
 }
 
-@keyframes buddhaBreath {
+@keyframes roomBreath {
   from { transform: scale(1.0); }
-  to   { transform: scale(1.06); }
+  to   { transform: scale(1.05); }
 }
 
-/* Warm, light overlay so cozy carpet room shows through */
+/* Sunlit warm overlay to keep text readable without hiding the cozy room details */
 .hero-video-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    160deg,
-    rgba(8, 22, 12, 0.48) 0%,
-    rgba(20, 30, 10, 0.30) 45%,
-    rgba(5, 18, 10, 0.52) 100%
+    135deg,
+    rgba(13, 51, 32, 0.15) 0%,
+    rgba(250, 245, 240, 0.1) 50%,
+    rgba(184, 137, 42, 0.15) 100%
   );
   z-index: 1;
 }
 
-/* ── Floating Flowers & Leaves Layer ─────────────────── */
-.hero-flora {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* Base flora element */
-.flora {
-  position: absolute;
-  opacity: 0;
-  animation: floraFloat linear infinite;
-  user-select: none;
-  will-change: transform, opacity;
-}
-
-/* Individual flora pieces — leaves */
-.fl1  { left: 5%;  bottom: -60px; width: 38px; animation-duration: 16s; animation-delay: 0s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl2  { left: 14%; bottom: -60px; width: 28px; animation-duration: 20s; animation-delay: 3s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl3  { left: 25%; bottom: -60px; width: 44px; animation-duration: 18s; animation-delay: 6s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl4  { left: 40%; bottom: -60px; width: 32px; animation-duration: 14s; animation-delay: 2s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl5  { left: 55%; bottom: -60px; width: 36px; animation-duration: 22s; animation-delay: 8s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl6  { left: 68%; bottom: -60px; width: 42px; animation-duration: 17s; animation-delay: 1s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl7  { left: 80%; bottom: -60px; width: 30px; animation-duration: 19s; animation-delay: 5s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-.fl8  { left: 92%; bottom: -60px; width: 34px; animation-duration: 15s; animation-delay: 9s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
-/* Individual flora pieces — flowers */
-.fl9  { left: 9%;  bottom: -60px; width: 32px; animation-duration: 21s; animation-delay: 4s;    filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-.fl10 { left: 22%; bottom: -60px; width: 26px; animation-duration: 13s; animation-delay: 7s;    filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-.fl11 { left: 38%; bottom: -60px; width: 36px; animation-duration: 25s; animation-delay: 11s;   filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-.fl12 { left: 52%; bottom: -60px; width: 28px; animation-duration: 18s; animation-delay: 0.5s;  filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-.fl13 { left: 63%; bottom: -60px; width: 40px; animation-duration: 16s; animation-delay: 10s;   filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-.fl14 { left: 76%; bottom: -60px; width: 30px; animation-duration: 23s; animation-delay: 6.5s;  filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-.fl15 { left: 88%; bottom: -60px; width: 24px; animation-duration: 12s; animation-delay: 3.5s;  filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
-
-@keyframes floraFloat {
-  0%   { opacity: 0;    transform: translateY(0px)    rotate(0deg)   scale(0.85); }
-  8%   { opacity: 0.55; }
-  45%  { opacity: 0.45; transform: translateY(-38vh)  rotate(20deg)  scale(1.0);  }
-  75%  { opacity: 0.30; transform: translateY(-65vh)  rotate(-12deg) scale(1.05); }
-  95%  { opacity: 0.08; }
-  100% { opacity: 0;    transform: translateY(-95vh)  rotate(30deg)  scale(1.1);  }
-}
-
-/* Content layer above overlay */
+/* Glassmorphic card for high-contrast readability over the bright room background */
 .hero-video-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 820px;
-  padding: 2rem 1.5rem;
+  max-width: 840px;
+  padding: 3.5rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
-  animation: fadeInUp 1s ease both;
+  gap: 1.5rem;
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.03),
+    0 15px 50px rgba(13, 51, 32, 0.12),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 @keyframes fadeInUp {
@@ -659,35 +623,80 @@ select {
   100% { background-position: 200% center; }
 }
 
-/* Floating mandala particles */
+/* Floating live leaves & flower petals */
 .hero-particles {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
 }
 
 .particle {
   position: absolute;
-  font-size: 1.4rem;
   opacity: 0;
-  animation: floatParticle 10s ease-in-out infinite;
   user-select: none;
+  will-change: transform, opacity;
 }
 
-.p1 { left: 8%;  top: 20%; animation-delay: 0s;   animation-duration: 11s; color: rgba(251,191,36,0.55); }
-.p2 { left: 18%; top: 70%; animation-delay: 2s;   animation-duration: 13s; color: rgba(167,243,208,0.5); }
-.p3 { left: 80%; top: 15%; animation-delay: 1s;   animation-duration: 9s;  color: rgba(251,191,36,0.45); }
-.p4 { left: 88%; top: 65%; animation-delay: 3.5s; animation-duration: 14s; color: rgba(255,255,255,0.6); }
-.p5 { left: 50%; top: 80%; animation-delay: 5s;   animation-duration: 12s; color: rgba(251,191,36,0.4); }
-.p6 { left: 65%; top: 35%; animation-delay: 4s;   animation-duration: 10s; color: rgba(167,243,208,0.55); }
+.particle.leaf {
+  font-size: clamp(1.2rem, 2vw, 2.2rem);
+  filter: drop-shadow(0 4px 8px rgba(13, 51, 32, 0.15)) brightness(0.95);
+  animation: leafDrift 18s linear infinite;
+}
 
-@keyframes floatParticle {
-  0%   { opacity: 0; transform: translateY(20px) scale(0.8) rotate(0deg); }
-  20%  { opacity: 0.9; }
-  80%  { opacity: 0.6; }
-  100% { opacity: 0; transform: translateY(-60px) scale(1.2) rotate(30deg); }
+.particle.petal {
+  font-size: clamp(1rem, 1.8vw, 1.8rem);
+  filter: drop-shadow(0 4px 8px rgba(244, 63, 94, 0.15)) saturate(1.1);
+  animation: petalFlutter 14s linear infinite;
+}
+
+/* Individual particle settings for natural distribution and timing */
+.p1  { left: 5%;   top: -5%;  animation-delay: 0s;   animation-duration: 20s; }
+.p2  { left: 15%;  top: -8%;  animation-delay: 3s;   animation-duration: 16s; }
+.p3  { left: 30%;  top: -6%;  animation-delay: 7s;   animation-duration: 24s; }
+.p4  { left: 45%;  top: -10%; animation-delay: 1s;   animation-duration: 18s; }
+.p5  { left: 60%;  top: -7%;  animation-delay: 11s;  animation-duration: 22s; }
+.p6  { left: 75%;  top: -5%;  animation-delay: 4s;   animation-duration: 17s; }
+.p7  { left: 88%;  top: -9%;  animation-delay: 9s;   animation-duration: 26s; }
+.p8  { left: 22%;  top: -7%;  animation-delay: 13s;  animation-duration: 21s; }
+.p9  { left: 52%;  top: -5%;  animation-delay: 5s;   animation-duration: 23s; }
+.p10 { left: 82%;  top: -8%;  animation-delay: 2s;   animation-duration: 19s; }
+
+/* Leaves fall down and sway sideways with spiral-like rotation */
+@keyframes leafDrift {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(105vh) translateX(120px) rotate(360deg) scale(1.15);
+  }
+}
+
+/* Petals flutter down and sway with double rotation for a natural drop */
+@keyframes petalFlutter {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) rotateX(0deg) rotateY(0deg) scale(0.7);
+  }
+  12% {
+    opacity: 0.9;
+  }
+  88% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(105vh) translateX(-100px) rotateX(480deg) rotateY(180deg) scale(1.1);
+  }
 }
 
 /* Desc text white */
