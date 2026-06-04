@@ -471,7 +471,7 @@ select {
   justify-content: center;
 }
 
-/* Video wrapper stretched to fill */
+/* Image/Video wrapper stretched to fill */
 .hero-video-wrapper {
   position: absolute;
   top: 0;
@@ -481,21 +481,30 @@ select {
   pointer-events: none;
 }
 
-.hero-video-wrapper video {
+.hero-video-wrapper video,
+.hero-buddha-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
+  /* Subtle breathing zoom animation */
+  animation: buddhaBreath 14s ease-in-out infinite alternate;
 }
 
-/* Dark gradient overlay */
+@keyframes buddhaBreath {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.06); }
+}
+
+/* Spiritual warm gradient overlay */
 .hero-video-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(10, 5, 20, 0.72) 0%,
-    rgba(20, 8, 35, 0.55) 50%,
-    rgba(10, 5, 20, 0.68) 100%
+    160deg,
+    rgba(10, 18, 30, 0.78) 0%,
+    rgba(30, 20, 8, 0.58) 40%,
+    rgba(8, 25, 20, 0.72) 100%
   );
   z-index: 1;
 }
@@ -555,6 +564,53 @@ select {
   display: inline;
 }
 
+/* Golden gradient for Buddha hero */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 35%, #fde68a 65%, #d97706 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+  animation: shimmerGold 4s linear infinite;
+}
+
+@keyframes shimmerGold {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Floating mandala particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0;
+  animation: floatParticle 10s ease-in-out infinite;
+  user-select: none;
+}
+
+.p1 { left: 8%;  top: 20%; animation-delay: 0s;   animation-duration: 11s; color: rgba(251,191,36,0.55); }
+.p2 { left: 18%; top: 70%; animation-delay: 2s;   animation-duration: 13s; color: rgba(167,243,208,0.5); }
+.p3 { left: 80%; top: 15%; animation-delay: 1s;   animation-duration: 9s;  color: rgba(251,191,36,0.45); }
+.p4 { left: 88%; top: 65%; animation-delay: 3.5s; animation-duration: 14s; color: rgba(255,255,255,0.6); }
+.p5 { left: 50%; top: 80%; animation-delay: 5s;   animation-duration: 12s; color: rgba(251,191,36,0.4); }
+.p6 { left: 65%; top: 35%; animation-delay: 4s;   animation-duration: 10s; color: rgba(167,243,208,0.55); }
+
+@keyframes floatParticle {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.8) rotate(0deg); }
+  20%  { opacity: 0.9; }
+  80%  { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-60px) scale(1.2) rotate(30deg); }
+}
+
 /* Desc text white */
 .hero-desc-video {
   color: rgba(255,255,255,0.82) !important;
@@ -593,10 +649,17 @@ select {
 }
 
 .hero-sound-btn:hover {
-  background: rgba(244, 63, 94, 0.5);
-  border-color: rgba(244, 63, 94, 0.7);
+  background: rgba(251, 191, 36, 0.28);
+  border-color: rgba(251, 191, 36, 0.7);
   transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.35);
+  box-shadow: 0 4px 24px rgba(251, 191, 36, 0.4);
+}
+
+/* Active / playing state */
+.hero-sound-btn.playing {
+  background: rgba(251, 191, 36, 0.18);
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.3);
 }
 
 /* Scroll indicator */

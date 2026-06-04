@@ -360,40 +360,120 @@ function initGallery() {
 }
 
 /**
- * Hero Video Sound Toggle
- * Controls playback of local background audio file.
+ * Hero Ambient Music — Web Audio API
+ * Generates peaceful yoga/meditation ambient tones entirely in-browser.
+ * No external files, no YouTube, zero ads.
  */
 function initHeroVideoSound() {
-  const btn = document.getElementById('hero-sound-btn');
-  const audio = document.getElementById('hero-bg-audio');
-  if (!btn || !audio) return;
-
+  const btn         = document.getElementById('hero-sound-btn');
   const iconMuted   = document.getElementById('icon-muted');
   const iconUnmuted = document.getElementById('icon-unmuted');
   const label       = document.getElementById('sound-label');
+  if (!btn) return;
 
-  let isMuted = true;
+  let audioCtx = null;
+  let masterGain = null;
+  let sources = [];
+  let isPlaying = false;
+
+  /** Build a simple reverb impulse (exponential decay noise) */
+  function makeReverb(ctx, duration, decay) {
+    const sampleRate = ctx.sampleRate;
+    const length = sampleRate * duration;
+    const impulse = ctx.createBuffer(2, length, sampleRate);
+    for (let c = 0; c < 2; c++) {
+      const ch = impulse.getChannelData(c);
+      for (let i = 0; i < length; i++) {
+        ch[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
+      }
+    }
+    const conv = ctx.createConvolver();
+    conv.buffer = impulse;
+    return conv;
+  }
+
+  /** Create one oscillator layer with individual gain */
+  function addTone(ctx, dest, freq, type, gainVal, detune) {
+    const osc  = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type      = type;
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    osc.detune.setValueAtTime(detune || 0, ctx.currentTime);
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(gainVal, ctx.currentTime + 3.5);
+    osc.connect(gain);
+    gain.connect(dest);
+    osc.start();
+    sources.push({ osc, gain });
+    return gain;
+  }
+
+  function startAmbient() {
+    audioCtx   = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0.55, audioCtx.currentTime + 4);
+
+    // Reverb send
+    const reverb = makeReverb(audioCtx, 4, 3.5);
+    const reverbGain = audioCtx.createGain();
+    reverbGain.gain.value = 0.35;
+    masterGain.connect(reverb);
+    reverb.connect(reverbGain);
+    reverbGain.connect(audioCtx.destination);
+    masterGain.connect(audioCtx.destination);
+
+    // Layer 1 — deep drone root (C2 = 65 Hz)
+    addTone(audioCtx, masterGain, 65.41, 'sine', 0.55, 0);
+    // Layer 2 — 5th harmonic (G2 = 98 Hz)
+    addTone(audioCtx, masterGain, 98.00, 'sine', 0.30, 3);
+    // Layer 3 — octave up (C3 = 130 Hz)
+    addTone(audioCtx, masterGain, 130.81, 'sine', 0.20, -2);
+    // Layer 4 — peaceful mid bell pad (E4 = 329 Hz)
+    addTone(audioCtx, masterGain, 329.63, 'triangle', 0.09, 5);
+    // Layer 5 — airy shimmer (A5 = 880 Hz, very soft)
+    addTone(audioCtx, masterGain, 880.00, 'sine', 0.025, -4);
+
+    // Slow LFO tremolo on master for breathing feel
+    const lfo = audioCtx.createOscillator();
+    const lfoGain = audioCtx.createGain();
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.08; // very slow — ~1 cycle per 12 seconds
+    lfoGain.gain.value = 0.07;
+    lfo.connect(lfoGain);
+    lfoGain.connect(masterGain.gain);
+    lfo.start();
+    sources.push({ osc: lfo, gain: lfoGain });
+  }
+
+  function stopAmbient() {
+    if (!audioCtx) return;
+    const now = audioCtx.currentTime;
+    masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+    masterGain.gain.linearRampToValueAtTime(0, now + 2.5);
+    setTimeout(() => {
+      sources.forEach(({ osc }) => { try { osc.stop(); } catch(e){} });
+      sources = [];
+      audioCtx.close();
+      audioCtx = null;
+    }, 2700);
+  }
 
   btn.addEventListener('click', () => {
-    if (isMuted) {
-      // Play audio and unmute
-      audio.play().then(() => {
-        audio.muted = false;
-        audio.volume = 0.8;
-      }).catch(err => {
-        console.warn('Audio play failed:', err);
-      });
-      isMuted = false;
+    if (!isPlaying) {
+      startAmbient();
+      isPlaying = true;
       iconMuted.style.display   = 'none';
       iconUnmuted.style.display = 'inline';
-      label.textContent = 'Sound On';
+      label.textContent         = '🎵 Stop Music';
+      btn.classList.add('playing');
     } else {
-      // Mute audio
-      audio.muted = true;
-      isMuted = true;
+      stopAmbient();
+      isPlaying = false;
       iconMuted.style.display   = 'inline';
       iconUnmuted.style.display = 'none';
-      label.textContent = 'Sound Off';
+      label.textContent         = '🎵 Play Music';
+      btn.classList.remove('playing');
     }
   });
 }
