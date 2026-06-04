@@ -152,7 +152,11 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #FAF8F5;
+  background-color: #dbe8d4; /* Premium Light Green carpet */
+  background-image: 
+    linear-gradient(90deg, rgba(13, 51, 32, 0.03) 50%, transparent 50%),
+    linear-gradient(rgba(13, 51, 32, 0.03) 50%, transparent 50%);
+  background-size: 3px 3px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 2px solid rgba(184, 137, 42, 0.25);
@@ -362,7 +366,11 @@ select {
 
 /* Navbar scrolled — darker green */
 .header-nav.scrolled {
-  background: rgba(250, 248, 245, 0.95);
+  background-color: rgba(219, 232, 212, 0.95);
+  background-image: 
+    linear-gradient(90deg, rgba(13, 51, 32, 0.02) 50%, transparent 50%),
+    linear-gradient(rgba(13, 51, 32, 0.02) 50%, transparent 50%);
+  background-size: 3px 3px;
   box-shadow: 0 4px 24px rgba(13, 51, 32, 0.12);
 }
 
@@ -2553,7 +2561,7 @@ footer {
     height: 70px;
     border-image: none;
     border-bottom: none;
-    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.3);
+    box-shadow: 0 2px 15px rgba(13, 51, 32, 0.08);
   }
 
   .nav-links {
@@ -2562,13 +2570,17 @@ footer {
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: linear-gradient(160deg, #F43F5E 0%, #FB923C 100%);
+    background-color: #dbe8d4;
+    background-image: 
+      linear-gradient(90deg, rgba(13, 51, 32, 0.02) 50%, transparent 50%),
+      linear-gradient(rgba(13, 51, 32, 0.02) 50%, transparent 50%);
+    background-size: 3px 3px;
     flex-direction: column;
     padding: 2.5rem 2rem;
     gap: 1.5rem;
     transition: left var(--transition-speed) var(--transition-ease);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 4px 0 30px rgba(244, 63, 94, 0.35);
+    border-top: 1px solid rgba(13, 51, 32, 0.08);
+    box-shadow: 4px 0 30px rgba(13, 51, 32, 0.1);
   }
 
   .nav-links.active {
@@ -2576,7 +2588,7 @@ footer {
   }
 
   .nav-links a {
-    color: rgba(255,255,255,0.92);
+    color: #0d3320;
     font-size: 1.1rem;
   }
 
