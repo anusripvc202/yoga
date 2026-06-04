@@ -49,14 +49,12 @@
   <main>
     <section class="hero-video-section" id="hero-video-section">
 
-      <!-- Cozy sunlit room background image -->
+      <!-- Background Meditation Video -->
       <div class="hero-video-wrapper">
-        <img
-          src="images/yoga_room_bg.png"
-          alt="Cozy sunlit meditation room - Aarogya Yoga"
-          class="hero-room-img"
-          id="hero-room-img"
-        >
+        <video autoplay loop muted playsinline id="hero-bg-video" poster="images/yoga_room_bg.png">
+          <source src="images/meditation-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <!-- Gradient overlay for readability -->
@@ -76,18 +74,21 @@
         <span class="particle petal p10">🏵️</span>
       </div>
 
-      <!-- Hero content on top of image (glassmorphic card) -->
-      <div class="hero-video-content">
-        <div class="yoga-sutra-quote video-hero-sutra">॥ Yoga Chitta Vritti Nirodhah ॥</div>
-        <span class="hero-subtitle hero-subtitle-video">Welcome to Aarogya Yoga</span>
-        <h1 class="hero-title hero-title-video">Your Path to <span class="gradient-text-gold">Wellness &amp; Inner Peace</span> Starts Here</h1>
-        <p class="hero-desc hero-desc-video">
-          Begin your Health &amp; Wellness journey with expert-guided yoga — where movement,
-          mindfulness, and healing come together.
-        </p>
-        <div class="hero-actions hero-actions-video">
-          <a href="classes.html" class="btn btn-primary">Join Classes &rarr;</a>
-          <a href="contact.html" class="btn btn-outline-white">Book a Class</a>
+      <!-- Hero content container for grid alignment -->
+      <div class="container hero-content-container">
+        <!-- Hero content on top of video (left-aligned) -->
+        <div class="hero-video-content">
+          <div class="yoga-sutra-quote video-hero-sutra">॥ Yoga Chitta Vritti Nirodhah ॥</div>
+          <span class="hero-subtitle hero-subtitle-video">Welcome to Aarogya Yoga</span>
+          <h1 class="hero-title hero-title-video">Your Path to <span class="gradient-text-gold">Wellness &amp; Inner Peace</span> Starts Here</h1>
+          <p class="hero-desc hero-desc-video">
+            Begin your Health &amp; Wellness journey with expert-guided yoga — where movement,
+            mindfulness, and healing come together.
+          </p>
+          <div class="hero-actions hero-actions-video">
+            <a href="classes.html" class="btn btn-primary">Join Classes &rarr;</a>
+            <a href="contact.html" class="btn btn-outline-white">Book a Class</a>
+          </div>
         </div>
       </div>
 
