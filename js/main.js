@@ -361,12 +361,12 @@ function initGallery() {
 
 /**
  * Hero Video Sound Toggle
- * Controls playback of local background video audio.
+ * Controls playback of local background audio file.
  */
 function initHeroVideoSound() {
   const btn = document.getElementById('hero-sound-btn');
-  const video = document.getElementById('hero-bg-video');
-  if (!btn || !video) return;
+  const audio = document.getElementById('hero-bg-audio');
+  if (!btn || !audio) return;
 
   const iconMuted   = document.getElementById('icon-muted');
   const iconUnmuted = document.getElementById('icon-unmuted');
@@ -376,14 +376,20 @@ function initHeroVideoSound() {
 
   btn.addEventListener('click', () => {
     if (isMuted) {
-      video.muted = false;
-      video.volume = 0.8;
+      // Play audio and unmute
+      audio.play().then(() => {
+        audio.muted = false;
+        audio.volume = 0.8;
+      }).catch(err => {
+        console.warn('Audio play failed:', err);
+      });
       isMuted = false;
       iconMuted.style.display   = 'none';
       iconUnmuted.style.display = 'inline';
       label.textContent = 'Sound On';
     } else {
-      video.muted = true;
+      // Mute audio
+      audio.muted = true;
       isMuted = true;
       iconMuted.style.display   = 'inline';
       iconUnmuted.style.display = 'none';

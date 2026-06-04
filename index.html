@@ -56,11 +56,15 @@
   <!-- HERO SECTION - Full Width YouTube Video Background -->
   <main>
     <section class="hero-video-section" id="hero-video-section">
-      <!-- HTML5 Video as background (with audio included) -->
+      <!-- HTML5 Video as background -->
       <div class="hero-video-wrapper">
         <video id="hero-bg-video" autoplay loop muted playsinline poster="images/instructor.png">
           <source src="videos/bg_video.mp4" type="video/mp4">
         </video>
+        <!-- Audio element played in sync -->
+        <audio id="hero-bg-audio" loop preload="auto">
+          <source src="videos/bg_music.mp3" type="audio/mp3">
+        </audio>
       </div>
 
       <!-- Gradient overlay for readability -->
