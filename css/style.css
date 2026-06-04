@@ -176,8 +176,7 @@ select {
   align-items: center;
   text-decoration: none;
   background: transparent;
-  padding: 4px 8px;
-  border-radius: 10px;
+  padding: 0;
 }
 
 .logo span {
@@ -185,19 +184,18 @@ select {
 }
 
 .logo-image {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.95);
-  padding: 4px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 2px rgba(184,137,42,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Dissolve white background into navbar — only logo design shows */
+  mix-blend-mode: multiply;
+  filter: contrast(1.15) brightness(1.05);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo:hover .logo-image {
-  transform: scale(1.06);
-  box-shadow: 0 4px 20px rgba(184,137,42,0.5), 0 0 0 2px rgba(184,137,42,0.7);
+  transform: scale(1.07);
+  filter: contrast(1.2) brightness(1.1);
 }
 
 .nav-links {
