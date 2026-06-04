@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initGallery();
   initHeroVideoSound();
+  initChakraAutoScroll();
 });
 
 /**
@@ -520,6 +521,60 @@ function initHeroVideoSound() {
       btn.classList.remove('playing');
     }
   });
+}
+
+/**
+ * Auto-scroll the chakras container slowly on mobile/tablet screens.
+ * Automatically pauses on manual touch/interaction, restoring snapping.
+ */
+function initChakraAutoScroll() {
+  const container = document.querySelector('.chakras-horizontal-container');
+  if (!container) return;
+
+  let scrollSpeed = 0.3; // Pixels per frame
+  let scrollDirection = 1; // 1 = right, -1 = left
+  let isUserInteracting = false;
+  let resumeTimeout = null;
+
+  function step() {
+    // Only auto-scroll on tablet/mobile screens (<= 1200px) when user is not touching it
+    if (window.innerWidth <= 1200 && !isUserInteracting) {
+      // Temporarily remove snap type for fluid JS auto-scroll
+      if (container.style.scrollSnapType !== 'none') {
+        container.style.scrollSnapType = 'none';
+      }
+
+      container.scrollLeft += scrollSpeed * scrollDirection;
+
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (scrollDirection === 1 && container.scrollLeft >= maxScroll - 1) {
+        scrollDirection = -1; // Reverse to left
+      } else if (scrollDirection === -1 && container.scrollLeft <= 1) {
+        scrollDirection = 1; // Reverse to right
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function handleUserInteraction() {
+    isUserInteracting = true;
+    // Restore default scroll snapping for manual swipe feedback
+    container.style.scrollSnapType = '';
+
+    if (resumeTimeout) clearTimeout(resumeTimeout);
+    resumeTimeout = setTimeout(() => {
+      isUserInteracting = false;
+    }, 4000); // Resume after 4 seconds of inactivity
+  }
+
+  // Listeners to pause auto-scrolling during drag/swipe/scroll
+  container.addEventListener('touchstart', handleUserInteraction, { passive: true });
+  container.addEventListener('touchmove', handleUserInteraction, { passive: true });
+  container.addEventListener('mousedown', handleUserInteraction, { passive: true });
+  container.addEventListener('wheel', handleUserInteraction, { passive: true });
+
+  // Start the auto-scroll loop
+  step();
 }
 
 
