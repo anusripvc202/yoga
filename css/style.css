@@ -153,7 +153,7 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 245, 240, 0.95);
+  background: oklch(0.985 0.012 80 / 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border);
@@ -361,7 +361,7 @@ select {
 
 /* Navbar scrolled */
 .header-nav.scrolled {
-  background: rgba(250, 245, 240, 0.98);
+  background: oklch(0.985 0.012 80 / 0.98);
   height: 90px;
   box-shadow: var(--shadow-md);
 }
