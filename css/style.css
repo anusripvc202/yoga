@@ -187,17 +187,18 @@ select {
   width: 90px;
   height: 90px;
   object-fit: contain;
-  /* Make dark-green logo elements visible as warm gold on dark navbar:
+  /* Rich gold filter:
      brightness(0) = all black → invert(1) = all white →
-     sepia+saturate+hue = warm gold tone */
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(8deg) brightness(1.1);
+     sepia → saturate(15) pushes to deep amber/gold →
+     brightness(0.88) darkens to true gold tone */
+  filter: brightness(0) invert(1) sepia(1) saturate(15) hue-rotate(5deg) brightness(0.88);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo:hover .logo-image {
   transform: scale(1.07);
-  filter: brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(5deg) brightness(1.3)
-          drop-shadow(0 0 10px rgba(240,192,64,0.7));
+  filter: brightness(0) invert(1) sepia(1) saturate(18) hue-rotate(3deg) brightness(1.05)
+          drop-shadow(0 0 10px rgba(240,192,64,0.8));
 }
 
 .nav-links {
