@@ -152,16 +152,16 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(135deg, #F43F5E 0%, #FB923C 100%);
+  background: linear-gradient(135deg, #0d3320 0%, #1a5c35 45%, #b8892a 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: none;
-  height: 80px;
+  border-bottom: 2px solid rgba(184, 137, 42, 0.4);
+  height: 100px;
   display: flex;
   align-items: center;
   transition: background var(--transition-speed) var(--transition-ease),
               box-shadow var(--transition-speed) var(--transition-ease);
-  box-shadow: 0 4px 24px rgba(244, 63, 94, 0.35);
+  box-shadow: 0 4px 28px rgba(13, 51, 32, 0.55);
 }
 
 .nav-container {
@@ -185,15 +185,19 @@ select {
 }
 
 .logo-image {
-  width: 70px;
-  height: auto;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.95);
+  padding: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 2px rgba(184,137,42,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo:hover .logo-image {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  box-shadow: 0 4px 20px rgba(184,137,42,0.5), 0 0 0 2px rgba(184,137,42,0.7);
 }
 
 .nav-links {
@@ -219,7 +223,7 @@ select {
   left: 0;
   width: 0;
   height: 2px;
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(90deg, #f0c040, #b8892a);
   border-radius: var(--border-radius-full);
   transition: width var(--transition-speed) var(--transition-ease);
 }
@@ -361,6 +365,35 @@ select {
   background-color: #ffffff;
 }
 
+/* Navbar scrolled — darker green */
+.header-nav.scrolled {
+  background: linear-gradient(135deg, #071a0f 0%, #0d3320 60%, #8a6318 100%);
+  box-shadow: 0 6px 32px rgba(7, 26, 15, 0.7);
+}
+
+/* Gold CTA button inside navbar */
+.btn-nav-gold {
+  background: linear-gradient(135deg, #b8892a 0%, #f0c040 50%, #b8892a 100%);
+  background-size: 200% auto;
+  color: #0d3320 !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 3px 14px rgba(184,137,42,0.45);
+  animation: goldShine 3s linear infinite;
+}
+
+.btn-nav-gold:hover {
+  background-position: right center;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(184,137,42,0.65);
+  color: #071a0f !important;
+}
+
+@keyframes goldShine {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
 
 /* Buttons */
 .btn {
@@ -459,11 +492,11 @@ select {
   transform: translateY(-11px) rotate(-45deg);
 }
 
-/* --- VIDEO HERO SECTION --- */
+/* --- VIDEO / BUDDHA HERO SECTION --- */
 .hero-video-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px); /* full viewport minus navbar */
+  height: calc(100vh - 100px); /* full viewport minus navbar */
   min-height: 560px;
   overflow: hidden;
   display: flex;
