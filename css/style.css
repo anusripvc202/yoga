@@ -152,20 +152,16 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #dbe8d4; /* Premium Light Green carpet */
-  background-image: 
-    linear-gradient(90deg, rgba(13, 51, 32, 0.03) 50%, transparent 50%),
-    linear-gradient(rgba(13, 51, 32, 0.03) 50%, transparent 50%);
-  background-size: 3px 3px;
+  background: linear-gradient(135deg, #0d3320 0%, #1a5c35 45%, #b8892a 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid rgba(184, 137, 42, 0.25);
+  border-bottom: 2px solid rgba(184, 137, 42, 0.4);
   height: 100px;
   display: flex;
   align-items: center;
   transition: background var(--transition-speed) var(--transition-ease),
               box-shadow var(--transition-speed) var(--transition-ease);
-  box-shadow: 0 2px 18px rgba(13, 51, 32, 0.08);
+  box-shadow: 0 4px 28px rgba(13, 51, 32, 0.55);
 }
 
 .nav-container {
@@ -184,19 +180,25 @@ select {
 }
 
 .logo span {
-  color: #0d3320 !important;
+  color: #ffffff !important;
 }
 
 .logo-image {
   width: 90px;
   height: 90px;
   object-fit: contain;
-  /* No filter to show original dark green & gold colors */
-  transition: transform 0.3s ease;
+  /* Rich gold filter:
+     brightness(0) = all black → invert(1) = all white →
+     sepia → saturate(15) pushes to deep amber/gold →
+     brightness(0.88) darkens to true gold tone */
+  filter: brightness(0) invert(1) sepia(1) saturate(15) hue-rotate(5deg) brightness(0.88);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo:hover .logo-image {
   transform: scale(1.07);
+  filter: brightness(0) invert(1) sepia(1) saturate(18) hue-rotate(3deg) brightness(1.05)
+          drop-shadow(0 0 10px rgba(240,192,64,0.8));
 }
 
 .nav-links {
@@ -209,7 +211,7 @@ select {
 .nav-links a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #0d3320;
+  color: rgba(255, 255, 255, 0.92);
   position: relative;
   padding: 6px 0;
   transition: color var(--transition-speed) var(--transition-ease);
@@ -228,7 +230,7 @@ select {
 }
 
 .nav-links a:hover {
-  color: #b8892a;
+  color: #ffffff;
 }
 
 .nav-links a:hover::after {
@@ -236,7 +238,7 @@ select {
 }
 
 .nav-links .active a {
-  color: #b8892a;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -361,17 +363,13 @@ select {
 
 /* Hamburger icon — white on colored navbar */
 .header-nav .menu-toggle span {
-  background-color: #0d3320;
+  background-color: #ffffff;
 }
 
 /* Navbar scrolled — darker green */
 .header-nav.scrolled {
-  background-color: rgba(219, 232, 212, 0.95);
-  background-image: 
-    linear-gradient(90deg, rgba(13, 51, 32, 0.02) 50%, transparent 50%),
-    linear-gradient(rgba(13, 51, 32, 0.02) 50%, transparent 50%);
-  background-size: 3px 3px;
-  box-shadow: 0 4px 24px rgba(13, 51, 32, 0.12);
+  background: linear-gradient(135deg, #071a0f 0%, #0d3320 60%, #8a6318 100%);
+  box-shadow: 0 6px 32px rgba(7, 26, 15, 0.7);
 }
 
 /* Gold CTA button inside navbar */
@@ -495,25 +493,6 @@ select {
   transform: translateY(-11px) rotate(-45deg);
 }
 
-/* --- YOGA BACKGROUND WATERMARK PATTERN --- */
-.yoga-bg-pattern {
-  position: relative;
-  background-image: 
-    linear-gradient(rgba(250, 248, 245, 0.972), rgba(250, 248, 245, 0.972)), 
-    url('../images/logo_transparent.png');
-  background-repeat: repeat;
-  background-size: 380px;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-/* Ensure background pattern shows through all home page sections */
-.yoga-bg-pattern section:not(.hero-video-section),
-.yoga-bg-pattern .trust-banner,
-.yoga-bg-pattern .bg-secondary-section {
-  background-color: transparent !important;
-}
-
 /* --- VIDEO / BUDDHA HERO SECTION --- */
 .hero-video-section {
   position: relative;
@@ -551,17 +530,62 @@ select {
   to   { transform: scale(1.06); }
 }
 
-/* Spiritual warm gradient overlay */
+/* Warm, light overlay so cozy carpet room shows through */
 .hero-video-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(10, 18, 30, 0.78) 0%,
-    rgba(30, 20, 8, 0.58) 40%,
-    rgba(8, 25, 20, 0.72) 100%
+    rgba(8, 22, 12, 0.48) 0%,
+    rgba(20, 30, 10, 0.30) 45%,
+    rgba(5, 18, 10, 0.52) 100%
   );
   z-index: 1;
+}
+
+/* ── Floating Flowers & Leaves Layer ─────────────────── */
+.hero-flora {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Base flora element */
+.flora {
+  position: absolute;
+  opacity: 0;
+  animation: floraFloat linear infinite;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+/* Individual flora pieces — leaves */
+.fl1  { left: 5%;  bottom: -60px; width: 38px; animation-duration: 16s; animation-delay: 0s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl2  { left: 14%; bottom: -60px; width: 28px; animation-duration: 20s; animation-delay: 3s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl3  { left: 25%; bottom: -60px; width: 44px; animation-duration: 18s; animation-delay: 6s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl4  { left: 40%; bottom: -60px; width: 32px; animation-duration: 14s; animation-delay: 2s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl5  { left: 55%; bottom: -60px; width: 36px; animation-duration: 22s; animation-delay: 8s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl6  { left: 68%; bottom: -60px; width: 42px; animation-duration: 17s; animation-delay: 1s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl7  { left: 80%; bottom: -60px; width: 30px; animation-duration: 19s; animation-delay: 5s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+.fl8  { left: 92%; bottom: -60px; width: 34px; animation-duration: 15s; animation-delay: 9s;    filter: drop-shadow(0 2px 4px rgba(0,80,20,0.3)); }
+/* Individual flora pieces — flowers */
+.fl9  { left: 9%;  bottom: -60px; width: 32px; animation-duration: 21s; animation-delay: 4s;    filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+.fl10 { left: 22%; bottom: -60px; width: 26px; animation-duration: 13s; animation-delay: 7s;    filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+.fl11 { left: 38%; bottom: -60px; width: 36px; animation-duration: 25s; animation-delay: 11s;   filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+.fl12 { left: 52%; bottom: -60px; width: 28px; animation-duration: 18s; animation-delay: 0.5s;  filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+.fl13 { left: 63%; bottom: -60px; width: 40px; animation-duration: 16s; animation-delay: 10s;   filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+.fl14 { left: 76%; bottom: -60px; width: 30px; animation-duration: 23s; animation-delay: 6.5s;  filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+.fl15 { left: 88%; bottom: -60px; width: 24px; animation-duration: 12s; animation-delay: 3.5s;  filter: drop-shadow(0 2px 6px rgba(200,50,100,0.35)); }
+
+@keyframes floraFloat {
+  0%   { opacity: 0;    transform: translateY(0px)    rotate(0deg)   scale(0.85); }
+  8%   { opacity: 0.55; }
+  45%  { opacity: 0.45; transform: translateY(-38vh)  rotate(20deg)  scale(1.0);  }
+  75%  { opacity: 0.30; transform: translateY(-65vh)  rotate(-12deg) scale(1.05); }
+  95%  { opacity: 0.08; }
+  100% { opacity: 0;    transform: translateY(-95vh)  rotate(30deg)  scale(1.1);  }
 }
 
 /* Content layer above overlay */
@@ -639,7 +663,7 @@ select {
 .hero-particles {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   overflow: hidden;
 }
@@ -2561,7 +2585,7 @@ footer {
     height: 70px;
     border-image: none;
     border-bottom: none;
-    box-shadow: 0 2px 15px rgba(13, 51, 32, 0.08);
+    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.3);
   }
 
   .nav-links {
@@ -2570,17 +2594,13 @@ footer {
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: #dbe8d4;
-    background-image: 
-      linear-gradient(90deg, rgba(13, 51, 32, 0.02) 50%, transparent 50%),
-      linear-gradient(rgba(13, 51, 32, 0.02) 50%, transparent 50%);
-    background-size: 3px 3px;
+    background: linear-gradient(160deg, #F43F5E 0%, #FB923C 100%);
     flex-direction: column;
     padding: 2.5rem 2rem;
     gap: 1.5rem;
     transition: left var(--transition-speed) var(--transition-ease);
-    border-top: 1px solid rgba(13, 51, 32, 0.08);
-    box-shadow: 4px 0 30px rgba(13, 51, 32, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 4px 0 30px rgba(244, 63, 94, 0.35);
   }
 
   .nav-links.active {
@@ -2588,7 +2608,7 @@ footer {
   }
 
   .nav-links a {
-    color: #0d3320;
+    color: rgba(255,255,255,0.92);
     font-size: 1.1rem;
   }
 
