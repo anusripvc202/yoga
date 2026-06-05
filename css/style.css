@@ -3916,5 +3916,29 @@ footer {
   .chakra-short-info {
     text-align: left;
   }
+
+  /* Benefits Grid 2x2 Layout on Mobile */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .benefit-card {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .benefit-list {
+    gap: 6px;
+  }
+
+  .benefit-list li {
+    font-size: 0.8rem;
+    gap: 6px;
+  }
 }
 
