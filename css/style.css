@@ -3524,8 +3524,7 @@ footer {
 
 /* --- CHAKRAS SECTION (VERTICAL ZIGZAG TIMELINE) --- */
 .chakras-section {
-  background: linear-gradient(135deg, oklch(0.95 0.03 30) 0%, var(--color-bg) 100%),
-              url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ccircle cx=%2220%22 cy=%2220%22 r=%222%22 fill=%22rgba(255,255,255,0.15)%22/%3E%3C/svg%3E') repeat;
+  background-color: var(--color-bg);
   position: relative;
   overflow: hidden;
 }
@@ -3943,3 +3942,51 @@ footer {
   }
 }
 
+/* -------------------------------------------------
+   Chakra Section – premium background design
+   ------------------------------------------------- */
+.chakras-section {
+  /* Soft gradient that matches the site’s pastel palette */
+  background: linear-gradient(135deg,
+              hsl(45, 30%, 98%) 0%,
+              hsl(45, 30%, 94%) 40%,
+              hsl(45, 30%, 90%) 100%);
+  /* Subtle texture using a semi‑transparent SVG pattern */
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='2' fill='%23e0d5b5' opacity='0.15'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  background-blend-mode: overlay;
+
+  /* Slight rounded corners for a glass‑morphism feel */
+  border-radius: 12px;
+
+  /* Light inner shadow to lift the section off the page */
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.04),
+              0 4px 12px rgba(0,0,0,0.06);
+
+  /* Padding already defined by .section-padding, keep it */
+  padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+}
+
+/* Ensure the inner container stays centered */
+.chakras-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Optional: subtle animation on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .chakras-section {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
