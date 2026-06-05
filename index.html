@@ -150,13 +150,11 @@
           </p>
         </div>
 
-        <!-- Horizontal layout wrapper -->
-        <div class="chakras-horizontal-container">
-          <!-- Horizontal connecting line behind images -->
-          <div class="chakra-connecting-line"></div>
+        <!-- Vertical layout wrapper -->
+        <div class="chakras-vertical-container">
 
           <!-- Chakra 7: Crown (Sahasrara) -->
-          <div class="chakra-column crown" data-chakra="crown">
+          <div class="chakra-row crown" data-chakra="crown">
             <div class="chakra-img-wrapper">
               <img src="images/sahasrara_crown.png" alt="Sahasrara Crown Chakra" class="chakra-image">
             </div>
@@ -169,7 +167,7 @@
           </div>
 
           <!-- Chakra 6: Third Eye (Ajna) -->
-          <div class="chakra-column third-eye" data-chakra="third-eye">
+          <div class="chakra-row third-eye" data-chakra="third-eye">
             <div class="chakra-img-wrapper">
               <img src="images/ajna_thirdeye.png" alt="Ajna Third Eye Chakra" class="chakra-image">
             </div>
@@ -182,7 +180,7 @@
           </div>
 
           <!-- Chakra 5: Throat (Vishuddha) -->
-          <div class="chakra-column throat" data-chakra="throat">
+          <div class="chakra-row throat" data-chakra="throat">
             <div class="chakra-img-wrapper">
               <img src="images/vishuddha_throat.png" alt="Vishuddha Throat Chakra" class="chakra-image">
             </div>
@@ -195,7 +193,7 @@
           </div>
 
           <!-- Chakra 4: Heart (Anahata) -->
-          <div class="chakra-column heart" data-chakra="heart">
+          <div class="chakra-row heart" data-chakra="heart">
             <div class="chakra-img-wrapper">
               <img src="images/anahata_heart.png" alt="Anahata Heart Chakra" class="chakra-image">
             </div>
@@ -208,7 +206,7 @@
           </div>
 
           <!-- Chakra 3: Solar Plexus (Manipura) -->
-          <div class="chakra-column solar-plexus" data-chakra="solar-plexus">
+          <div class="chakra-row solar-plexus" data-chakra="solar-plexus">
             <div class="chakra-img-wrapper">
               <img src="images/manipura_solarplexus.png" alt="Manipura Solar Plexus Chakra" class="chakra-image">
             </div>
@@ -221,7 +219,7 @@
           </div>
 
           <!-- Chakra 2: Sacral (Svadhisthana) -->
-          <div class="chakra-column sacral" data-chakra="sacral">
+          <div class="chakra-row sacral" data-chakra="sacral">
             <div class="chakra-img-wrapper">
               <img src="images/svadhisthana_sacral.png" alt="Svadhisthana Sacral Chakra" class="chakra-image">
             </div>
@@ -234,7 +232,7 @@
           </div>
 
           <!-- Chakra 1: Root (Muladhara) -->
-          <div class="chakra-column root" data-chakra="root">
+          <div class="chakra-row root" data-chakra="root">
             <div class="chakra-img-wrapper">
               <img src="images/muladhara_root.png" alt="Muladhara Root Chakra" class="chakra-image">
             </div>
@@ -661,6 +659,18 @@
           class="designer-link">The Patterns Company</a>.</p>
     </div>
   </footer>
+
+  <!-- SVG Filter for Chakra Energy Vortex Displacement (creates wispy, turbulent energy flares) -->
+  <svg width="0" height="0" style="position: absolute; pointer-events: none; visibility: hidden;">
+    <defs>
+      <filter id="chakra-energy-vortex" x="-50%" y="-50%" width="200%" height="200%">
+        <!-- Turbulence creates organic fractal noise texture -->
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+        <!-- Displacement map warps the gradients based on the noise map to generate flame-like tendrils -->
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="35" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>

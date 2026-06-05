@@ -1038,7 +1038,12 @@ select {
   margin: 0 auto 50px auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
+}
+
+.section-header .hero-subtitle {
+  align-self: center;
 }
 
 .section-title {
@@ -1479,6 +1484,7 @@ select {
 .videos-header-container .section-header {
   text-align: left;
   margin: 0;
+  align-items: flex-start;
 }
 
 .videos-grid {
@@ -3516,32 +3522,37 @@ footer {
   }
 }
 
-/* --- CHAKRAS SECTION (HORIZONTAL) --- */
+/* --- CHAKRAS SECTION (VERTICAL ZIGZAG TIMELINE) --- */
 .chakras-section {
   background-color: var(--color-bg);
   position: relative;
   overflow: hidden;
 }
 
-.chakras-horizontal-container {
+.chakras-vertical-container {
   position: relative;
   display: flex;
-  justify-content: space-between;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 2.5rem; /* Neat, compact spacing */
   margin-top: 40px;
   padding: 40px 0;
   width: 100%;
+  max-width: 900px; /* Constrain max-width for a neat desktop layout */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Horizontal connecting line behind images */
-.chakra-connecting-line {
+/* Subtle vertical gradient timeline axis in the center */
+.chakras-vertical-container::before {
+  content: '';
   position: absolute;
-  top: 90px; /* Aligned with center of 100px images when container has 40px padding */
-  left: 5%;
-  right: 5%;
-  height: 3px;
+  top: 40px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
   background: linear-gradient(
-    to right,
+    to bottom,
     oklch(0.6 0.2 320) 0%,   /* Sahasrara - Violet */
     oklch(0.5 0.22 280) 16%, /* Ajna - Indigo */
     oklch(0.7 0.16 220) 33%, /* Vishuddha - Blue */
@@ -3550,218 +3561,360 @@ footer {
     oklch(0.65 0.22 50) 83%, /* Svadhisthana - Orange */
     oklch(0.6 0.25 20) 100%  /* Muladhara - Red */
   );
-  opacity: 0.6;
+  opacity: 0.25;
   z-index: 1;
-  border-radius: var(--border-radius-full);
 }
 
-.chakra-column {
-  flex: 1 1 0;
-  min-width: 0;
+.chakra-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 4rem; /* Gap between image and card */
   position: relative;
   z-index: 2;
+  width: 100%;
   transition: all 0.4s var(--transition-ease);
 }
 
-/* Image wrapper centered */
+/* Alternating flex direction on desktop */
+.chakra-row:nth-child(odd) {
+  flex-direction: row; /* Image on left, Card on right */
+}
+
+.chakra-row:nth-child(even) {
+  flex-direction: row-reverse; /* Card on left, Image on right */
+}
+
+/* Align cards text alignment based on their layout side */
+.chakra-row:nth-child(odd) .chakra-card-compact {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.chakra-row:nth-child(even) .chakra-card-compact {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Chakra Image Wrapper */
 .chakra-img-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 110px; /* Enlarged slightly for prominence */
+  height: 110px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--color-border);
-  background: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  /* Removed overflow: hidden to allow flowy smoke pseudo-elements to expand outside the border */
+  border: 4px solid var(--chakra-color); /* Thicker colored border */
+  background: transparent; /* Changed from white to transparent to prevent clipping the smoke behind it */
+  /* Intense glowing neon energy ring shadow */
+  box-shadow: 
+    0 0 15px var(--chakra-color),
+    0 0 30px var(--chakra-color-glow-strong),
+    inset 0 0 15px var(--chakra-color-glow-strong);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   z-index: 3;
-  margin-bottom: 1.5rem;
   padding: 5px;
+  flex-shrink: 0;
 }
 
 .chakra-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 50%; /* Make image round to contain the white background */
+  background: var(--color-white); /* White background moved here to act as a solid center mask */
+  position: relative;
+  z-index: 2; /* Ensure image draws over the smoky pseudo-elements */
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.chakra-index {
+/* Layered Smoky Energy Aura Pseudo-elements */
+.chakra-img-wrapper::before,
+.chakra-img-wrapper::after {
+  content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background: var(--color-text);
-  color: var(--color-white);
-  font-size: 0.68rem;
-  font-weight: 700;
-  width: 22px;
-  height: 22px;
+  top: -30px; /* Expanded further to let flares stretch out */
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--color-white);
-  transition: all 0.3s ease;
+  z-index: 1; /* Stays inside the wrapper's stacking context, but behind the image (z-index 2) */
+  opacity: 0;
+  /* Apply SVG turbulence/displacement filter for high-fidelity wispy energy flares */
+  filter: url(#chakra-energy-vortex) blur(6px);
+  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  pointer-events: none;
+  will-change: transform, border-radius;
 }
 
-/* Compact Card */
+/* Base smoky gradients using the chakra's theme color variables */
+.chakra-img-wrapper::before {
+  background: radial-gradient(circle, var(--chakra-color) 15%, var(--chakra-color-glow-strong) 45%, transparent 70%);
+}
+
+.chakra-img-wrapper::after {
+  background: radial-gradient(circle, var(--chakra-color-glow-strong) 10%, var(--chakra-color) 40%, transparent 68%);
+}
+
+/* Styled, Highly Compressed Card Container */
 .chakra-card-compact {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-md);
-  padding: 1.25rem 0.5rem;
+  padding: 0.8rem 1.1rem; /* Compressed padding */
   width: 100%;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
+  max-width: 260px; /* Compressed card width to highlight chakra circle size */
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03); /* Soft default shadow */
+  opacity: 0.92;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 230px;
-  flex-grow: 1;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .chakra-badge {
-  font-size: 0.58rem;
+  font-size: 0.58rem; /* Slightly smaller */
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--color-text-muted);
   background-color: var(--color-bg-secondary);
-  padding: 3px 6px;
+  padding: 2px 6px;
   border-radius: var(--border-radius-full);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
+  align-self: flex-start;
   transition: all var(--transition-speed) var(--transition-ease);
+}
+
+/* Adjust badge alignment on even rows (right-aligned card) */
+.chakra-row:nth-child(even) .chakra-badge {
+  align-self: flex-end;
 }
 
 .chakra-name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem; /* Compressed font size */
   color: var(--color-text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
   transition: all var(--transition-speed) var(--transition-ease);
 }
 
 .chakra-short-info {
-  font-size: 0.78rem;
+  font-size: 0.76rem; /* Compressed font size */
   color: var(--color-text-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   border-bottom: 1px dashed var(--color-border);
   width: 100%;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.15rem;
 }
 
 .chakra-desc {
-  font-size: 0.78rem;
+  font-size: 0.76rem; /* Compressed font size */
   color: var(--color-text-muted);
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
-/* Hover States & Custom Chakra Colors */
-.chakra-column.crown { --chakra-color: oklch(0.6 0.2 320); }
-.chakra-column.third-eye { --chakra-color: oklch(0.5 0.22 280); }
-.chakra-column.throat { --chakra-color: oklch(0.7 0.16 220); }
-.chakra-column.heart { --chakra-color: oklch(0.65 0.18 140); }
-.chakra-column.solar-plexus { --chakra-color: oklch(0.75 0.18 80); }
-.chakra-column.sacral { --chakra-color: oklch(0.65 0.22 50); }
-.chakra-column.root { --chakra-color: oklch(0.6 0.25 20); }
+/* Chakra theme colors & glow configurations */
+.chakra-row.crown {
+  --chakra-color: oklch(0.6 0.2 320);
+  --chakra-color-glow: oklch(0.6 0.2 320 / 0.18);
+  --chakra-color-glow-strong: oklch(0.6 0.2 320 / 0.5);
+  --chakra-color-trans: oklch(0.6 0.2 320 / 0);
+}
+.chakra-row.third-eye {
+  --chakra-color: oklch(0.5 0.22 280);
+  --chakra-color-glow: oklch(0.5 0.22 280 / 0.18);
+  --chakra-color-glow-strong: oklch(0.5 0.22 280 / 0.5);
+  --chakra-color-trans: oklch(0.5 0.22 280 / 0);
+}
+.chakra-row.throat {
+  --chakra-color: oklch(0.7 0.16 220);
+  --chakra-color-glow: oklch(0.7 0.16 220 / 0.18);
+  --chakra-color-glow-strong: oklch(0.7 0.16 220 / 0.5);
+  --chakra-color-trans: oklch(0.7 0.16 220 / 0);
+}
+.chakra-row.heart {
+  --chakra-color: oklch(0.65 0.18 140);
+  --chakra-color-glow: oklch(0.65 0.18 140 / 0.18);
+  --chakra-color-glow-strong: oklch(0.65 0.18 140 / 0.5);
+  --chakra-color-trans: oklch(0.65 0.18 140 / 0);
+}
+.chakra-row.solar-plexus {
+  --chakra-color: oklch(0.75 0.18 80);
+  --chakra-color-glow: oklch(0.75 0.18 80 / 0.18);
+  --chakra-color-glow-strong: oklch(0.75 0.18 80 / 0.5);
+  --chakra-color-trans: oklch(0.75 0.18 80 / 0);
+}
+.chakra-row.sacral {
+  --chakra-color: oklch(0.65 0.22 50);
+  --chakra-color-glow: oklch(0.65 0.22 50 / 0.18);
+  --chakra-color-glow-strong: oklch(0.65 0.22 50 / 0.5);
+  --chakra-color-trans: oklch(0.65 0.22 50 / 0);
+}
+.chakra-row.root {
+  --chakra-color: oklch(0.6 0.25 20);
+  --chakra-color-glow: oklch(0.6 0.25 20 / 0.18);
+  --chakra-color-glow-strong: oklch(0.6 0.25 20 / 0.5);
+  --chakra-color-trans: oklch(0.6 0.25 20 / 0);
+}
+
+/* Scroll-triggered flowy, smoky continuous animations */
+.chakra-row.active .chakra-img-wrapper::before {
+  opacity: 0.45; /* Lightened from 0.75 for a softer default look */
+  animation: smoke-flow-1 9s infinite linear;
+}
+
+.chakra-row.active .chakra-img-wrapper::after {
+  opacity: 0.35; /* Lightened from 0.65 for a softer default look */
+  animation: smoke-flow-2 6.5s infinite linear;
+}
+
+/* Organic morphing, rotating, and scaling keyframes for smoke */
+@keyframes smoke-flow-1 {
+  0% {
+    transform: rotate(0deg) scale(0.98);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  }
+  25% {
+    transform: rotate(90deg) scale(1.12);
+    border-radius: 52% 48% 30% 70% / 50% 62% 38% 50%;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    border-radius: 65% 35% 72% 28% / 50% 30% 70% 50%;
+  }
+  75% {
+    transform: rotate(270deg) scale(1.18);
+    border-radius: 30% 70% 45% 55% / 65% 35% 65% 35%;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.98);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  }
+}
+
+@keyframes smoke-flow-2 {
+  0% {
+    transform: rotate(360deg) scale(1.05);
+    border-radius: 50% 50% 50% 50%;
+  }
+  25% {
+    transform: rotate(270deg) scale(0.9);
+    border-radius: 38% 62% 28% 72% / 58% 48% 52% 42%;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    border-radius: 62% 38% 62% 38% / 38% 62% 38% 62%;
+  }
+  75% {
+    transform: rotate(90deg) scale(0.92);
+    border-radius: 28% 72% 48% 52% / 48% 38% 62% 48%;
+  }
+  100% {
+    transform: rotate(0deg) scale(1.05);
+    border-radius: 50% 50% 50% 50%;
+  }
+}
 
 @media (hover: hover) {
-  /* Dim non-hovered columns when container is hovered */
-  .chakras-horizontal-container:hover .chakra-column:not(:hover) {
-    opacity: 0.4;
-    transform: scale(0.96);
-    filter: grayscale(30%) blur(0.3px);
+  /* Dim other rows when hovering a row */
+  .chakras-vertical-container:hover .chakra-row:not(:hover) {
+    opacity: 0.5;
+    transform: scale(0.98);
+    filter: blur(0.2px);
   }
 
-  /* Elevate and scale the hovered column */
-  .chakra-column:hover {
-    transform: scale(1.05);
+  .chakra-row:hover {
     z-index: 10;
   }
 
-  /* Card hovered effects */
-  .chakra-column:hover .chakra-card-compact {
-    transform: translateY(-8px);
+  /* Reveal card and cast soft colored shadow on hover */
+  .chakra-row:hover .chakra-card-compact {
+    transform: translateY(-3px);
+    opacity: 1;
     border-color: var(--chakra-color);
-    box-shadow: 0 12px 28px var(--chakra-color);
+    box-shadow: 0 8px 20px var(--chakra-color-glow);
   }
 
-  /* Fallback box shadow opacity controls */
-  .chakra-column.crown:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.6 0.2 320 / 0.12); }
-  .chakra-column.third-eye:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.5 0.22 280 / 0.12); }
-  .chakra-column.throat:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.7 0.16 220 / 0.12); }
-  .chakra-column.heart:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.65 0.18 140 / 0.12); }
-  .chakra-column.solar-plexus:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.75 0.18 80 / 0.12); }
-  .chakra-column.sacral:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.65 0.22 50 / 0.12); }
-  .chakra-column.root:hover .chakra-card-compact { box-shadow: 0 12px 28px oklch(0.6 0.25 20 / 0.12); }
-
-  /* Hover effects for images & badge */
-  .chakra-column:hover .chakra-img-wrapper {
+/* Image interactions on hover (extra scaling and intense glow shadow) */
+  .chakra-row:hover .chakra-img-wrapper {
     border-color: var(--chakra-color);
-    transform: scale(1.1);
-    box-shadow: 0 0 25px var(--chakra-color), inset 0 0 15px rgba(255,255,255,0.4);
+    transform: scale(1.15); /* Pop the chakra circular image wrapper */
+    box-shadow: 
+      0 0 25px var(--chakra-color),
+      0 0 50px var(--chakra-color-glow-strong),
+      inset 0 0 20px var(--chakra-color-glow-strong);
   }
 
-  .chakra-column:hover .chakra-image {
-    transform: rotate(15deg) scale(1.08);
+  /* Intensify the smoke aura on hover */
+  .chakra-row:hover .chakra-img-wrapper::before {
+    opacity: 0.95;
+    filter: url(#chakra-energy-vortex) blur(4px); /* Slightly sharper flares on hover */
+    animation: smoke-flow-1 5s infinite linear; /* Faster rotation for intensified energetic look */
   }
 
-  .chakra-column:hover .chakra-index {
-    background: var(--chakra-color);
-    transform: scale(1.15);
-    box-shadow: 0 0 10px var(--chakra-color);
-    border-color: var(--chakra-color);
+  .chakra-row:hover .chakra-img-wrapper::after {
+    opacity: 0.85;
+    filter: url(#chakra-energy-vortex) blur(4px);
+    animation: smoke-flow-2 3.8s infinite linear;
   }
 
-  .chakra-column:hover .chakra-badge {
+  .chakra-row:hover .chakra-image {
+    transform: rotate(12deg) scale(1.08);
+  }
+
+  .chakra-row:hover .chakra-badge {
     background-color: var(--chakra-color);
     color: var(--color-white);
   }
 
-  .chakra-column:hover .chakra-name {
+  .chakra-row:hover .chakra-name {
     color: var(--chakra-color);
   }
 }
 
-/* Responsiveness - Scrollable slider on mobile / tablet */
-@media (max-width: 1200px) {
-  .chakra-connecting-line {
-    display: none; /* Hide line when layout scrolls */
-  }
-  
-  .chakras-horizontal-container {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scroll-snap-type: x mandatory;
-    padding: 40px 15px;
-    -webkit-overflow-scrolling: touch;
-    gap: 1.5rem;
-  }
-  
-  /* Styling horizontal scrollbars to look premium */
-  .chakras-horizontal-container::-webkit-scrollbar {
-    height: 6px;
-  }
-  .chakras-horizontal-container::-webkit-scrollbar-track {
-    background: var(--color-bg-secondary);
-    border-radius: var(--border-radius-full);
-  }
-  .chakras-horizontal-container::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: var(--border-radius-full);
-  }
-  .chakras-horizontal-container::-webkit-scrollbar-thumb:hover {
-    background: var(--color-text-muted);
+/* Responsiveness - Stacked Layout for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  .chakras-vertical-container::before {
+    left: 57.5px; /* Shift axis line to align with centers of 85px mobile images (15px padding + 42.5px center) */
+    transform: none;
+    top: 30px;
+    bottom: 30px;
   }
 
-  .chakra-column {
-    flex: 0 0 240px; /* Fixed width cards for sliding */
-    scroll-snap-align: center;
+  .chakras-vertical-container {
+    gap: 2rem;
+    padding: 20px 15px;
+  }
+
+  .chakra-row {
+    flex-direction: row !important; /* Force left-aligned layout on mobile */
+    gap: 1.25rem;
+    justify-content: flex-start;
+  }
+
+  .chakra-img-wrapper {
+    width: 85px; /* Chakra images size on mobile */
+    height: 85px;
+    border-width: 3px;
+  }
+
+  .chakra-card-compact {
+    max-width: 100%;
+    text-align: left !important;
+    align-items: flex-start !important;
+    padding: 0.8rem 1.1rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    border-radius: var(--border-radius-md);
+  }
+
+  .chakra-row:nth-child(even) .chakra-badge {
+    align-self: flex-start; /* Reset mobile badges to left-aligned */
+  }
+
+  .chakra-short-info {
+    text-align: left;
   }
 }
 
