@@ -813,7 +813,7 @@ select {
   padding: 6px 16px;
   border-radius: var(--border-radius-full);
   display: inline-block;
-  align-self: flex-start;
+  align-self: center;
 }
 
 /* --- YOGA SUTRA QUOTE --- */
@@ -1038,6 +1038,7 @@ select {
   margin: 0 auto 50px auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
