@@ -3524,7 +3524,8 @@ footer {
 
 /* --- CHAKRAS SECTION (VERTICAL ZIGZAG TIMELINE) --- */
 .chakras-section {
-  background-color: var(--color-bg);
+  background: linear-gradient(135deg, oklch(0.95 0.03 30) 0%, var(--color-bg) 100%),
+              url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ccircle cx=%2220%22 cy=%2220%22 r=%222%22 fill=%22rgba(255,255,255,0.15)%22/%3E%3C/svg%3E') repeat;
   position: relative;
   overflow: hidden;
 }
