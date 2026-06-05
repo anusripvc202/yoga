@@ -150,37 +150,33 @@ select {
 
 .classes-online-img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border-radius: var(--border-radius-lg);
   object-fit: cover;
-  max-height: 460px;
-  object-position: center top;
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-speed) var(--transition-ease);
 }
 
-.live-online-badge {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: var(--color-primary);
-  color: var(--color-white);
+.live-online-badge-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   padding: 8px 16px;
   border-radius: var(--border-radius-full);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: var(--shadow-sm);
-  z-index: 2;
+  margin-bottom: 1.25rem;
 }
 
-.live-online-badge span {
+.live-online-badge-container .live-dot {
   width: 8px;
   height: 8px;
-  background: #7fffb2;
+  background-color: #10B981;
   border-radius: 50%;
   display: inline-block;
   animation: pulse 1.5s infinite;
@@ -2624,12 +2620,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .live-online-badge {
-    top: auto;
-    bottom: 20px;
-    left: 20px;
-  }
-
   .yoga-sutra-quote {
     font-size: clamp(1.15rem, 4.5vw, 1.45rem);
     margin-top: 0.25rem;
