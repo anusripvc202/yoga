@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initGallery();
   initHeroVideoSound();
-  initChakraAutoScroll();
+  initChakraAnimations();
 });
 
 /**
@@ -524,58 +524,36 @@ function initHeroVideoSound() {
 }
 
 /**
- * Auto-scroll the chakras container slowly on mobile/tablet screens.
- * Automatically pauses on manual touch/interaction, restoring snapping.
+ * Scroll-triggered staggered animations for the chakras
  */
-function initChakraAutoScroll() {
-  const container = document.querySelector('.chakras-horizontal-container');
-  if (!container) return;
+function initChakraAnimations() {
+  const rows = document.querySelectorAll('.chakra-row');
+  if (!rows.length) return;
 
-  let scrollSpeed = 0.3; // Pixels per frame
-  let scrollDirection = 1; // 1 = right, -1 = left
-  let isUserInteracting = false;
-  let resumeTimeout = null;
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -12% 0px',
+    threshold: 0.15
+  };
 
-  function step() {
-    // Only auto-scroll on tablet/mobile screens (<= 1200px) when user is not touching it
-    if (window.innerWidth <= 1200 && !isUserInteracting) {
-      // Temporarily remove snap type for fluid JS auto-scroll
-      if (container.style.scrollSnapType !== 'none') {
-        container.style.scrollSnapType = 'none';
-      }
+  const observer = new IntersectionObserver((entries) => {
+    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+    
+    if (visibleEntries.length > 0) {
+      // Sort top-to-bottom for correct sequential order
+      visibleEntries.sort((a, b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top);
 
-      container.scrollLeft += scrollSpeed * scrollDirection;
-
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      if (scrollDirection === 1 && container.scrollLeft >= maxScroll - 1) {
-        scrollDirection = -1; // Reverse to left
-      } else if (scrollDirection === -1 && container.scrollLeft <= 1) {
-        scrollDirection = 1; // Reverse to right
-      }
+      visibleEntries.forEach((entry, index) => {
+        const row = entry.target;
+        if (!row.classList.contains('active')) {
+          setTimeout(() => {
+            row.classList.add('active');
+          }, index * 250);
+          observer.unobserve(row);
+        }
+      });
     }
-    requestAnimationFrame(step);
-  }
+  }, observerOptions);
 
-  function handleUserInteraction() {
-    isUserInteracting = true;
-    // Restore default scroll snapping for manual swipe feedback
-    container.style.scrollSnapType = '';
-
-    if (resumeTimeout) clearTimeout(resumeTimeout);
-    resumeTimeout = setTimeout(() => {
-      isUserInteracting = false;
-    }, 4000); // Resume after 4 seconds of inactivity
-  }
-
-  // Listeners to pause auto-scrolling during drag/swipe/scroll
-  container.addEventListener('touchstart', handleUserInteraction, { passive: true });
-  container.addEventListener('touchmove', handleUserInteraction, { passive: true });
-  container.addEventListener('mousedown', handleUserInteraction, { passive: true });
-  container.addEventListener('wheel', handleUserInteraction, { passive: true });
-
-  // Start the auto-scroll loop
-  step();
+  rows.forEach(row => observer.observe(row));
 }
-
-
-
