@@ -4482,6 +4482,10 @@ footer {
     padding-top: 0.75rem !important;
     gap: 8px !important;
   }
+  .specialty-highlight-card {
+    margin-top: 0.75rem !important;
+    padding: 8px 14px !important;
+  }
 
   /* Homepage: Client testimonials section - all 3 videos in one line */
   .videos-grid {
