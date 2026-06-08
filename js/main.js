@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initHeroVideoSound();
   initChakraAnimations();
+  initVideoTestimonials();
 });
 
 /**
@@ -556,4 +557,45 @@ function initChakraAnimations() {
   }, observerOptions);
 
   rows.forEach(row => observer.observe(row));
+}
+
+/**
+ * Testimonial Videos - Playback control and aesthetic transitions
+ */
+function initVideoTestimonials() {
+  const cards = document.querySelectorAll('.testimonial-video-card');
+  const videos = document.querySelectorAll('.testimonial-video-card video');
+
+  videos.forEach(video => {
+    const card = video.closest('.testimonial-video-card');
+    if (!card) return;
+
+    // Play event listener
+    video.addEventListener('play', () => {
+      // Pause all other videos
+      videos.forEach(otherVideo => {
+        if (otherVideo !== video) {
+          otherVideo.pause();
+        }
+      });
+      
+      // Add playing class to this card, remove from others
+      cards.forEach(c => {
+        if (c === card) {
+          c.classList.add('playing');
+        } else {
+          c.classList.remove('playing');
+        }
+      });
+    });
+
+    // Pause/Ended listeners
+    video.addEventListener('pause', () => {
+      card.classList.remove('playing');
+    });
+
+    video.addEventListener('ended', () => {
+      card.classList.remove('playing');
+    });
+  });
 }
