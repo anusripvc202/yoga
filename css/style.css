@@ -4513,10 +4513,10 @@ footer {
     padding: 8px 14px !important;
   }
 
-  /* Homepage: Client testimonials section - all 3 videos in one line */
+  /* Homepage: Client testimonials section - all 4 videos in one line */
   .videos-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.25rem !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem !important;
   }
   .testimonial-video-wrapper {
     height: 240px !important;
@@ -4686,5 +4686,9 @@ footer {
   .paths-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
+  }
+  .videos-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2rem !important;
   }
 }
