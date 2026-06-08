@@ -1630,7 +1630,7 @@ select {
   overflow: hidden;
 }
 
-/* Card 1 - Sakshi Maheshwari: Sage tint */
+/* Card 1 - Sonali Gupta: Sage tint */
 .testimonial-card:nth-child(1) {
   background: linear-gradient(135deg, oklch(0.97 0.02 145) 0%, oklch(0.95 0.04 145) 100%);
   border-color: oklch(0.78 0.09 140 / 0.15);
@@ -1643,7 +1643,7 @@ select {
   border-color: oklch(0.65 0.08 140);
 }
 
-/* Card 2 - Shikha Kumari: Terracotta tint */
+/* Card 2 - Yavanika: Terracotta tint */
 .testimonial-card:nth-child(2) {
   background: linear-gradient(135deg, oklch(0.97 0.02 45) 0%, oklch(0.94 0.04 45) 100%);
   border-color: oklch(0.72 0.16 45 / 0.15);
@@ -1656,7 +1656,7 @@ select {
   border-color: var(--color-primary-hover);
 }
 
-/* Card 3 - Melissa D'Souza: Gold tint */
+/* Card 3 - Priyanka: Gold tint */
 .testimonial-card:nth-child(3) {
   background: linear-gradient(135deg, oklch(0.97 0.02 75) 0%, oklch(0.94 0.04 75) 100%);
   border-color: oklch(0.82 0.13 75 / 0.15);
@@ -1876,12 +1876,15 @@ select {
 .testimonial-video-wrapper video:fullscreen {
   object-fit: contain !important;
 }
+
 .testimonial-video-wrapper video:-webkit-full-screen {
   object-fit: contain !important;
 }
+
 .testimonial-video-wrapper video:-moz-full-screen {
   object-fit: contain !important;
 }
+
 .testimonial-video-wrapper video:-ms-fullscreen {
   object-fit: contain !important;
 }
@@ -4444,21 +4447,26 @@ footer {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
   }
+
   .paths-grid .path-content {
     padding: 1rem !important;
     gap: 0.5rem !important;
   }
+
   .paths-grid .path-card h3 {
     font-size: 1.15rem !important;
   }
+
   .paths-grid .path-desc {
     font-size: 0.8rem !important;
     line-height: 1.4 !important;
   }
+
   .paths-grid .path-tags {
     padding-top: 0.5rem !important;
     gap: 6px !important;
   }
+
   .paths-grid .tag {
     padding: 2px 8px !important;
     font-size: 0.7rem !important;
@@ -4469,45 +4477,55 @@ footer {
    NEST HUB LAYOUT OVERRIDES (min-width: 769px) and (max-width: 1024px)
    ========================================================================== */
 @media (min-width: 769px) and (max-width: 1024px) {
+
   /* Homepage: Meet your yoga guide section - photo left, content right */
   section.bg-secondary-section:has(.guide-section) {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
+
   .guide-section {
     grid-template-columns: 0.9fr 1.1fr !important;
     gap: 2.5rem !important;
     align-items: center !important;
     text-align: left !important;
   }
+
   .guide-images div {
     max-width: 250px !important;
     aspect-ratio: 1 / 1.1 !important;
   }
+
   .guide-images img {
     object-position: center top !important;
   }
+
   .guide-content {
     align-items: flex-start !important;
     text-align: left !important;
   }
+
   .guide-content .hero-subtitle {
     align-self: flex-start !important;
   }
+
   .guide-content h2.section-title {
     font-size: 2rem !important;
     margin-bottom: 0.5rem !important;
   }
+
   .guide-content p {
     font-size: 0.95rem !important;
     margin-bottom: 0.5rem !important;
     line-height: 1.5 !important;
   }
+
   .guide-specs {
     margin-top: 0.75rem !important;
     padding-top: 0.75rem !important;
     gap: 8px !important;
   }
+
   .specialty-highlight-card {
     margin-top: 0.75rem !important;
     padding: 8px 14px !important;
@@ -4518,6 +4536,7 @@ footer {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1rem !important;
   }
+
   .testimonial-video-wrapper {
     height: 240px !important;
   }
@@ -4527,9 +4546,11 @@ footer {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1rem !important;
   }
+
   .benefit-card {
     padding: 1.5rem 1.25rem !important;
   }
+
   .benefit-card h3 {
     font-size: 1.15rem !important;
   }
@@ -4539,35 +4560,44 @@ footer {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
   }
+
   #wellness-paths-section .section-header {
     margin-bottom: 1.5rem !important;
   }
+
   #wellness-paths-section h2.section-title {
     font-size: 1.8rem !important;
   }
+
   #wellness-paths-section .section-subtitle {
     font-size: 0.9rem !important;
     margin-top: 0.25rem !important;
   }
+
   .paths-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 0.75rem !important;
   }
+
   .paths-grid .path-card h3 {
     font-size: 1.15rem !important;
   }
+
   .paths-grid .path-content {
     padding: 1rem !important;
     gap: 0.5rem !important;
   }
+
   .paths-grid .path-desc {
     font-size: 0.8rem !important;
     line-height: 1.4 !important;
   }
+
   .paths-grid .path-tags {
     padding-top: 0.5rem !important;
     gap: 4px !important;
   }
+
   .paths-grid .tag {
     padding: 2px 8px !important;
     font-size: 0.7rem !important;
@@ -4588,11 +4618,13 @@ footer {
     padding-bottom: 1.5rem !important;
     box-sizing: border-box !important;
   }
+
   .classes-online-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 2.5rem !important;
     width: 100% !important;
   }
+
   .classes-online-img {
     width: auto !important;
     max-width: 100% !important;
@@ -4602,19 +4634,24 @@ footer {
     display: block !important;
     margin: 0 auto !important;
   }
-  .classes-online-grid > div:last-child {
+
+  .classes-online-grid>div:last-child {
     gap: 0.75rem !important;
   }
+
   .classes-online-grid h2.section-title {
     font-size: 1.8rem !important;
   }
+
   .classes-online-grid p {
     font-size: 0.9rem !important;
     line-height: 1.5 !important;
   }
+
   .classes-online-grid ul {
     gap: 0.4rem !important;
   }
+
   .classes-online-grid li {
     font-size: 0.85rem !important;
   }
@@ -4625,10 +4662,12 @@ footer {
     gap: 3rem !important;
     text-align: left !important;
   }
+
   .hero-right-content {
     align-items: flex-start !important;
     text-align: left !important;
   }
+
   .hero-badge-row {
     justify-content: flex-start !important;
   }
@@ -4644,6 +4683,7 @@ footer {
    DESKTOP CLASSES PAGE HEIGHT CONSTRAINTS (min-width: 1025px)
    ========================================================================== */
 @media (min-width: 1025px) {
+
   /* Classes page: Enroll in live online classes - fit on single screen on desktop */
   section:has(.classes-online-grid) {
     min-height: calc(100vh - 80px) !important;
@@ -4653,40 +4693,50 @@ footer {
     padding-bottom: 2rem !important;
     box-sizing: border-box !important;
   }
+
   .classes-online-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 4rem !important;
     width: 100% !important;
   }
+
   .classes-online-img {
     width: auto !important;
     max-width: 100% !important;
-    max-height: 520px !important; /* larger uncropped image size for desktop views */
+    max-height: 520px !important;
+    /* larger uncropped image size for desktop views */
     aspect-ratio: 4 / 5.5 !important;
     object-fit: cover !important;
     display: block !important;
     margin: 0 auto !important;
   }
-  .classes-online-grid > div:last-child {
+
+  .classes-online-grid>div:last-child {
     gap: 1.5rem !important;
   }
+
   .classes-online-grid h2.section-title {
     font-size: 2.5rem !important;
   }
+
   .classes-online-grid p {
     font-size: 1.05rem !important;
     line-height: 1.7 !important;
   }
+
   .classes-online-grid ul {
     gap: 0.75rem !important;
   }
+
   .classes-online-grid li {
     font-size: 1rem !important;
   }
+
   .paths-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
   }
+
   .videos-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 2rem !important;
