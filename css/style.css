@@ -161,6 +161,7 @@ select {
 
 .classes-online-grid>div:first-child {
   width: 100%;
+  text-align: center !important;
 }
 
 .live-online-badge-container {
@@ -4435,5 +4436,188 @@ footer {
   .benefit-list li {
     font-size: 0.8rem;
     gap: 6px;
+  }
+}
+
+/* ==========================================================================
+   NEST HUB LAYOUT OVERRIDES (min-width: 769px) and (max-width: 1024px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Homepage: Meet your yoga guide section - photo left, content right */
+  section.bg-secondary-section:has(.guide-section) {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .guide-section {
+    grid-template-columns: 0.9fr 1.1fr !important;
+    gap: 2.5rem !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .guide-images div {
+    max-width: 250px !important;
+    aspect-ratio: 1 / 1.1 !important;
+  }
+  .guide-images img {
+    object-position: center top !important;
+  }
+  .guide-content {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .guide-content .hero-subtitle {
+    align-self: flex-start !important;
+  }
+  .guide-content h2.section-title {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .guide-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.5 !important;
+  }
+  .guide-specs {
+    margin-top: 0.75rem !important;
+    padding-top: 0.75rem !important;
+    gap: 8px !important;
+  }
+
+  /* Homepage: Client testimonials section - all 3 videos in one line */
+  .videos-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .testimonial-video-wrapper {
+    height: 240px !important;
+  }
+
+  /* Homepage: Benefits section - 4 cards in one line */
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem !important;
+  }
+  .benefit-card {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .benefit-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  /* Classes page: Tailored wellness paths - all 3 cards in one line */
+  .paths-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Gallery page: 3 columns in one line */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Classes page: Enroll in live online classes - fit on single screen for Nest Hub */
+  section:has(.classes-online-grid) {
+    min-height: calc(100vh - 80px) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+  .classes-online-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+  }
+  .classes-online-img {
+    width: auto !important;
+    max-width: 100% !important;
+    max-height: 280px !important;
+    aspect-ratio: 4 / 5.5 !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  .classes-online-grid > div:last-child {
+    gap: 0.75rem !important;
+  }
+  .classes-online-grid h2.section-title {
+    font-size: 1.8rem !important;
+  }
+  .classes-online-grid p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  .classes-online-grid ul {
+    gap: 0.4rem !important;
+  }
+  .classes-online-grid li {
+    font-size: 0.85rem !important;
+  }
+
+  /* About page: hero photo left, content right */
+  .hero-grid-custom {
+    grid-template-columns: 0.9fr 1.1fr !important;
+    gap: 3rem !important;
+    text-align: left !important;
+  }
+  .hero-right-content {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .hero-badge-row {
+    justify-content: flex-start !important;
+  }
+
+  /* Footer: all 3 columns in one row */
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.5fr !important;
+    gap: 2rem !important;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP CLASSES PAGE HEIGHT CONSTRAINTS (min-width: 1025px)
+   ========================================================================== */
+@media (min-width: 1025px) {
+  /* Classes page: Enroll in live online classes - fit on single screen on desktop */
+  section:has(.classes-online-grid) {
+    min-height: calc(100vh - 80px) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    box-sizing: border-box !important;
+  }
+  .classes-online-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4rem !important;
+    width: 100% !important;
+  }
+  .classes-online-img {
+    width: auto !important;
+    max-width: 100% !important;
+    max-height: 520px !important; /* larger uncropped image size for desktop views */
+    aspect-ratio: 4 / 5.5 !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  .classes-online-grid > div:last-child {
+    gap: 1.5rem !important;
+  }
+  .classes-online-grid h2.section-title {
+    font-size: 2.5rem !important;
+  }
+  .classes-online-grid p {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+  }
+  .classes-online-grid ul {
+    gap: 0.75rem !important;
+  }
+  .classes-online-grid li {
+    font-size: 1rem !important;
   }
 }

@@ -104,6 +104,10 @@
       object-fit: cover;
     }
 
+    .about-hero .hero-subtitle {
+      align-self: center !important;
+    }
+
     .bio-paragraph {
       font-size: 1.05rem;
       line-height: 1.8;
@@ -371,6 +375,43 @@
         font-size: 0.8rem;
         line-height: 1.4;
         text-align: left;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero-grid-custom {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 3rem;
+        text-align: left;
+      }
+
+      .hero-right-content {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .hero-badge-row {
+        justify-content: flex-start;
+      }
+
+      .about-hero {
+        padding: 1.5rem 0 !important;
+      }
+
+      .oval-image-frame {
+        max-width: 330px !important;
+        aspect-ratio: 1 / 1.15 !important;
+      }
+
+      .oval-image-frame img {
+        object-position: center top !important;
+        object-fit: cover !important;
+      }
+
+      .disorder-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.25rem !important;
+        margin-top: 2rem !important;
       }
     }
   </style>
