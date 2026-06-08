@@ -904,6 +904,182 @@ select {
   animation: bounce-dot 1.6s ease-in-out infinite;
 }
 
+/* =========================
+   YOUTUBE VIDEOS SECTION
+========================= */
+
+.videos-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.video-card {
+  text-align: center;
+}
+
+.video-thumbnail-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.video-thumbnail-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.video-title {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.btn.btn-secondary {
+  white-space: nowrap;
+}
+
+/* =========================
+   LAPTOP
+========================= */
+@media (max-width: 1200px) {
+
+  .videos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+
+  .videos-header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-header {
+    text-align: center;
+  }
+
+  .section-title,
+  .section-subtitle {
+    text-align: center;
+  }
+
+  .btn.btn-secondary {
+    margin: 0 auto;
+  }
+
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .videos-header-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .section-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .video-card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .video-title {
+    font-size: 17px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .btn.btn-secondary {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  .video-title {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .videos-grid {
+    gap: 24px;
+  }
+
+  .btn.btn-secondary {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+}
+
+
+
+
 @keyframes bounce-dot {
 
   0%,
