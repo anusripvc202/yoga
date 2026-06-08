@@ -358,9 +358,8 @@ function initGallery() {
 }
 
 /**
- * Hero Ambient Music — Indian Yoga Soundscape (Web Audio API)
- * Layered tanpura-style drone + temple bell arpeggios + singing bowl resonance.
- * No external files · No YouTube · Zero ads.
+ * Hero Background Music Player
+ * Plays a calm soothing background music track (bg_music.mp3) with premium volume fades.
  */
 function initHeroVideoSound() {
   const btn         = document.getElementById('hero-sound-btn');
@@ -369,153 +368,64 @@ function initHeroVideoSound() {
   const label       = document.getElementById('sound-label');
   if (!btn) return;
 
-  let audioCtx   = null;
-  let masterGain = null;
-  let sources    = [];
-  let bellTimer  = null;
-  let isPlaying  = false;
+  const bgMusic = new Audio('videos/bg_music.mp3');
+  bgMusic.loop = true;
+  bgMusic.volume = 0; // Starts muted to allow soft fade-in
 
-  /* Long reverb impulse (cathedral-style) */
-  function makeReverb(ctx, seconds, decay) {
-    const len    = ctx.sampleRate * seconds;
-    const buf    = ctx.createBuffer(2, len, ctx.sampleRate);
-    for (let c = 0; c < 2; c++) {
-      const d = buf.getChannelData(c);
-      for (let i = 0; i < len; i++) {
-        d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
+  let isPlaying = false;
+  let fadeInterval = null;
+
+  function fadeVolume(targetVolume, durationMs, callback) {
+    clearInterval(fadeInterval);
+    const startVolume = bgMusic.volume;
+    const step = 0.05;
+    const diff = targetVolume - startVolume;
+    if (Math.abs(diff) < 0.01) {
+      bgMusic.volume = targetVolume;
+      if (callback) callback();
+      return;
+    }
+
+    const stepsCount = Math.ceil(Math.abs(diff) / step);
+    const intervalTime = durationMs / stepsCount;
+
+    fadeInterval = setInterval(() => {
+      if (diff > 0) {
+        bgMusic.volume = Math.min(targetVolume, bgMusic.volume + step);
+      } else {
+        bgMusic.volume = Math.max(targetVolume, bgMusic.volume - step);
       }
-    }
-    const node = ctx.createConvolver();
-    node.buffer = buf;
-    return node;
-  }
 
-  /* Drone oscillator (sine/triangle) with slow fade-in */
-  function addDrone(ctx, dest, freq, type, vol, detuneCents) {
-    const osc  = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = type;
-    osc.frequency.value = freq;
-    osc.detune.value    = detuneCents || 0;
-    gain.gain.setValueAtTime(0, ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(vol, ctx.currentTime + 5);
-    osc.connect(gain);
-    gain.connect(dest);
-    osc.start();
-    sources.push({ osc, gain });
-  }
-
-  /* Single temple-bell strike using decaying sinusoids */
-  function strikeBell(ctx, dest, freq, vol) {
-    const t    = ctx.currentTime;
-    const osc  = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type            = 'sine';
-    osc.frequency.value = freq;
-    gain.gain.setValueAtTime(vol, t);
-    gain.gain.exponentialRampToValueAtTime(0.0001, t + 4.5);
-    osc.connect(gain);
-    gain.connect(dest);
-    osc.start(t);
-    osc.stop(t + 5);
-    // Overtone shimmer
-    const osc2  = ctx.createOscillator();
-    const gain2 = ctx.createGain();
-    osc2.type             = 'sine';
-    osc2.frequency.value  = freq * 2.756; // Tibetan bowl overtone ratio
-    gain2.gain.setValueAtTime(vol * 0.3, t);
-    gain2.gain.exponentialRampToValueAtTime(0.0001, t + 2.8);
-    osc2.connect(gain2);
-    gain2.connect(dest);
-    osc2.start(t);
-    osc2.stop(t + 3);
-  }
-
-  /* Indian pentatonic scale: Sa Re Ga Pa Dha (C D E G A) */
-  const bellNotes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
-
-  function scheduleBells(ctx, dest) {
-    let noteIdx = 0;
-    function next() {
-      if (!isPlaying) return;
-      const freq  = bellNotes[noteIdx % bellNotes.length];
-      strikeBell(ctx, dest, freq, 0.18);
-      noteIdx++;
-      /* Random gap between 3.5 and 8 seconds for a meditative feel */
-      const gap = 3500 + Math.random() * 4500;
-      bellTimer = setTimeout(next, gap);
-    }
-    bellTimer = setTimeout(next, 1500); // first bell after 1.5s
-  }
-
-  function startAmbient() {
-    audioCtx   = new (window.AudioContext || window.webkitAudioContext)();
-    masterGain = audioCtx.createGain();
-    masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
-    masterGain.gain.linearRampToValueAtTime(0.5, audioCtx.currentTime + 5);
-
-    // Reverb chain
-    const reverb     = makeReverb(audioCtx, 6, 2.8);
-    const revGain    = audioCtx.createGain();
-    revGain.gain.value = 0.45;
-    masterGain.connect(reverb);
-    reverb.connect(revGain);
-    revGain.connect(audioCtx.destination);
-    masterGain.connect(audioCtx.destination);
-
-    // ── Tanpura-style Drone ──────────────────────────────
-    // Sa  (C2 = 65.41 Hz) — root
-    addDrone(audioCtx, masterGain, 65.41,  'sine',     0.50,  0);
-    addDrone(audioCtx, masterGain, 65.41,  'sine',     0.22,  +4);  // binaural beat
-    // Pa  (G2 = 98.00 Hz) — 5th
-    addDrone(audioCtx, masterGain, 98.00,  'sine',     0.30,  -3);
-    // Sa octave (C3 = 130.81 Hz)
-    addDrone(audioCtx, masterGain, 130.81, 'sine',     0.18,  +2);
-    // Ma  (F3 = 174.61 Hz) — 4th, warm pad
-    addDrone(audioCtx, masterGain, 174.61, 'triangle', 0.10,  0);
-    // Airy Sa high (C5 = 523.25 Hz) — very soft shimmer
-    addDrone(audioCtx, masterGain, 523.25, 'sine',     0.022, -5);
-
-    // Slow breathing LFO (0.05 Hz ≈ 1 breath per 20s)
-    const lfo     = audioCtx.createOscillator();
-    const lfoGain = audioCtx.createGain();
-    lfo.type            = 'sine';
-    lfo.frequency.value = 0.05;
-    lfoGain.gain.value  = 0.06;
-    lfo.connect(lfoGain);
-    lfoGain.connect(masterGain.gain);
-    lfo.start();
-    sources.push({ osc: lfo, gain: lfoGain });
-
-    // ── Temple Bell Arpeggios ─────────────────────────────
-    scheduleBells(audioCtx, masterGain);
-  }
-
-  function stopAmbient() {
-    if (!audioCtx) return;
-    clearTimeout(bellTimer);
-    isPlaying = false;
-    const now = audioCtx.currentTime;
-    masterGain.gain.setValueAtTime(masterGain.gain.value, now);
-    masterGain.gain.linearRampToValueAtTime(0, now + 2.5);
-    setTimeout(() => {
-      sources.forEach(({ osc }) => { try { osc.stop(); } catch(e) {} });
-      sources = [];
-      audioCtx.close();
-      audioCtx = null;
-    }, 2800);
+      if (Math.abs(bgMusic.volume - targetVolume) < 0.01) {
+        bgMusic.volume = targetVolume;
+        clearInterval(fadeInterval);
+        if (callback) callback();
+      }
+    }, intervalTime);
   }
 
   btn.addEventListener('click', () => {
     if (!isPlaying) {
-      isPlaying = true;
-      startAmbient();
-      if (iconMuted)   iconMuted.style.display   = 'none';
-      if (iconUnmuted) iconUnmuted.style.display = 'inline';
-      if (label)       label.textContent         = '🎵 Stop Music';
-      btn.classList.add('playing');
+      // Set volume to 0 and play, then fade in to 0.35 (soothing volume)
+      bgMusic.volume = 0;
+      bgMusic.play().then(() => {
+        isPlaying = true;
+        fadeVolume(0.35, 1500);
+
+        if (iconMuted)   iconMuted.style.display   = 'none';
+        if (iconUnmuted) iconUnmuted.style.display = 'inline';
+        if (label)       label.textContent         = '🎵 Stop Music';
+        btn.classList.add('playing');
+      }).catch(err => {
+        console.error('Audio play failed:', err);
+      });
     } else {
-      stopAmbient();
+      // Fade out to 0, then pause
+      fadeVolume(0, 1000, () => {
+        bgMusic.pause();
+        isPlaying = false;
+      });
+
       if (iconMuted)   iconMuted.style.display   = 'inline';
       if (iconUnmuted) iconUnmuted.style.display = 'none';
       if (label)       label.textContent         = '🎵 Play Music';
