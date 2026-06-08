@@ -8,6 +8,14 @@
   <meta name="description"
     content="Explore India's leading wellness programs at Aarogya. Choose from Daily Yoga Plans, Face Yoga Plans, and specialized Women Wellness programs.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    @media (min-width: 768px) {
+      .mobile-only-btn {
+        opacity: 0.5 !important;
+        cursor: not-allowed !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -278,15 +286,28 @@
                 </div>
               </div>
 
-              <a href="https://wa.me/919985928227?text=Hi%20Shravanthi%2C%20I%20have%20a%20query%20regarding%20the%20Advanced%20and%20Intense%20Yoga%20(Online%20%26%20Offline)%20Batch%20-%20%E2%82%B92999%2Fmonth"
-                target="_blank" class="btn btn-primary"
-                style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); margin-top: auto;">
-                <span>For Queries</span>
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.136 8.136 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24c-1.45 0-2.88-.38-4.12-1.11l-.3-.17l-3.07.8l.82-2.99l-.19-.3A8.178 8.178 0 0 1 3.73 11.9c0-4.53 3.7-8.23 8.24-8.23m-3.8 3.51c-.2-.04-.43-.04-.62.15c-.19.18-.74.73-.74 1.79c0 1.06.77 2.08.88 2.23c.1.15 1.5 2.29 3.64 3.22c.51.22.9.36 1.21.46c.51.16.98.14 1.35.08c.41-.06 1.27-.52 1.45-1.02c.18-.5.18-.93.13-1.02c-.05-.09-.18-.14-.38-.24c-.2-.1-1.18-.58-1.37-.65c-.18-.07-.32-.1-.46.1c-.14.2-.54.68-.66.82c-.12.14-.24.16-.44.06c-.2-.1-.84-.31-1.59-.98c-.59-.52-.98-1.17-1.1-1.37c-.12-.2-.01-.31.09-.41c.09-.09.2-.24.3-.36c.1-.12.13-.2.2-.33c.07-.14.03-.26-.02-.36c-.05-.1-.46-1.11-.63-1.52z" />
-                </svg>
-              </a>
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
+                <a href="https://wa.me/919985928227?text=Hi%20Shravanthi%2C%20I%20have%20a%20query%20regarding%20the%20Advanced%20and%20Intense%20Yoga%20(Online%20%26%20Offline)%20Batch%20-%20%E2%82%B92999%2Fmonth"
+                  target="_blank" class="btn"
+                  style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); border: 1px solid var(--color-primary); color: var(--color-primary); text-decoration: none; background: transparent;">
+                  <span>For Queries</span>
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.136 8.136 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24c-1.45 0-2.88-.38-4.12-1.11l-.3-.17l-3.07.8l.82-2.99l-.19-.3A8.178 8.178 0 0 1 3.73 11.9c0-4.53 3.7-8.23 8.24-8.23m-3.8 3.51c-.2-.04-.43-.04-.62.15c-.19.18-.74.73-.74 1.79c0 1.06.77 2.08.88 2.23c.1.15 1.5 2.29 3.64 3.22c.51.22.9.36 1.21.46c.51.16.98.14 1.35.08c.41-.06 1.27-.52 1.45-1.02c.18-.5.18-.93.13-1.02c-.05-.09-.18-.14-.38-.24c-.2-.1-1.18-.58-1.37-.65c-.18-.07-.32-.1-.46.1c-.14.2-.54.68-.66.82c-.12.14-.24.16-.44.06c-.2-.1-.84-.31-1.59-.98c-.59-.52-.98-1.17-1.1-1.37c-.12-.2-.01-.31.09-.41c.09-.09.2-.24.3-.36c.1-.12.13-.2.2-.33c.07-.14.03-.26-.02-.36c-.05-.1-.46-1.11-.63-1.52z" />
+                  </svg>
+                </a>
+                <button
+                  onclick="handlePayment('upi://pay?pa=9985928227@ybl&pn=Aarogya+Yoga&am=2999&cu=INR&tn=Advanced+Yoga', 'https://chat.whatsapp.com/ERTMfjpmRmRKPj04SUie7L')"
+                  class="btn btn-primary mobile-only-btn"
+                  style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer; border: none; font-family: inherit; font-size: 1rem;">
+                  <span>Pay & Enroll</span>
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
             </div>
 
             <!-- Right Side: Inclusions & Benefits Prospectus -->
@@ -429,7 +450,7 @@
 
                 <div style="display: flex; align-items: baseline; margin-bottom: 1.5rem; gap: 0.25rem;">
                   <span
-                    style="font-size: 2.6rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-serif);">₹1,599</span>
+                    style="font-size: 2.6rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-serif);">₹1</span>
                   <span style="font-size: 0.95rem; color: var(--color-text-muted);">/ month</span>
                 </div>
 
@@ -453,15 +474,28 @@
                 </div>
               </div>
 
-              <a href="https://wa.me/919985928227?text=Hi%20Shravanthi%2C%20I%20have%20a%20query%20regarding%20the%20Beginners%20Yoga%20(Online)%20Batch%20(6%3A00%20PM%20%E2%80%93%207%3A00%20PM%20-%20%E2%82%B91599%2Fmonth)"
-                target="_blank" class="btn btn-primary"
-                style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); margin-top: auto;">
-                <span>For Queries</span>
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.136 8.136 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24c-1.45 0-2.88-.38-4.12-1.11l-.3-.17l-3.07.8l.82-2.99l-.19-.3A8.178 8.178 0 0 1 3.73 11.9c0-4.53 3.7-8.23 8.24-8.23m-3.8 3.51c-.2-.04-.43-.04-.62.15c-.19.18-.74.73-.74 1.79c0 1.06.77 2.08.88 2.23c.1.15 1.5 2.29 3.64 3.22c.51.22.9.36 1.21.46c.51.16.98.14 1.35.08c.41-.06 1.27-.52 1.45-1.02c.18-.5.18-.93.13-1.02c-.05-.09-.18-.14-.38-.24c-.2-.1-1.18-.58-1.37-.65c-.18-.07-.32-.1-.46.1c-.14.2-.54.68-.66.82c-.12.14-.24.16-.44.06c-.2-.1-.84-.31-1.59-.98c-.59-.52-.98-1.17-1.1-1.37c-.12-.2-.01-.31.09-.41c.09-.09.2-.24.3-.36c.1-.12.13-.2.2-.33c.07-.14.03-.26-.02-.36c-.05-.1-.46-1.11-.63-1.52z" />
-                </svg>
-              </a>
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
+                <a href="https://wa.me/919985928227?text=Hi%20Shravanthi%2C%20I%20have%20a%20query%20regarding%20the%20Beginners%20Yoga%20(Online)%20Batch%20(6%3A00%20PM%20%E2%80%93%207%3A00%20PM%20-%20%E2%82%B91599%2Fmonth)"
+                  target="_blank" class="btn"
+                  style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); border: 1px solid var(--color-primary); color: var(--color-primary); text-decoration: none; background: transparent;">
+                  <span>For Queries</span>
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.136 8.136 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24c-1.45 0-2.88-.38-4.12-1.11l-.3-.17l-3.07.8l.82-2.99l-.19-.3A8.178 8.178 0 0 1 3.73 11.9c0-4.53 3.7-8.23 8.24-8.23m-3.8 3.51c-.2-.04-.43-.04-.62.15c-.19.18-.74.73-.74 1.79c0 1.06.77 2.08.88 2.23c.1.15 1.5 2.29 3.64 3.22c.51.22.9.36 1.21.46c.51.16.98.14 1.35.08c.41-.06 1.27-.52 1.45-1.02c.18-.5.18-.93.13-1.02c-.05-.09-.18-.14-.38-.24c-.2-.1-1.18-.58-1.37-.65c-.18-.07-.32-.1-.46.1c-.14.2-.54.68-.66.82c-.12.14-.24.16-.44.06c-.2-.1-.84-.31-1.59-.98c-.59-.52-.98-1.17-1.1-1.37c-.12-.2-.01-.31.09-.41c.09-.09.2-.24.3-.36c.1-.12.13-.2.2-.33c.07-.14.03-.26-.02-.36c-.05-.1-.46-1.11-.63-1.52z" />
+                  </svg>
+                </a>
+                <button
+                  onclick="handlePayment('upi://pay?pa=9985928227@ybl&pn=Aarogya+Yoga&am=1599&cu=INR&tn=Beginners+Yoga', 'https://chat.whatsapp.com/CdXJoqqgZu476P5oJlkgb5')"
+                  class="btn btn-primary mobile-only-btn"
+                  style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer; border: none; font-family: inherit; font-size: 1rem;">
+                  <span>Pay & Enroll</span>
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
             </div>
 
             <!-- Right Side: Inclusions & Benefits Prospectus -->
@@ -737,6 +771,24 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    function handlePayment(upiLink, whatsappLink) {
+      // Prevent execution on desktop view (handled by CSS visual disable, but enforced here)
+      if (window.innerWidth >= 768) {
+        return;
+      }
+
+      // 1. Open the UPI app (works on mobile)
+      window.location.href = upiLink;
+
+      // 2. Wait 5 seconds, then redirect the browser to the WhatsApp group.
+      // Even if they are in the UPI app, when they return to the browser, 
+      // it will be showing the WhatsApp group join page!
+      setTimeout(function () {
+        window.location.href = whatsappLink;
+      }, 5000);
+    }
+  </script>
 </body>
 
 </html>
