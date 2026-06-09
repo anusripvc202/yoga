@@ -4843,6 +4843,16 @@ footer {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
+
+  /* Center "Join From Home" section elements and button on mobile */
+  .classes-online-grid > div:last-child {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .classes-online-grid .btn-primary {
+    align-self: center !important;
+  }
 }
 
 /* Wellness paths on Classes page: stack to 1 column on small screens (<= 576px) */
