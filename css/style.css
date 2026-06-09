@@ -4828,3 +4828,40 @@ footer {
     gap: 2rem !important;
   }
 }
+
+/* ==========================================================================
+   MOBILE & SMALL SCREEN RESPONSIVENESS PATCHES
+   ========================================================================== */
+
+/* Fix testimonial videos grid stacking on mobile (<= 768px) */
+@media (max-width: 768px) {
+  .videos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* Wellness paths on Classes page: stack to 1 column on small screens (<= 576px) */
+@media (max-width: 576px) {
+  .paths-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* Small mobile responsiveness (<= 480px) */
+@media (max-width: 480px) {
+  /* Header adjustments */
+  .header-nav {
+    height: 70px !important;
+  }
+
+  .logo-image {
+    height: 50px !important;
+  }
+
+  .nav-links {
+    top: 70px !important;
+    height: calc(100vh - 70px) !important;
+  }
+}
