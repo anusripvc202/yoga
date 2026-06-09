@@ -22,8 +22,15 @@ function initMobileMenu() {
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
+      const isActive = menuToggle.classList.toggle('active');
       navLinks.classList.toggle('active');
+      
+      // Lock scroll when menu is active
+      if (isActive) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
 
     // Close menu when a link is clicked, unless it is a dropdown toggle
@@ -39,12 +46,24 @@ function initMobileMenu() {
         } else {
           menuToggle.classList.remove('active');
           navLinks.classList.remove('active');
+          document.body.style.overflow = ''; // Unlock scroll on menu close
           // Collapse all dropdowns when menu closes
           navLinks.querySelectorAll('.nav-item.dropdown').forEach(item => {
             item.classList.remove('open');
           });
         }
       });
+    });
+
+    // Close menu when clicking outside (on the remaining area of the screen)
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('active')) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
     });
   }
 }
