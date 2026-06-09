@@ -3164,7 +3164,7 @@ footer {
 
   .logo-image,
   .header-nav.scrolled .logo-image {
-    height: 70px;
+    height: 75px;
   }
 
   .nav-links {
@@ -4906,16 +4906,16 @@ footer {
 @media (max-width: 480px) {
   /* Header adjustments */
   .header-nav {
-    height: 70px !important;
+    height: 85px !important;
   }
 
   .logo-image {
-    height: 50px !important;
+    height: 75px !important;
   }
 
   .nav-links {
-    top: 70px !important;
-    height: calc(100vh - 70px) !important;
+    top: 85px !important;
+    height: calc(100vh - 85px) !important;
   }
 }
 
