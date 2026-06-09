@@ -4921,17 +4921,17 @@ footer {
 
 /* Guide Biography Highlight Style */
 .guide-bio-highlight {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  font-family: 'Lora', Georgia, serif !important;
   font-style: italic !important;
-  font-weight: 500 !important;
-  font-size: clamp(1.1rem, 2.2vw, 1.45rem) !important;
-  line-height: 1.8 !important;
+  font-weight: 400 !important;
+  font-size: clamp(1.05rem, 2vw, 1.25rem) !important;
+  line-height: 1.85 !important;
   color: #1a2656 !important; /* Rich deep indigo/blue from the screenshot */
   letter-spacing: 0.1px;
 }
 
 .guide-bio-highlight strong {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  font-family: 'Lora', Georgia, serif !important;
   font-weight: 700 !important;
   color: #1a2656 !important;
 }
