@@ -744,6 +744,14 @@ select {
   font-weight: 800;
 }
 
+.hero-live-badge .live-badge-sub {
+  display: inline;
+}
+
+.hero-live-badge .live-badge-sub::before {
+  content: " — ";
+}
+
 
 /* Hero title — white on dark background */
 .hero-title-video {
@@ -4470,6 +4478,25 @@ footer {
   .guide-content h2.section-title {
     font-size: clamp(1.1rem, 5.5vw, 2rem) !important;
     white-space: nowrap !important;
+  }
+
+  .hero-live-badge {
+    align-items: flex-start !important;
+    border-radius: 14px !important;
+    padding: 10px 16px !important;
+  }
+
+  .hero-live-badge .live-pulse-dot {
+    margin-top: 5px !important;
+  }
+
+  .hero-live-badge .live-badge-sub {
+    display: block !important;
+    margin-top: 4px !important;
+  }
+
+  .hero-live-badge .live-badge-sub::before {
+    content: "" !important;
   }
 
   .chakras-vertical-container::before {
