@@ -4651,20 +4651,20 @@ footer {
 
   /* Homepage: Meet your yoga guide section - photo left, content right */
   section.bg-secondary-section:has(.guide-section) {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 
   .guide-section {
-    grid-template-columns: 0.9fr 1.1fr !important;
-    gap: 2.5rem !important;
+    grid-template-columns: 0.95fr 1.05fr !important;
+    gap: 2rem !important;
     align-items: center !important;
     text-align: left !important;
   }
 
   .guide-images div {
-    max-width: 250px !important;
-    aspect-ratio: 1 / 1.1 !important;
+    max-width: 310px !important;
+    aspect-ratio: 1.25 / 1 !important;
   }
 
   .guide-images img {
@@ -4681,26 +4681,39 @@ footer {
   }
 
   .guide-content h2.section-title {
-    font-size: clamp(1.2rem, 5.8vw, 2rem) !important;
-    margin-bottom: 0.5rem !important;
+    font-size: clamp(1.2rem, 5.8vw, 1.85rem) !important;
+    margin-bottom: 0.4rem !important;
     white-space: nowrap !important;
   }
 
-  .guide-content p {
-    font-size: 0.95rem !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.5 !important;
+  .guide-content p.guide-bio-highlight {
+    font-size: 0.88rem !important;
+    margin-bottom: 0.4rem !important;
+    line-height: 1.4 !important;
   }
 
   .guide-specs {
-    margin-top: 0.75rem !important;
-    padding-top: 0.75rem !important;
-    gap: 8px !important;
+    margin-top: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    gap: 6px 12px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .guide-specs .spec-item {
+    font-size: 0.82rem !important;
   }
 
   .specialty-highlight-card {
-    margin-top: 0.75rem !important;
-    padding: 8px 14px !important;
+    margin-top: 0.5rem !important;
+    padding: 6px 12px !important;
+  }
+
+  .specialty-highlight-card strong {
+    font-size: 0.92rem !important;
+  }
+
+  .specialty-highlight-card span {
+    font-size: 0.65rem !important;
   }
 
   /* Homepage: Client testimonials section - all 4 videos in one line */
