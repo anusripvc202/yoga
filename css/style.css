@@ -2018,18 +2018,26 @@ select {
 /* Force standard fit in fullscreen to avoid zoom-cropping */
 .testimonial-video-wrapper video:fullscreen {
   object-fit: contain !important;
+  object-position: center center !important;
+  background-color: #000000 !important;
 }
 
 .testimonial-video-wrapper video:-webkit-full-screen {
   object-fit: contain !important;
+  object-position: center center !important;
+  background-color: #000000 !important;
 }
 
 .testimonial-video-wrapper video:-moz-full-screen {
   object-fit: contain !important;
+  object-position: center center !important;
+  background-color: #000000 !important;
 }
 
 .testimonial-video-wrapper video:-ms-fullscreen {
   object-fit: contain !important;
+  object-position: center center !important;
+  background-color: #000000 !important;
 }
 
 .testimonial-video-card:hover .testimonial-video-wrapper video {
